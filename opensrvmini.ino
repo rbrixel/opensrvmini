@@ -2,33 +2,37 @@
  * OpenSRVmini
  * -----------
  * 
- * EN: Description
- * DE: Beschreibung
+ * EN: OpenSRVmini is suitable for mobile homes and caravans. You can use it to
+ *     measure the outside temperature, the inside temperature and the air humidity.
+ *     Furthermore, a position sensor is included!
+ * DE: OpenSRVmini ist für Wohnmobile, sowie Wohnwägen geeignet. Du kannst damit
+ *     die Außentemperatur, die Innentemperatur und die -Luftfeuchte messen.
+ *     Des Weiteren ist ein Lagesensor dabei!
  * 
  * Hardware: 
- * - ESP32 Dev Kit
- * - BME280 (temperature, humidity and air pressure)
+ * - ESP32 "Dev Kit"
+ * - BME280 (temperature, humidity and air pressure for indoor)
  * - MPU-6050 (3-axis-gyroscope)
  * - DS18B20 (waterproof for outdoor measurement)
  * - ADS1115 (4-Channel, 16-Bit AD, i2c)
  * 
- * Software:
+ * Info:
+ * - I use the ADS1115-AD-Converter, because of the bad AD in the ESP32
+ * - Wifi is only used for OTA-Update
+ * - Bluetooth is used for communication with smartphone-app
+ * 
+ * Libs:
  * - Over-The-Air-Update (ArduinoOTA)
  * - OneWire (OneWire - use 2.3.0)
  * - Cactus.io BME280 (http://cactus.io/projects/weather/arduino-weather-station-bme280-sensor)
  * 
- * Author: René Brixel <mail@campingtech.de>
- * Date: 2020-09-14
- * Web: https://campingtech.de/opensrv
- * GitHub: https://github.com/rbrixel
+ * Author:  René Brixel <mail@campingtech.de>
+ * Date:    2020-09-14 (initial Sketch)
+ * VErsion: 20201210-1
+ * Web:     https://campingtech.de/opensrv
+ * GitHub:  https://github.com/rbrixel
  */
-
-/*
- * Kurzinfos:
- * WLAN wird nur für Over-The-Air-Update benötigt
- * Bluetooth für Datenkommunikation mit Smartphone
- */
-
+ 
 /*
  * General setup
  */
@@ -45,13 +49,11 @@ BME280_I2C bme(0x76); // uint i2c-address
 /*
  * DS18B20-setup
  */
-/*
 #include <OneWire.h>
 #include <DallasTemperature.h>
 #define ONE_WIRE_BUS 5 // GPIO5
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature ds18sensors(&oneWire);
-*/
 
 /*
  * MPU-6050-setup
@@ -69,21 +71,42 @@ int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);
 
-
+/*
+ * ## SETUP-Routine ##
+ */
 void setup() {
   Serial.begin(115200);
 
   // ADS1115 init
   ADS.begin();
+
+  // DS18B20 init
+  ds18sensors.begin();
 }
 
+/*
+ * ## LOOP ##
+ */
 void loop() {
-  Serial.println(String(MeasureADS(0)) + "V");
+  
+  ds18sensors.requestTemperatures(); // Send the command to get temperatures
+  float tempC = ds18sensors.getTempCByIndex(0); // read first sensor
+  if(tempC != DEVICE_DISCONNECTED_C) {
+    Serial.println(String(tempC) + " °C");
+  } else {
+    Serial.println("Error: Could not read temperature data");
+  }
+  
+  Serial.println(String(MeasureADS(0)) + " V"); // Read the voltage of BAT0
+  
   Serial.println();
 
   delay(1000);
 }
 
+/*
+ * Function: Measure voltage and return in "human readable"
+ */
 float MeasureADS (int analog_input_pin) {
   float reference_vcc = 3.3; // Volt... ESP32 system voltage
   float vcc_max = 16.0; // Volt... maximum input on voltage divider
