@@ -27,3 +27,7 @@ Die Schaltung kommuniziert über Bluetooth mit einer Smartphone-App. Über WLAN 
 ## Software
 
 Arduino-IDE with ESP32-Board-Addon.
+
+## Facebook-Group/-Gruppe
+
+Only in german / nur in Deutsch: https://www.facebook.com/groups/opensrv
