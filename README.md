@@ -1,5 +1,7 @@
 # OpenSRVmini
 
+![OpenSRVmini Logo](/OpenSRVmini-Logo.jpg)
+
 #WIP - Work in progress
 
 ## Description/Beschreibung
