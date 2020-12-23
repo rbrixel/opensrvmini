@@ -41,10 +41,8 @@ String osrvmVersion = "0.1"; // OpenSRVmini version
 /*
  * BME280-setup
  */
-/*
 #include <cactus_io_BME280_I2C.h>
 BME280_I2C bme(0x76); // uint i2c-address
-*/
 
 /*
  * DS18B20-setup
@@ -67,7 +65,6 @@ int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
 /*
  * Voltagedivider-setup
  */
-//#define VCCINPORT 32
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);
 
@@ -82,13 +79,20 @@ void setup() {
 
   // DS18B20 init
   ds18sensors.begin();
+
+  // BME280 init
+  if (!bme.begin()) {
+    Serial.println("Could not find BME280 sensor, check wiring");
+    while (1);
+  }
 }
 
 /*
  * ## LOOP ##
  */
 void loop() {
-  
+
+  Serial.println("-- DB18B20 --");
   ds18sensors.requestTemperatures(); // Send the command to get temperatures
   float tempC = ds18sensors.getTempCByIndex(0); // read first sensor
   if(tempC != DEVICE_DISCONNECTED_C) {
@@ -96,12 +100,22 @@ void loop() {
   } else {
     Serial.println("Error: Could not read temperature data");
   }
-  
-  Serial.println(String(MeasureADS(0)) + " V"); // Read the voltage of BAT0
-  
-  Serial.println();
 
-  delay(1000);
+  Serial.println("-- BME280 --");
+  bme.readSensor();
+  float bTemp(NAN), bHum(NAN), bPres(NAN);
+  bTemp = bme.getTemperature_C();
+  bHum = bme.getHumidity();
+  bPres = bme.getPressure_MB();
+  Serial.println(String(bTemp) + " °C");
+  Serial.println(String(bHum) + " %");
+  Serial.println(String(bPres) + " mb");
+
+  Serial.println("-- ADS1115 --");
+  Serial.println(String(MeasureADS(0)) + " V"); // Read the voltage of BAT0
+
+  Serial.println("---------");
+  delay(2000);
 }
 
 /*
