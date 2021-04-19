@@ -32,17 +32,28 @@
  * Web:     https://campingtech.de/opensrv
  * GitHub:  https://github.com/rbrixel
  */
- 
+
+#include <main.h>
+
 /*
  * General setup
  */
 String osrvmVersion = "0.1"; // OpenSRVmini version
 
 /*
+ *  Ringbuffer to hold Data
+ */
+RingBuffer *dataholder = new RingBuffer(20,"Buffer");
+
+/*
  * BME280-setup
  */
-#include <cactus_io_BME280_I2C.h>
-BME280_I2C bme(0x76); // uint i2c-address
+#include <BME280_I2C.h>
+//BME280_I2C bme(0x76); // uint i2c-address
+BME280_I2C bme280;
+
+#define BME280_I2C_SCL    26
+#define BME280_I2C_SDA    25
 
 /*
  * DS18B20-setup
@@ -68,6 +79,7 @@ int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);
 
+
 /*
  * ## SETUP-Routine ##
  */
@@ -81,10 +93,23 @@ void setup() {
   ds18sensors.begin();
 
   // BME280 init
-  if (!bme.begin()) {
-    Serial.println("Could not find BME280 sensor, check wiring");
-    while (1);
-  }
+
+    bme280.setAddress(BME280_ADDRESS, BME280_I2C_SDA, BME280_I2C_SCL);
+    bool isStatus = bme280.begin(
+      bme280.BME280_STANDBY_0_5,
+      bme280.BME280_FILTER_16,
+      bme280.BME280_SPI3_DISABLE,
+      bme280.BME280_OVERSAMPLING_2,
+      bme280.BME280_OVERSAMPLING_16,
+      bme280.BME280_OVERSAMPLING_1,
+      bme280.BME280_MODE_NORMAL);
+
+    if (!isStatus) {
+      Serial.println("can NOT initialize for using BME280.\n");
+      while(true);
+    } else {
+      Serial.println("ready to using BME280.\n");
+    }
 }
 
 /*
@@ -102,14 +127,24 @@ void loop() {
   }
 
   Serial.println("-- BME280 --");
-  bme.readSensor();
-  float bTemp(NAN), bHum(NAN), bPres(NAN);
-  bTemp = bme.getTemperature_C();
-  bHum = bme.getHumidity();
-  bPres = bme.getPressure_MB();
-  Serial.println(String(bTemp) + " °C");
-  Serial.println(String(bHum) + " %");
-  Serial.println(String(bPres) + " mb");
+  bme280.read();
+
+  char temp_c[12], humi_c[12], pres_c[12], altd_c[12];
+  dataholder->addElement(bme280.data.temperature);
+  ESP_LOGI(TAG , "- Temperature History ---------------------------" );
+  dataholder->debugBuffer(dataholder->getContentHistory());
+  ESP_LOGI(TAG , "- -----------------------------------------------" );
+
+  sprintf(temp_c, "%2.2lf", bme280.data.temperature);
+  sprintf(humi_c, "%2.2lf", bme280.data.humidity);
+  sprintf(pres_c, "%4.2lf", bme280.data.pressure);
+  sprintf(altd_c, "%4.2lf", bme280.data.altitude);
+  Serial.println("-----------------------");
+  Serial.print("Temperature: "); Serial.print(temp_c); Serial.println(" ℃");
+  Serial.print("Humidity: ");    Serial.print(humi_c); Serial.println(" %");
+  Serial.print("Pressure: ");    Serial.print(pres_c); Serial.println(" hPa");
+  Serial.print("Altitude: ");    Serial.print(altd_c); Serial.println(" m");
+  Serial.println("-----------------------");
 
   Serial.println("-- ADS1115 --");
   Serial.println(String(MeasureADS(0)) + " V"); // Read the voltage of BAT0
