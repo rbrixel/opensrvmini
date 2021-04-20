@@ -34,6 +34,9 @@
  * GitHub:        https://github.com/rbrixel/opensrvmini
  */
 
+/*
+ * Header files
+ */
 #include <main.h>
 
 /*
@@ -50,8 +53,7 @@ RingBuffer *dataholder = new RingBuffer(20,"Buffer");
  * BME280-setup
  */
 #include <BME280_I2C.h>
-//BME280_I2C bme(0x76); // uint i2c-address
-BME280_I2C bme280;
+BME280_I2C bme280; //BME280_I2C bme(0x76); // uint i2c-address
 
 #define BME280_I2C_SCL    26
 #define BME280_I2C_SDA    25
@@ -79,7 +81,6 @@ int16_t AcX, AcY, AcZ, Tmp, GyX, GyY, GyZ;
  */
 #include "ADS1X15.h"
 ADS1115 ADS(0x48);
-
 
 /*
  * ## SETUP-Routine ##
