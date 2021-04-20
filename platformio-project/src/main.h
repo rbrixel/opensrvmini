@@ -1,7 +1,5 @@
-
- #include <Arduino.h>
+#include <Arduino.h>
 #include <RingBuffer.h>
-
 
 const char *TAG = "OPENSRVMINI";
 

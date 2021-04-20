@@ -26,11 +26,12 @@
  * - OneWire (OneWire - use 2.3.0)
  * - Cactus.io BME280 (http://cactus.io/projects/weather/arduino-weather-station-bme280-sensor)
  * 
- * Author:  René Brixel <mail@campingtech.de>
- * Date:    2020-09-14 (initial Sketch)
- * VErsion: 20201210-1
- * Web:     https://campingtech.de/opensrv
- * GitHub:  https://github.com/rbrixel
+ * Author:        René Brixel <mail@campingtech.de>
+ * Contributors:  dalander
+ * Date:          2020-09-14 (initial Sketch)
+ * Version:       20201210-1
+ * Web:           https://campingtech.de/opensrv
+ * GitHub:        https://github.com/rbrixel/opensrvmini
  */
 
 #include <main.h>
