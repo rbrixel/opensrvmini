@@ -40,6 +40,9 @@
 const char* ssid = "OtaStation";
 const char* password = "WelcomeAboard!";
 
+#include "lib/BMEDataCollector.h"
+
+
 void setup() {
   Serial.begin(115200);
   Serial.println("Over The Air Update - FullOTA");
