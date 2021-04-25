@@ -40,7 +40,25 @@
 const char* ssid = "OtaStation";
 const char* password = "WelcomeAboard!";
 
+// Sample Usage of Interfaces for Data Collection
+std::vector< IDataCollector *> dataCollectors;
+IDataStorage *storage = new DataStorage();
+
 void setup() {
+  
+  // Sample Usage of Interfaces for Data Collection
+  dataCollectors.push_back(new BMEDataCollector("Channel-1"));
+  dataCollectors.push_back(new BMEDataCollector("Channel-2"));
+  dataCollectors.push_back(new BMEDataCollector("Channel-3"));
+
+  // Initialize Collectors (with storage and maybe more)
+  for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
+      Serial.printf("INIT: %s\n",dataCollectors[i]->getName().c_str() );
+      dataCollectors[i]->setDataStorage(storage);
+  }
+
+
+
   Serial.begin(115200);
   Serial.println("Over The Air Update - FullOTA");
 
@@ -55,9 +73,7 @@ void setup() {
 
   // OTA Settings
   ArduinoOTA.setPort(3232);
-  // ArduinoOTA.setHostname("myesp8266");
-  // ArduinoOTA.setPassword((const char *)"1234");
-  
+ 
   // OTA Start
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
@@ -86,4 +102,22 @@ void setup() {
 void loop() {
   ArduinoOTA.handle();
 
+  // Sample Usage of Interfaces for Data Collection
+  Serial.println("************************************");
+  for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
+      dataCollectors[i]->updateData();
+
+      Serial.printf("UPDATE: %s\n",dataCollectors[i]->getName().c_str() );
+  }
+
+  Serial.println("************************************");
+  // Read Data out of Storage
+  for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
+      Serial.printf("READ: %s -> %f\n", dataCollectors[i]->getName().c_str(),
+                                  storage->getDataDouble( dataCollectors[i]->getName()));
+  }
+
+  Serial.println("Go Sleep ***************************");
+  Serial.println("");
+  delay(1000);
 }
