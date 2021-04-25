@@ -33,4 +33,4 @@ jobs:
       run: |
           cd platformio-project
           pio lib -g update
-          pio run -e esp32dev-com3
+          pio run -e githubci
