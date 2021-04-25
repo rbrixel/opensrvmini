@@ -31,6 +31,7 @@ jobs:
         pip install --upgrade platformio
     - name: Run PlatformIO
       run: |
+          pio settings get
           cd platformio-project
           pio lib -g update
-          pio run -e esp32dev-com3
+          pio run -e githubci
