@@ -10,6 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
+        ref: develop
         path: platformio-project
     - name: Cache pip
       uses: actions/cache@v2
