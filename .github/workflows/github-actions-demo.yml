@@ -30,4 +30,4 @@ jobs:
     - name: Run PlatformIO
       run: |
             cd platformio-project
-            pio run -e env:esp32dev-com3
+            pio run -e esp32dev-com3
