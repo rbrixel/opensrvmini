@@ -1,4 +1,5 @@
 # OpenSRVmini
+![example workflow](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg)
 
 ![OpenSRVmini Logo](./OpenSRVmini-Logo.jpg)
 
@@ -60,5 +61,3 @@ Each section like [env:esp32dev-ota] in platformio.ini describes a usable enviro
 
 Only in german / nur in Deutsch: https://www.facebook.com/groups/opensrv
 
-
-![example workflow](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg)
