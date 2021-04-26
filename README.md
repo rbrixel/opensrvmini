@@ -1,5 +1,5 @@
 # OpenSRVmini
-![example workflow](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg)
+![ESPBuildBadge](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg)
 
 ![OpenSRVmini Logo](./OpenSRVmini-Logo.jpg)
 
