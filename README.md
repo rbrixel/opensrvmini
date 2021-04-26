@@ -1,4 +1,5 @@
 # OpenSRVmini
+![ESPBuildBadge](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg?branch=develop)
 
 ![OpenSRVmini Logo](./OpenSRVmini-Logo.jpg)
 
@@ -59,3 +60,4 @@ Each section like [env:esp32dev-ota] in platformio.ini describes a usable enviro
 ## Facebook-Group/-Gruppe
 
 Only in german / nur in Deutsch: https://www.facebook.com/groups/opensrv
+
