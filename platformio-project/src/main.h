@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
-#include <ArduinoOta.h>
+#include <ArduinoOTA.h>
 
 #include <BMEDataCollector.h>
 #include <DataStorage.h>
