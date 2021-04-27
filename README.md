@@ -1,5 +1,5 @@
 # OpenSRVmini
-![ESPBuildBadge](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg?branch=develop)
+![ESPBuildBadge](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg)
 
 ![OpenSRVmini Logo](./OpenSRVmini-Logo.jpg)
 
