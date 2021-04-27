@@ -1,0 +1,37 @@
+name: Build-ESP32
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: develop
+    - name: Cache pip
+      uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+    - name: Cache PlatformIO
+      uses: actions/cache@v2
+      with:
+        path: ~/.platformio
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+    - name: Set up Python
+      uses: actions/setup-python@v2
+    - name: Install PlatformIO
+      run: |
+        python -m pip install --upgrade pip
+        pip install --upgrade platformio
+    - name: Run PlatformIO
+      run: |
+          pio settings get
+          cd platformio-project
+          pio lib -g update
+          pio run -e githubci

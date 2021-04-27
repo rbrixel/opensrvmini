@@ -1,6 +1,7 @@
 # OpenSRVmini
+![ESPBuildBadge](https://github.com/rbrixel/opensrvmini/actions/workflows/build.yml/badge.svg?branch=develop)
 
-![OpenSRVmini Logo](/OpenSRVmini-Logo.jpg)
+![OpenSRVmini Logo](./OpenSRVmini-Logo.jpg)
 
 #WIP - Work in progress
 
@@ -26,8 +27,37 @@ Die Schaltung kommuniziert über Bluetooth mit einer Smartphone-App. Über WLAN 
 
 ## Software
 
-Arduino-IDE with ESP32-Board-Addon.
+Using VSCode with installed Platform IO Extension for development.
+PlatformIO supports the Arduino Framework which makes it more easy to access allready supported devices.
+
+* https://code.visualstudio.com/
+* https://platformio.org/
+
+# Startup Hints
+
+After cloning the repository you can open the platformio-project folder as a project:
+
+![PIO Open Project](./pio-openproject.png)  
+![PIO Choose Folder](./pio-choosefolder.png)
+
+Once the project opened one way to use Platform IO environment is using the taskbar:
+![PIO Taskbar](./pio-taskbar.png)
+
+Right from the GIT symbols the Platform IO Icons are shown.
+* House: Go TO PlatformIO home
+* Checkmark : Compile current project using selected Environment (later here)
+* Arrow: Compile current project and upload to ESP using selected Environment (later here)
+* Trashcan: Clean current Project
+* Connector Plug: Show ESP Serial Monitor interface
+* Square: Open Terminal (less used)
+* Folder Symbol with env:.... : Select active environment 
+
+### Environment 
+
+Please use https://platformio.org/ or https://docs.platformio.org/en/latest/projectconf/index.html for detailed descriptions. For this project so far just the info, that it will have multiple environments configured, depending for developer and connection.
+Each section like [env:esp32dev-ota] in platformio.ini describes a usable environment, which can be used. This makes it more easy to switch between OTA upload or different serial ports.
 
 ## Facebook-Group/-Gruppe
 
 Only in german / nur in Deutsch: https://www.facebook.com/groups/opensrv
+
