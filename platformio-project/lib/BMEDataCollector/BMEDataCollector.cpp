@@ -8,6 +8,16 @@
 BMEDataCollector::BMEDataCollector(std::string channelName)
 {
     _channelName = channelName;
+    _bme280 = new BME280_I2C(_address,_i2cSDA, _i2cSCL);
+}
+
+BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL)
+{
+    _channelName = channelName;
+    _i2cSDA=i2cSDA;
+    _i2cSCL=i2cSCL;
+    _address=address;
+    _bme280 = new BME280_I2C(_address,_i2cSDA, _i2cSCL);
 }
 
 ///
@@ -15,6 +25,21 @@ BMEDataCollector::BMEDataCollector(std::string channelName)
 void BMEDataCollector::init(IDataStorage *storage)
 {
     _dataStorage = storage;
+
+    _bmeIsReady = _bme280->begin(
+                                _bme280->BME280_STANDBY_0_5,
+                                _bme280->BME280_FILTER_16,
+                                _bme280->BME280_SPI3_DISABLE,
+                                _bme280->BME280_OVERSAMPLING_2,
+                                _bme280->BME280_OVERSAMPLING_16,
+                                _bme280->BME280_OVERSAMPLING_1,
+                                _bme280->BME280_MODE_NORMAL);
+
+    // if (!_bmeIsReady) {
+    //   Serial.println("can NOT initialize for using BME280.\n");
+    // } else {
+    //   Serial.println("ready to using BME280.\n");
+    // }
 }
 
 ///
@@ -28,6 +53,11 @@ void BMEDataCollector::reInit()
 /// Updates BME Data into DataStorage
 void BMEDataCollector::updateData()
 {
+    if (!_bmeIsReady) {
+        _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
+        _dataStorage->addData(_channelName + CHANNELEXTPRESSURE , 0.0f);
+        return;
+    }
     readBMEData();
     _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
     _dataStorage->addData(_channelName + CHANNELEXTPRESSURE , _pressure);
@@ -42,9 +72,9 @@ std::string BMEDataCollector::getName(){
 ///
 /// fake at the moment, Reads BME Data
 void  BMEDataCollector::readBMEData() {
-    
-    _temp =  std::rand()/((RAND_MAX + 1u)/35);;
-    _pressure =  std::rand()/((RAND_MAX + 1u)/35);;
+    _bme280->read();
+    _temp = _bme280->data.temperature;
+    _pressure = _bme280->data.pressure;
 }
 
 ///

@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: develop
+        #ref: develop
     - name: Cache pip
       uses: actions/cache@v2
       with:
@@ -31,7 +31,5 @@ jobs:
         pip install --upgrade platformio
     - name: Run PlatformIO
       run: |
-          pio settings get
           cd platformio-project
-          pio lib -g update
           pio run -e githubci
