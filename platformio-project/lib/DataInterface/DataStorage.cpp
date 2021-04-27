@@ -1,22 +1,22 @@
 
 #include <DataStorage.h>
 
-void DataStorage::storeDataDouble(std::string channelName, double data)
+/// 
+/// stores a double in the channelname
+void DataStorage::addData(std::string channelName, double data)
 {
     _map[channelName] = data;
 }
 
-void DataStorage::storeDataInt(std::string channelName,int data)
-{
-    _map[channelName] = data;
-}
-
-double DataStorage::getDataDouble(std::string channelName)
+///
+/// Resolves the channelName and returns the stored Data
+double DataStorage::getData(std::string channelName)
 {
     return _map[channelName];
 }
 
-int DataStorage::getDataInt(std::string channelName)
+std::map<std::string, double> DataStorage::getMapCopy()
 {
-    return _map[channelName];
+    std::map<std::string, double> result = _map;
+    return result;
 }
