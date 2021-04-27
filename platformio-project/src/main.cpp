@@ -54,7 +54,7 @@ void setup() {
   // Initialize Collectors (with storage and maybe more)
   for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
       Serial.printf("INIT: %s\n",dataCollectors[i]->getName().c_str() );
-      dataCollectors[i]->setDataStorage(storage);
+      dataCollectors[i]->init(storage);
   }
 
 
@@ -111,11 +111,22 @@ void loop() {
   }
 
   Serial.println("************************************");
+  
   // Read Data out of Storage
-  for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
-      Serial.printf("READ: %s -> %f\n", dataCollectors[i]->getName().c_str(),
-                                  storage->getDataDouble( dataCollectors[i]->getName()));
+  std::map<std::string, double> data = storage->getMapCopy();
+  std::map<std::string, double>::iterator it;
+
+  for (it = data.begin(); it != data.end(); it++)
+  {
+      Serial.printf("READ: %s -> %f\n", 
+                                   it->first.c_str(),
+                                   it->second);
   }
+  // for(std::size_t i = 0; i < data.size(); ++i) {
+
+  //     Serial.printf("READ: %s -> %f\n", data[i]->getName().c_str(),
+  //                                 storage->getData( dataCollectors[i]->getName()));
+  // }
 
   Serial.println("Go Sleep ***************************");
   Serial.println("");
