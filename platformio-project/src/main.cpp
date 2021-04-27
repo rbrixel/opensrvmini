@@ -37,43 +37,96 @@
 
 #include <main.h>
 
-const char* ssid = "OtaStation";
-const char* password = "WelcomeAboard!";
+const char *ssid = "OtaStation";
+const char *password = "WelcomeAboard!";
 
 // Sample Usage of Interfaces for Data Collection
-std::vector< IDataCollector *> dataCollectors;
+std::vector<IDataCollector *> dataCollectors;
 IDataStorage *storage = new DataStorage();
 
-void setup() {
-  
-  // Sample Usage of Interfaces for Data Collection
-  dataCollectors.push_back(new BMEDataCollector("Channel-1"));
-  dataCollectors.push_back(new BMEDataCollector("Channel-2"));
-  dataCollectors.push_back(new BMEDataCollector("Channel-3"));
+void setup()
+{
+  Serial.begin(115200);
 
+  /* *******************************************************************************
+      Create Datacollectors 
+  */
+  dataCollectors.push_back(new BMEDataCollector("Channel-BME"));
+  dataCollectors.push_back(new ADSDataCollector("Channel-ADS"));
+  dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));
+
+  Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
+
+  /* *******************************************************************************
+      Init DataCollectors
+  */
   // Initialize Collectors (with storage and maybe more)
-  for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
-      Serial.printf("INIT: %s\n",dataCollectors[i]->getName().c_str() );
-      dataCollectors[i]->init(storage);
+  for (std::size_t i = 0; i < dataCollectors.size(); ++i)
+  {
+    Serial.printf("INIT: %s\n", dataCollectors[i]->getName().c_str());
+    dataCollectors[i]->init(storage);
   }
 
+  initOTA();
+}
 
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* ************************************************************************** */
 
-  Serial.begin(115200);
-  Serial.println("Over The Air Update - FullOTA");
+void loop()
+{
+  ArduinoOTA.handle();
 
-  Serial.printf("Connect to %s\n",ssid);
+  /* *******************************************************************************
+      Update DataCollectors
+  */
+  Serial.println("************************************");
+  for (std::size_t i = 0; i < dataCollectors.size(); ++i)
+  {
+    dataCollectors[i]->updateData();
+
+    Serial.printf("UPDATE: %s\n", dataCollectors[i]->getName().c_str());
+  }
+
+  Serial.println("************************************");
+
+  /* *******************************************************************************
+      Use collected Data
+  */
+  // Read Data out of Storage
+  std::map<std::string, double> data = storage->getMapCopy();
+  std::map<std::string, double>::iterator it;
+
+  for (it = data.begin(); it != data.end(); it++)
+  {
+    Serial.printf("READ: %s -> %f\n",
+                  it->first.c_str(), // Print ChannelName
+                  it->second);       // Print Channel Value
+  }
+  
+  Serial.println("************************************");
+  Serial.println("Can Sleep now for a while **********");
+  Serial.println("");
+  delay(1000);
+}
+
+void initOTA()
+{
+ Serial.println("Over The Air Update - FullOTA");
+
+  Serial.printf("Connect to %s\n", ssid);
   Serial.printf("Sketch size: %u\n", ESP.getSketchSize());
   Serial.printf("Free size: %u\n", ESP.getFreeSketchSpace());
 
-  WiFi.softAP(ssid,password);
+  WiFi.softAP(ssid, password);
   IPAddress IP = WiFi.softAPIP();
   Serial.print("AP IP address: ");
   Serial.println(IP);
 
   // OTA Settings
   ArduinoOTA.setPort(3232);
- 
+
   // OTA Start
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
@@ -82,53 +135,22 @@ void setup() {
     Serial.println("\nEnd");
   });
   ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));;Serial.println();
+    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));
+    ;
+    Serial.println();
   });
   ArduinoOTA.onError([](ota_error_t error) {
     Serial.printf("Error[%u]: ", error);
-    if (error == OTA_AUTH_ERROR) Serial.println("Auth Failed");
-    else if (error == OTA_BEGIN_ERROR) Serial.println("Begin Failed");
-    else if (error == OTA_CONNECT_ERROR) Serial.println("Connect Failed");
-    else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
-    else if (error == OTA_END_ERROR) Serial.println("End Failed");
+    if (error == OTA_AUTH_ERROR)
+      Serial.println("Auth Failed");
+    else if (error == OTA_BEGIN_ERROR)
+      Serial.println("Begin Failed");
+    else if (error == OTA_CONNECT_ERROR)
+      Serial.println("Connect Failed");
+    else if (error == OTA_RECEIVE_ERROR)
+      Serial.println("Receive Failed");
+    else if (error == OTA_END_ERROR)
+      Serial.println("End Failed");
   });
   ArduinoOTA.begin();
-}
-
-/* ************************************************************************** */
-/* ************************************************************************** */
-/* ************************************************************************** */
-
-void loop() {
-  ArduinoOTA.handle();
-
-  // Sample Usage of Interfaces for Data Collection
-  Serial.println("************************************");
-  for(std::size_t i = 0; i < dataCollectors.size(); ++i) {
-      dataCollectors[i]->updateData();
-
-      Serial.printf("UPDATE: %s\n",dataCollectors[i]->getName().c_str() );
-  }
-
-  Serial.println("************************************");
-  
-  // Read Data out of Storage
-  std::map<std::string, double> data = storage->getMapCopy();
-  std::map<std::string, double>::iterator it;
-
-  for (it = data.begin(); it != data.end(); it++)
-  {
-      Serial.printf("READ: %s -> %f\n", 
-                                   it->first.c_str(),
-                                   it->second);
-  }
-  // for(std::size_t i = 0; i < data.size(); ++i) {
-
-  //     Serial.printf("READ: %s -> %f\n", data[i]->getName().c_str(),
-  //                                 storage->getData( dataCollectors[i]->getName()));
-  // }
-
-  Serial.println("Go Sleep ***************************");
-  Serial.println("");
-  delay(1000);
 }
