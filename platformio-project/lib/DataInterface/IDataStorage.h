@@ -3,6 +3,8 @@
 
 #include <map>
 
+#define UNKNOWNRESULT -99999.0f
+
 ///
 /// IDataStorage to store sensorData in channels
 /// Every channel is defined by its name
@@ -16,6 +18,11 @@ class IDataStorage {
       ///
       /// retrieves a double from the specified channel
       virtual double getData(std::string channelName)=0;
+
+      ///
+      /// True if the given channel exists in storage and can be queried
+      /// otherwise false
+      virtual bool isChannelExistant(std::string channelName);
 
       virtual  std::map<std::string, double> getMapCopy() =0;
    protected:

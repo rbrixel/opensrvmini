@@ -42,6 +42,8 @@ const char *password = "WelcomeAboard!";
 
 // Sample Usage of Interfaces for Data Collection
 std::vector<IDataCollector *> dataCollectors;
+std::vector<IDataActor *> dataActors;
+
 IDataStorage *storage = new DataStorage();
 
 void setup()
@@ -51,11 +53,18 @@ void setup()
   /* *******************************************************************************
       Create Datacollectors 
   */
-  dataCollectors.push_back(new BMEDataCollector("Channel-BME"));
-  dataCollectors.push_back(new ADSDataCollector("Channel-ADS"));
-  dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));
+  dataCollectors.push_back(new BMEDataCollector("Channel-BME"));  // Get Temperature and Pressure
+  dataCollectors.push_back(new ADSDataCollector("Channel-ADS"));  // get Board Voltage
+  dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));  // get outer temperature
+
+  /* *******************************************************************************
+      Create DataActors 
+  */
+  dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_18,true )); // Raise PIN 18 to HIGH as long as board voltage is good
+  dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_19,true )); // Raise PIN 19 as alarm to HIGH as voltage drops below 11.5V
 
   Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
+  Serial.printf("INIT: %d Actors found\n", dataActors.size());
 
   /* *******************************************************************************
       Init DataCollectors
@@ -65,6 +74,15 @@ void setup()
   {
     Serial.printf("INIT: %s\n", dataCollectors[i]->getName().c_str());
     dataCollectors[i]->init(storage);
+  }
+
+  /* *******************************************************************************
+      Init Actors
+  */
+  for (std::size_t i = 0; i < dataActors.size(); ++i)
+  {
+    Serial.printf("INIT Actor\n");
+    dataActors[i]->init();
   }
 
   initOTA();
@@ -92,23 +110,37 @@ void loop()
   Serial.println("************************************");
 
   /* *******************************************************************************
+      Update Actors
+  */
+  Serial.println("************************************");
+  for (std::size_t i = 0; i < dataActors.size(); ++i)
+  {
+    dataActors[i]->action(storage);
+  }
+
+  Serial.println("************************************");
+
+  /* *******************************************************************************
       Use collected Data
   */
-  // Read Data out of Storage
-  std::map<std::string, double> data = storage->getMapCopy();
-  std::map<std::string, double>::iterator it;
+  // Should use Actors do do something with data
+  // std::map<std::string, double> data = storage->getMapCopy();
+  // std::map<std::string, double>::iterator it;
 
-  for (it = data.begin(); it != data.end(); it++)
-  {
-    Serial.printf("READ: %s -> %f\n",
-                  it->first.c_str(), // Print ChannelName
-                  it->second);       // Print Channel Value
-  }
+  // for (it = data.begin(); it != data.end(); it++)
+  // {
+  //   Serial.printf("READ: %s -> %f\n",
+  //                 it->first.c_str(), // Print ChannelName
+  //                 it->second);       // Print Channel Value
+  // }
   
   Serial.println("************************************");
   Serial.println("Can Sleep now for a while **********");
   Serial.println("");
-  delay(1000);
+  Serial.println("");
+  Serial.println("");
+  Serial.println("");
+  delay(5000);
 }
 
 void initOTA()
