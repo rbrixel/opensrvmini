@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['init_51',['init',['../class_b_m_e_data_collector.html#a205123ea60f1ca18477c0bed241ef5f9',1,'BMEDataCollector::init()'],['../class_i_data_collector.html#ae2aea6c98add73a205df2cd6103b6609',1,'IDataCollector::init()']]]
+  ['extractchannelvalue_97',['extractChannelValue',['../class_range_data_actor.html#a618322d091ef25a52701acd304338b4c',1,'RangeDataActor']]]
 ];

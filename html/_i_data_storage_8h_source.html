@@ -20,6 +20,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="OpenSRVmini-Logo.jpg"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">OpenSRV Mini
    &#160;<span id="projectnumber">0.1</span>
@@ -76,21 +77,26 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_i_data_storage.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_data_storage.html">IDataStorage</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">   14</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">addData</a>(std::string channelName, <span class="keywordtype">double</span> data)=0;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">   18</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">getData</a>(std::string channelName)=0;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">   20</a></span>&#160;      <span class="keyword">virtual</span>  std::map&lt;std::string, double&gt; <a class="code" href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">getMapCopy</a>() =0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;   <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:10</div></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="_i_data_storage_8h.html#acbf8c4ac5bd4efaea53b91ed9c97f2a8">    6</a></span>&#160;<span class="preprocessor">#define UNKNOWNRESULT -99999.0f</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_i_data_storage.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_data_storage.html">IDataStorage</a> {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">   16</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">addData</a>(std::string channelName, <span class="keywordtype">double</span> data)=0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">   20</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">getData</a>(std::string channelName)=0;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#adbe6dd46d76e2bb31064d58a71b33018">   25</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_data_storage.html#adbe6dd46d76e2bb31064d58a71b33018">isChannelExistant</a>(std::string channelName);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">   27</a></span>&#160;      <span class="keyword">virtual</span>  std::map&lt;std::string, double&gt; <a class="code" href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">getMapCopy</a>() =0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;   <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:12</div></div>
 <div class="ttc" id="aclass_i_data_storage_html_a43d103acc3867695c5148b4335f889e6"><div class="ttname"><a href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">IDataStorage::getData</a></div><div class="ttdeci">virtual double getData(std::string channelName)=0</div><div class="ttdoc">retrieves a double from the specified channel</div></div>
 <div class="ttc" id="aclass_i_data_storage_html_abc753aa95b8b5cf1f54392be437a313c"><div class="ttname"><a href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">IDataStorage::getMapCopy</a></div><div class="ttdeci">virtual std::map&lt; std::string, double &gt; getMapCopy()=0</div></div>
+<div class="ttc" id="aclass_i_data_storage_html_adbe6dd46d76e2bb31064d58a71b33018"><div class="ttname"><a href="class_i_data_storage.html#adbe6dd46d76e2bb31064d58a71b33018">IDataStorage::isChannelExistant</a></div><div class="ttdeci">virtual bool isChannelExistant(std::string channelName)</div></div>
 <div class="ttc" id="aclass_i_data_storage_html_af366696a70ef729c6ff3b9e9f453b026"><div class="ttname"><a href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">IDataStorage::addData</a></div><div class="ttdeci">virtual void addData(std::string channelName, double data)=0</div><div class="ttdoc">stores a double Value (data) to the channel channelName</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

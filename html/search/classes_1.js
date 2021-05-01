@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['datastorage_35',['DataStorage',['../class_data_storage.html',1,'']]]
+  ['bmedatacollector_70',['BMEDataCollector',['../class_b_m_e_data_collector.html',1,'']]]
 ];

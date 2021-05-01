@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bmedatacollector_34',['BMEDataCollector',['../class_b_m_e_data_collector.html',1,'']]]
+  ['adsdatacollector_69',['ADSDataCollector',['../class_a_d_s_data_collector.html',1,'']]]
 ];

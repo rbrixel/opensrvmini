@@ -1,8 +1,23 @@
 var searchData=
 [
-  ['_5fchannelname_0',['_channelName',['../class_b_m_e_data_collector.html#af22f85b85f763228a3b770bc6f5fb049',1,'BMEDataCollector']]],
-  ['_5fdatastorage_1',['_dataStorage',['../class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725',1,'IDataCollector']]],
-  ['_5fmap_2',['_map',['../class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd',1,'DataStorage']]],
-  ['_5fpressure_3',['_pressure',['../class_b_m_e_data_collector.html#a4f541e8e70881623673ecae846f3d559',1,'BMEDataCollector']]],
-  ['_5ftemp_4',['_temp',['../class_b_m_e_data_collector.html#aa0435f72be458f1f5915c47383558147',1,'BMEDataCollector']]]
+  ['_5faddress_0',['_address',['../class_b_m_e_data_collector.html#ad8070532869fcc0907e54610e498f6f4',1,'BMEDataCollector::_address()'],['../class_a_d_s_data_collector.html#a3849966ff078d6c4c945eb9f42ab68fc',1,'ADSDataCollector::_address()']]],
+  ['_5fads_1',['_ads',['../class_a_d_s_data_collector.html#aab285184672d0c9c484cd731ac71929a',1,'ADSDataCollector']]],
+  ['_5fanaloginputpin_2',['_analogInputPin',['../class_a_d_s_data_collector.html#a41cb24848c342dd7c58525d0b9cc214a',1,'ADSDataCollector']]],
+  ['_5fbme280_3',['_bme280',['../class_b_m_e_data_collector.html#a8fe0539aa2495460c134cc27964dc9a2',1,'BMEDataCollector']]],
+  ['_5fbmeisready_4',['_bmeIsReady',['../class_b_m_e_data_collector.html#a34c60d1d8e0a576bccf3e198485ba5d8',1,'BMEDataCollector']]],
+  ['_5fchannelname_5',['_channelName',['../class_a_d_s_data_collector.html#a3425f7e44f68e421d741d8e1e1985dde',1,'ADSDataCollector::_channelName()'],['../class_b_m_e_data_collector.html#af22f85b85f763228a3b770bc6f5fb049',1,'BMEDataCollector::_channelName()'],['../class_d_t_s_data_collector.html#acf71732f5fc27e5b7e0a33bc8a194b26',1,'DTSDataCollector::_channelName()']]],
+  ['_5fdatastorage_6',['_dataStorage',['../class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971',1,'IDataActor::_dataStorage()'],['../class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725',1,'IDataCollector::_dataStorage()']]],
+  ['_5fds18sensors_7',['_ds18sensors',['../class_d_t_s_data_collector.html#a9d49e5b66e70f97af3a7b8ef9c5c3557',1,'DTSDataCollector']]],
+  ['_5fgpio_8',['_gpio',['../class_range_data_actor.html#a3833e8f0feb612c4053c030b06078a76',1,'RangeDataActor']]],
+  ['_5fi2cscl_9',['_i2cSCL',['../class_b_m_e_data_collector.html#ae4992d2d5f0b1aafcfa7afa069493671',1,'BMEDataCollector']]],
+  ['_5fi2csda_10',['_i2cSDA',['../class_b_m_e_data_collector.html#ab6cbc013c9b0173e8e05fcfd2d5bd45c',1,'BMEDataCollector']]],
+  ['_5finrangeison_11',['_inRangeIsOn',['../class_range_data_actor.html#a7505bf014cd428fdd0b1c11a87cf2922',1,'RangeDataActor']]],
+  ['_5flowerbound_12',['_lowerBound',['../class_range_data_actor.html#a74801390a88c53ba7e07af232e95a70c',1,'RangeDataActor']]],
+  ['_5fmap_13',['_map',['../class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd',1,'DataStorage']]],
+  ['_5fobservedchannel_14',['_observedChannel',['../class_range_data_actor.html#a00a64115e2c022068a4747b4a750ca88',1,'RangeDataActor']]],
+  ['_5fonewire_15',['_oneWire',['../class_d_t_s_data_collector.html#a6dc38023ee6b149eed992b9bc7a63b21',1,'DTSDataCollector']]],
+  ['_5fonewirepin_16',['_oneWirePin',['../class_d_t_s_data_collector.html#a868379cca05838869a574951a6037133',1,'DTSDataCollector']]],
+  ['_5fpressure_17',['_pressure',['../class_b_m_e_data_collector.html#a4f541e8e70881623673ecae846f3d559',1,'BMEDataCollector::_pressure()'],['../class_d_t_s_data_collector.html#a2fc4af4598ba371682d6d07043943201',1,'DTSDataCollector::_pressure()']]],
+  ['_5ftemp_18',['_temp',['../class_b_m_e_data_collector.html#aa0435f72be458f1f5915c47383558147',1,'BMEDataCollector::_temp()'],['../class_d_t_s_data_collector.html#adce990bbc25d34941d1840de0458ad40',1,'DTSDataCollector::_temp()']]],
+  ['_5fupperbound_19',['_upperBound',['../class_range_data_actor.html#a042b04656ff73e390810cbe7bfc5a3db',1,'RangeDataActor']]]
 ];
