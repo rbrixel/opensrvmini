@@ -10,6 +10,8 @@
 #include <DTSDataCollector.h>
 #include <ADSDataCollector.h>
 #include <DataStorage.h>
+#include <IDataActor.h>
+#include <RangeDataActor.h>
 
 void initOTA();
 

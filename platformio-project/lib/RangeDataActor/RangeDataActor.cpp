@@ -1,7 +1,5 @@
 #include <RangeDataActor.h>
 #include <Arduino.h>
-#define CHANNELEXTTEMP ".TEMP"
-#define CHANNELEXTPRESSURE ".PRES"
 
 ///
 /// Instanciation of Range Actor
@@ -15,7 +13,8 @@ RangeDataActor::RangeDataActor(std::string observedChannel,double lowerBound, do
               _lowerBound = lowerBound;
               _upperBound = upperBound; 
               _inRangeIsOn  = inRangeIsOn;
-              _outPutPin = outputPin;
+              _gpio = outputPin;
+              pinMode(_gpio,OUTPUT);
 }
 
 ///
@@ -36,11 +35,43 @@ void RangeDataActor::reInit()
 /// Updates BME Data into DataStorage
 void RangeDataActor::action(IDataStorage *dataStorage)
 {
+    //Serial.printf("Action on %s\n", _observedChannel.c_str());
     // TODO LOGIC HERE
+    if (!dataStorage->isChannelExistant(_observedChannel))
+    {
+        // No Data; No Action
+        //Serial.printf("No Action \n");
+        return;
+    }
+
+    double value = dataStorage->getData(_observedChannel);
+    if ( isInRange(value) )
+    {
+        Serial.printf("Action on %s for value %f -> GPIO %d=%s\n",
+            _observedChannel.c_str() ,
+            value, 
+            _gpio ,
+            _inRangeIsOn ? "HIGH" : "LOW");
+        digitalWrite( _gpio, _inRangeIsOn );
+    }else{
+        Serial.printf("Action on %s for value %f -> %d=%s\n",
+            _observedChannel.c_str() ,
+            value,
+            _gpio ,
+            !_inRangeIsOn ? "HIGH" : "LOW");
+        digitalWrite( _gpio, !_inRangeIsOn );
+    }
+}
+
+/// 
+/// Updates BME Data into DataStorage
+bool RangeDataActor::isInRange(double value)
+{
+    return (value >= _lowerBound && value <=_upperBound);
 }
 
 ///
 /// fake at the moment, set up sleep mode
 void  RangeDataActor::sleep() {
-    ;
+    ; // Maybe Default Output if sleeping?
 }

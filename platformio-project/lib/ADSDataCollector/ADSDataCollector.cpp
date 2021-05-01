@@ -33,6 +33,7 @@ void ADSDataCollector::reInit()
     ;
 }
 
+
 /// 
 /// Updates BME Data into DataStorage
 void ADSDataCollector::updateData()
@@ -51,6 +52,10 @@ void ADSDataCollector::updateData()
     float rFactor = (float)resistor_to_gnd_max / (float)resistor_to_gnd; // It is important to cast a float!!
 
     double result =  (voutRaw * rFactor);
+
+    // Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+    // long randomVal = random(100,160);
+    // result = randomVal/10;
 
     _dataStorage->addData(_channelName + CHANNELEXTVCC , result);
 }
