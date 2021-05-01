@@ -12,6 +12,7 @@
 #include <DataStorage.h>
 #include <IDataActor.h>
 #include <RangeDataActor.h>
+#include <BTDataActor.h>
 
 void initOTA();
 

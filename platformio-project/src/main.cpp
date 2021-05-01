@@ -62,6 +62,7 @@ void setup()
   */
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_18,true )); // Raise PIN 18 to HIGH as long as board voltage is good
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_19,true )); // Raise PIN 19 as alarm to HIGH as voltage drops below 11.5V
+  dataActors.push_back(new BTDataActor()); 
 
   Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
   Serial.printf("INIT: %d Actors found\n", dataActors.size());
@@ -103,7 +104,6 @@ void loop()
   for (std::size_t i = 0; i < dataCollectors.size(); ++i)
   {
     dataCollectors[i]->updateData();
-
     Serial.printf("UPDATE: %s\n", dataCollectors[i]->getName().c_str());
   }
 
