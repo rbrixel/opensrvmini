@@ -7,7 +7,7 @@
 
 ///
 /// ADSDataCollector implementing IDataCollector
-/// used to collect temperature and pressure from a BME280 sensor
+/// used to collect voltage of ADS1115 Sensor
 class ADSDataCollector : public IDataCollector {
        public:
               ADSDataCollector(std::string channelName);
