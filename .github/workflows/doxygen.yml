@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: doxytest
+        ref: develop
     - name: Doxygen
       uses: mattnotmitt/doxygen-action@v1
       with:
