@@ -14,10 +14,13 @@ var searchData=
   ['_5finrangeison_11',['_inRangeIsOn',['../class_range_data_actor.html#a7505bf014cd428fdd0b1c11a87cf2922',1,'RangeDataActor']]],
   ['_5flowerbound_12',['_lowerBound',['../class_range_data_actor.html#a74801390a88c53ba7e07af232e95a70c',1,'RangeDataActor']]],
   ['_5fmap_13',['_map',['../class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd',1,'DataStorage']]],
-  ['_5fobservedchannel_14',['_observedChannel',['../class_range_data_actor.html#a00a64115e2c022068a4747b4a750ca88',1,'RangeDataActor']]],
+  ['_5fobservedchannel_14',['_observedChannel',['../class_b_t_data_actor.html#af31f31a9e35ea37405769f2b576fb65e',1,'BTDataActor::_observedChannel()'],['../class_range_data_actor.html#a00a64115e2c022068a4747b4a750ca88',1,'RangeDataActor::_observedChannel()']]],
   ['_5fonewire_15',['_oneWire',['../class_d_t_s_data_collector.html#a6dc38023ee6b149eed992b9bc7a63b21',1,'DTSDataCollector']]],
   ['_5fonewirepin_16',['_oneWirePin',['../class_d_t_s_data_collector.html#a868379cca05838869a574951a6037133',1,'DTSDataCollector']]],
-  ['_5fpressure_17',['_pressure',['../class_b_m_e_data_collector.html#a4f541e8e70881623673ecae846f3d559',1,'BMEDataCollector::_pressure()'],['../class_d_t_s_data_collector.html#a2fc4af4598ba371682d6d07043943201',1,'DTSDataCollector::_pressure()']]],
-  ['_5ftemp_18',['_temp',['../class_b_m_e_data_collector.html#aa0435f72be458f1f5915c47383558147',1,'BMEDataCollector::_temp()'],['../class_d_t_s_data_collector.html#adce990bbc25d34941d1840de0458ad40',1,'DTSDataCollector::_temp()']]],
-  ['_5fupperbound_19',['_upperBound',['../class_range_data_actor.html#a042b04656ff73e390810cbe7bfc5a3db',1,'RangeDataActor']]]
+  ['_5fpcharacteristic_17',['_pCharacteristic',['../class_b_t_data_actor.html#a0604fd42028b5c43bf57b75914bce137',1,'BTDataActor']]],
+  ['_5fpressure_18',['_pressure',['../class_b_m_e_data_collector.html#a4f541e8e70881623673ecae846f3d559',1,'BMEDataCollector::_pressure()'],['../class_d_t_s_data_collector.html#a2fc4af4598ba371682d6d07043943201',1,'DTSDataCollector::_pressure()']]],
+  ['_5fpserver_19',['_pServer',['../class_b_t_data_actor.html#a9ea3ef235324b6c5269e1e1ad3a0edfa',1,'BTDataActor']]],
+  ['_5fpservice_20',['_pService',['../class_b_t_data_actor.html#a97c6c17b7dfaf642a6e573f1628d6064',1,'BTDataActor']]],
+  ['_5ftemp_21',['_temp',['../class_b_m_e_data_collector.html#aa0435f72be458f1f5915c47383558147',1,'BMEDataCollector::_temp()'],['../class_d_t_s_data_collector.html#adce990bbc25d34941d1840de0458ad40',1,'DTSDataCollector::_temp()']]],
+  ['_5fupperbound_22',['_upperBound',['../class_range_data_actor.html#a042b04656ff73e390810cbe7bfc5a3db',1,'RangeDataActor']]]
 ];
