@@ -37,8 +37,7 @@
 
 #include <main.h>
 
-const char *ssid = "OtaStation";
-const char *password = "WelcomeAboard!";
+
 
 // Sample Usage of Interfaces for Data Collection
 std::vector<IDataCollector *> dataCollectors;
@@ -62,6 +61,7 @@ void setup()
   */
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_18,true )); // Raise PIN 18 to HIGH as long as board voltage is good
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_19,true )); // Raise PIN 19 as alarm to HIGH as voltage drops below 11.5V
+  dataActors.push_back(new BTDataActor()); 
 
   Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
   Serial.printf("INIT: %d Actors found\n", dataActors.size());
@@ -85,7 +85,6 @@ void setup()
     dataActors[i]->init();
   }
 
-  initOTA();
 }
 
 /* ************************************************************************** */
@@ -94,8 +93,6 @@ void setup()
 
 void loop()
 {
-  ArduinoOTA.handle();
-
   /* *******************************************************************************
       Update DataCollectors
   */
@@ -103,7 +100,6 @@ void loop()
   for (std::size_t i = 0; i < dataCollectors.size(); ++i)
   {
     dataCollectors[i]->updateData();
-
     Serial.printf("UPDATE: %s\n", dataCollectors[i]->getName().c_str());
   }
 
@@ -141,48 +137,4 @@ void loop()
   Serial.println("");
   Serial.println("");
   delay(5000);
-}
-
-void initOTA()
-{
- Serial.println("Over The Air Update - FullOTA");
-
-  Serial.printf("Connect to %s\n", ssid);
-  Serial.printf("Sketch size: %u\n", ESP.getSketchSize());
-  Serial.printf("Free size: %u\n", ESP.getFreeSketchSpace());
-
-  WiFi.softAP(ssid, password);
-  IPAddress IP = WiFi.softAPIP();
-  Serial.print("AP IP address: ");
-  Serial.println(IP);
-
-  // OTA Settings
-  ArduinoOTA.setPort(3232);
-
-  // OTA Start
-  ArduinoOTA.onStart([]() {
-    Serial.println("Start");
-  });
-  ArduinoOTA.onEnd([]() {
-    Serial.println("\nEnd");
-  });
-  ArduinoOTA.onProgress([](unsigned int progress, unsigned int total) {
-    Serial.printf("Progress: %u%%\r", (progress / (total / 100)));
-    ;
-    Serial.println();
-  });
-  ArduinoOTA.onError([](ota_error_t error) {
-    Serial.printf("Error[%u]: ", error);
-    if (error == OTA_AUTH_ERROR)
-      Serial.println("Auth Failed");
-    else if (error == OTA_BEGIN_ERROR)
-      Serial.println("Begin Failed");
-    else if (error == OTA_CONNECT_ERROR)
-      Serial.println("Connect Failed");
-    else if (error == OTA_RECEIVE_ERROR)
-      Serial.println("Receive Failed");
-    else if (error == OTA_END_ERROR)
-      Serial.println("End Failed");
-  });
-  ArduinoOTA.begin();
 }

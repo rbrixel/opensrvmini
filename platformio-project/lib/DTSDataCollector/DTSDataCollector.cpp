@@ -40,17 +40,25 @@ void DTSDataCollector::reInit()
 /// Updates Dallas Temperature Data into DataStorage
 void DTSDataCollector::updateData()
 {
-    if (_ds18sensors->getDeviceCount()==0){
-        _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
-        return;
-    }
-     _ds18sensors->requestTemperatures(); // Send the command to get temperatures
-    _temp = _ds18sensors->getTempCByIndex(0); // read first sensor
-    if(_temp != DEVICE_DISCONNECTED_C) {
-        _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
-    } else {
-        _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
-    }
+    #ifdef OPENSRVDEBUG
+        Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+        long randomVal = random(-200,400);
+        double result = randomVal/10;
+        _dataStorage->addData(_channelName + CHANNELEXTTEMP ,result);
+    #else
+        if (_ds18sensors->getDeviceCount()==0){
+            _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
+            return;
+        }
+        _ds18sensors->requestTemperatures(); // Send the command to get temperatures
+        _temp = _ds18sensors->getTempCByIndex(0); // read first sensor
+        if(_temp != DEVICE_DISCONNECTED_C) {
+            _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
+        } else {
+            _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
+        }
+    #endif
+
 }
 
 ///

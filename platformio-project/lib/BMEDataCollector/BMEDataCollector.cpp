@@ -54,8 +54,18 @@ void BMEDataCollector::reInit()
 void BMEDataCollector::updateData()
 {
     if (!_bmeIsReady) {
-        _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
-        _dataStorage->addData(_channelName + CHANNELEXTPRESSURE , 0.0f);
+        #ifdef OPENSRVDEBUG
+            Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+            long randomVal = random(-200,400);
+            double result = randomVal/10;
+            long randomVal2 = random(90000,110000);
+            double result2 = randomVal2;
+            _dataStorage->addData(_channelName + CHANNELEXTTEMP , result);
+            _dataStorage->addData(_channelName + CHANNELEXTPRESSURE ,result2);
+        #else
+            _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
+            _dataStorage->addData(_channelName + CHANNELEXTPRESSURE ,0.0f);
+        #endif
         return;
     }
     readBMEData();
