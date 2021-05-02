@@ -4,6 +4,8 @@
 #include <IDataCollector.h>
 #include <random>
 #include <BME280_I2C.h>
+// Comment this line to acitivate Real Sensors
+#define OPENSRVDEBUG 
 
 ///
 /// BMEDataCollector implementing IDataCollector

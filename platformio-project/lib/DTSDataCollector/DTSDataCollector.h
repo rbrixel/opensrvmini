@@ -9,6 +9,9 @@
 
 #define ONE_WIRE_BUS 2
 
+// Comment this line to acitivate Real Sensors
+#define OPENSRVDEBUG 
+
 ///
 /// DTSDataCollector implementing IDataCollector
 /// used to collect temperature and pressure from a DS18B2ß sensor
