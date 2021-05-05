@@ -8,7 +8,7 @@
 BMEDataCollector::BMEDataCollector(std::string channelName)
 {
     _channelName = channelName;
-    _bme280 = new BME280_I2C(_address,_i2cSDA, _i2cSCL);
+    _bme280 = new BME280_I2C(_address, _i2cSDA, _i2cSCL);
 }
 
 BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL)
