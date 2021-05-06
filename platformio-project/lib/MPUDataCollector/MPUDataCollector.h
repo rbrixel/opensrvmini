@@ -22,8 +22,10 @@ class MPUDataCollector : public IDataCollector {
               void reInit();
               void sleep();
               void updateData();
+              bool needsReInit();
               std::string getName();
        protected:
+              bool _isInitialized = false;
               Adafruit_MPU6050 *_mpu;
               std::string _channelName = "MPU6050";
               

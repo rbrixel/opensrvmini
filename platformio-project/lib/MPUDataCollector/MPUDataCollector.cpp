@@ -31,15 +31,31 @@ void MPUDataCollector::init(IDataStorage *storage)
  
     if (!_mpu->begin()) {
         Serial.println("Sensor init failed");
+        _isInitialized = false;
+        return;
     }
+    _isInitialized = true;
     Serial.println("Found a MPU-6050 sensor");
+}
+
+///
+/// Initializes the Component and its DataStorage
+bool MPUDataCollector::needsReInit()
+{
+    return _isInitialized;
 }
 
 ///
 /// Initializes the component
 void MPUDataCollector::reInit()
 {
-    ;
+    if (!_mpu->begin()) {
+        Serial.println("Sensor init failed");
+        _isInitialized = false;
+        return;
+    }
+    _isInitialized = true;
+    Serial.println("Found a MPU-6050 sensor");
 }
 
 /// 

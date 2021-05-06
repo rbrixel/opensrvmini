@@ -91,6 +91,10 @@ Setup will call then for all DataActors the ::init() function, which can be used
 
 ### LOOP Parts
 
+#### Reinit DataCollectors
+A DataCollector can tell the main loop if it needs to be reinitialized. This will be done in the next loop before collecting new data.
+For this the collector can override needsReInit() function returning false if everything is ok, or true if a new initialisation is needed. The init will be done synchronous one collector after the other to prevent thread issues.
+
 #### Update Data
 For each collector the ->updateData(); method is called. In this method the DataCollector should connect to its hardware, query the last value, and store it into the dataStorage using its channelname (and extension).
 

@@ -22,6 +22,12 @@ class IDataCollector {
       virtual void reInit()=0;
 
       ///
+      /// Override this function 
+      /// to tell the main loop that a reinit call is needed.
+      /// Be sure to clean your data before.
+      virtual bool needsReInit(){ return false; };
+
+      ///
       /// called after init or reinit, not called after sleep
       /// Reads data from the Implemented Sensor and stores it to the DataStorage
       /// If multiple Values needs to be stored into one DataStorage use Channelformat name

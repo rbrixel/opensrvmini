@@ -94,6 +94,20 @@ void setup()
 void loop()
 {
   /* *******************************************************************************
+      Check Initialization of DataCollectors
+  */
+  Serial.println("************************************");
+  for (std::size_t i = 0; i < dataCollectors.size(); ++i)
+  {
+    if (dataCollectors[i]->needsReInit())
+    {
+      dataCollectors[i]->reInit();
+      Serial.printf("Reinitialized: %s\n", dataCollectors[i]->getName().c_str());
+    };
+  }
+
+
+  /* *******************************************************************************
       Update DataCollectors
   */
   Serial.println("************************************");
