@@ -1,3 +1,9 @@
+/*
+ * DTSDataCollector.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <DTSDataCollector.h>
 #include <Arduino.h>
 

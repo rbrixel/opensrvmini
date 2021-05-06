@@ -1,3 +1,9 @@
+/*
+ * IDataActor.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef IDATAACTOR_H
 #define IDATAACTOR_H
 

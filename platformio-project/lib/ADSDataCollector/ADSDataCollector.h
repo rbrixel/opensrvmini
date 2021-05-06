@@ -1,3 +1,9 @@
+/*
+ * ADSDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef ADSDATACOLLECTOR_H
 #define ADSDATACOLLECTOR_H
 

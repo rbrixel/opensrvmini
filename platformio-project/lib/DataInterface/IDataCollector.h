@@ -1,3 +1,9 @@
+/*
+ * IDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef IDATACOLLECTOR_H
 #define IDATACOLLECTOR_H
 
@@ -20,6 +26,12 @@ class IDataCollector {
       /// but keeps the allready defined dataStorage
       /// called after sleep
       virtual void reInit()=0;
+
+      ///
+      /// Override this function 
+      /// to tell the main loop that a reinit call is needed.
+      /// Be sure to clean your data before.
+      virtual bool needsReInit(){ return false; };
 
       ///
       /// called after init or reinit, not called after sleep

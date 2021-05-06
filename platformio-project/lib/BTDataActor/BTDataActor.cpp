@@ -1,8 +1,15 @@
+/*
+ * BTDataActor.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <BTDataActor.h>
 #include <Arduino.h>
 
 
 class MyCallbacks: public BLECharacteristicCallbacks {
+  
     void onWrite(BLECharacteristic *pCharacteristic) {
       std::string value = pCharacteristic->getValue();
 
@@ -20,9 +27,9 @@ class MyCallbacks: public BLECharacteristicCallbacks {
 
 ///
 /// Instanciation of BTDataActor 
-BTDataActor::BTDataActor()
+BTDataActor::BTDataActor(std::string deviceName)
 {
-
+  _deviceName = deviceName;
 }
 
 ///
@@ -30,7 +37,7 @@ BTDataActor::BTDataActor()
 void BTDataActor::init()
 {
        // _serialBT.begin("ESP32"); //Name des ESP32;;
-  BLEDevice::init("MyESP32");
+  BLEDevice::init(_deviceName);
   _pServer = BLEDevice::createServer();
 
   _pService = _pServer->createService(SERVICE_UUID);
