@@ -1,3 +1,9 @@
+/*
+ * DTSDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef DTSDATACOLLECTOR_H
 #define DTSDATACOLLECTOR_H
 

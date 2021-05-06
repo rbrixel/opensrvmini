@@ -1,3 +1,9 @@
+/*
+ * TemplateDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef TEMPLATEDATACOLLECTOR_H
 #define TEMPLATEDATACOLLECTOR_H
 
@@ -19,9 +25,11 @@ class TemplateDataCollector : public IDataCollector {
               void reInit();
               void sleep();
               void updateData();
+              bool needsReInit();
               std::string getName();
        protected:
               byte _config1 = 0;
+              bool _needsReInit;
               std::string _channelName = "TemplateCollector";
               
 };

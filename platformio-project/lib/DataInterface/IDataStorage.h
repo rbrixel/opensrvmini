@@ -1,3 +1,10 @@
+/*
+ * IDataStorage.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
+
 #ifndef IDATASTORAGE_H
 #define IDATASTORAGE_H
 

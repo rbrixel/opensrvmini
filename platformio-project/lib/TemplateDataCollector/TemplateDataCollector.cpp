@@ -1,3 +1,9 @@
+/*
+ * TemplateDataCollector.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <TemplateDataCollector.h>
 
 #define CHANNELEXTFAXE ".FAKE"
@@ -27,10 +33,18 @@ void TemplateDataCollector::init(IDataStorage *storage)
 }
 
 ///
-/// Initializes the component
+/// Initializes the component again
+/// Usually the same as init, but maybe additional cleanup is needed
 void TemplateDataCollector::reInit()
 {
-    ;
+    _needsReInit=false;
+}
+
+///
+/// Tells overlaying process if this component should be reinitialized
+bool TemplateDataCollector::needsReInit()
+{
+    return _needsReInit;
 }
 
 /// 
@@ -41,11 +55,14 @@ void TemplateDataCollector::updateData()
             Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(0,_config1*10);
             double result = randomVal/10;
+            if (result > 900)
+            {
+                _needsReInit=true; // Create some fake reinit requests
+            }
             _dataStorage->addData(_channelName + CHANNELEXTFAXE , result);
         #else
             _dataStorage->addData(_channelName + CHANNELEXTFAXE , 1.0f);
         #endif
-  
 }
 
 ///

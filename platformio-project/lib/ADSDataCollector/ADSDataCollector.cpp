@@ -1,3 +1,9 @@
+/*
+ * ADSDataCollector.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <ADSDataCollector.h>
 #include <Arduino.h>
 

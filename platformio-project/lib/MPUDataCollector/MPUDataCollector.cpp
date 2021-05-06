@@ -1,3 +1,9 @@
+/*
+ * MPUDataCollector.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <MPUDataCollector.h>
 #define MPUCHEXTACCX ".ACCX"
 #define MPUCHEXTACCY ".ACCY"

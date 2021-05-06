@@ -1,3 +1,9 @@
+/*
+ * MPUDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef MPUDATACOLLECTOR_H
 #define MPUDATACOLLECTOR_H
 

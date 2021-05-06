@@ -21,15 +21,17 @@
  * - Wifi is only used for OTA-Update
  * - Bluetooth is used for communication with smartphone-app
  * 
- * Libs: (not up to date)
- * - Over-The-Air-Update (ArduinoOTA)
- * - OneWire (OneWire - use 2.3.0)
- * - Cactus.io BME280 (http://cactus.io/projects/weather/arduino-weather-station-bme280-sensor)
+ * Libs: From PlatformIO INI 
+ * - ks-tec/BME280_I2C @ ^1.4.1
+ * - paulstoffregen/OneWire @ ^2.3.5
+ * - milesburton/DallasTemperature @ ^3.9.1
+ * - robtillaart/ADS1X15 @ ^0.3.0
+ * - adafruit/Adafruit MPU6050 @ ^2.0.4
  * 
  * Author:  René Brixel <mail@campingtech.de>
- * Support: Frank Weichert <opensrvmini@humanbyte.de
+ * Support: Frank Weichert <opensrvmini@humanbyte.de> (@weichei)
  * Date:    2021-04-22 (not so, but really initial Sketch)
- * VErsion: 20210422-1
+ * Version: 20210422-1
  * Web:     https://campingtech.de/opensrv
  * GitHub:  https://github.com/rbrixel
  * 
@@ -61,7 +63,7 @@ void setup()
   */
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_18,true )); // Raise PIN 18 to HIGH as long as board voltage is good
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_19,true )); // Raise PIN 19 as alarm to HIGH as voltage drops below 11.5V
-  dataActors.push_back(new BTDataActor()); 
+  dataActors.push_back(new BTDataActor("OpenSRVmini")); 
 
   Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
   Serial.printf("INIT: %d Actors found\n", dataActors.size());

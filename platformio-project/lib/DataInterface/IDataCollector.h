@@ -1,3 +1,9 @@
+/*
+ * IDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef IDATACOLLECTOR_H
 #define IDATACOLLECTOR_H
 
