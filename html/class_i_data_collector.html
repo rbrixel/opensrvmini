@@ -80,9 +80,11 @@ Inheritance diagram for IDataCollector:</div>
  <div class="center">
   <img src="class_i_data_collector.png" usemap="#IDataCollector_map" alt=""/>
   <map id="IDataCollector_map" name="IDataCollector_map">
-<area href="class_a_d_s_data_collector.html" alt="ADSDataCollector" shape="rect" coords="0,56,116,80"/>
-<area href="class_b_m_e_data_collector.html" alt="BMEDataCollector" shape="rect" coords="126,56,242,80"/>
-<area href="class_d_t_s_data_collector.html" alt="DTSDataCollector" shape="rect" coords="252,56,368,80"/>
+<area href="class_a_d_s_data_collector.html" alt="ADSDataCollector" shape="rect" coords="0,56,139,80"/>
+<area href="class_b_m_e_data_collector.html" alt="BMEDataCollector" shape="rect" coords="149,56,288,80"/>
+<area href="class_d_t_s_data_collector.html" alt="DTSDataCollector" shape="rect" coords="298,56,437,80"/>
+<area href="class_m_p_u_data_collector.html" alt="MPUDataCollector" shape="rect" coords="447,56,586,80"/>
+<area href="class_template_data_collector.html" alt="TemplateDataCollector" shape="rect" coords="596,56,735,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -92,6 +94,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae2aea6c98add73a205df2cd6103b6609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48c8fc572a1b53415b615da3a36fa0b9"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#a48c8fc572a1b53415b615da3a36fa0b9">reInit</a> ()=0</td></tr>
 <tr class="separator:a48c8fc572a1b53415b615da3a36fa0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a3e4d12f6331f62694d506a75d5f90b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#a8a3e4d12f6331f62694d506a75d5f90b">needsReInit</a> ()</td></tr>
+<tr class="separator:a8a3e4d12f6331f62694d506a75d5f90b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4ab1e0c6fdd0f8aca3c067e9b573d18"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">updateData</a> ()=0</td></tr>
 <tr class="separator:af4ab1e0c6fdd0f8aca3c067e9b573d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b6689dcf51681ac99bc6523f48a159c"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#a5b6689dcf51681ac99bc6523f48a159c">getName</a> ()=0</td></tr>
@@ -131,7 +135,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Resolves the name of the Implemented Sensorchannel used as the first part of the <a class="el" href="class_data_storage.html">DataStorage</a> Channel (f.e. BMECHANNEL in BMECHANNEL.TEMP ) </p>
 
-<p>Implemented in <a class="el" href="class_d_t_s_data_collector.html#ae666df431c769823b0661383be893c12">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a1ca7cfcc8fbee0d0638e9d37004b6547">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a8b164bd9b4ec74823580e81533dfd479">ADSDataCollector</a>.</p>
+<p>Implemented in <a class="el" href="class_template_data_collector.html#a819ac672fc5c450f3bb8bcb8ea33ce75">TemplateDataCollector</a>, <a class="el" href="class_m_p_u_data_collector.html#a033acd03cdcabedc2f331b1aa1f18ca6">MPUDataCollector</a>, <a class="el" href="class_d_t_s_data_collector.html#ae666df431c769823b0661383be893c12">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a1ca7cfcc8fbee0d0638e9d37004b6547">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a8b164bd9b4ec74823580e81533dfd479">ADSDataCollector</a>.</p>
 
 </div>
 </div>
@@ -160,7 +164,35 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Called once after Instace creation Used to setup BUS protocoll etc used for communication </p>
 
-<p>Implemented in <a class="el" href="class_d_t_s_data_collector.html#ac1f8e57f780d8a1b6bdfbb6b1a979538">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a205123ea60f1ca18477c0bed241ef5f9">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a854e9d008a8aa6b3eef3b647bfee4f79">ADSDataCollector</a>.</p>
+<p>Implemented in <a class="el" href="class_template_data_collector.html#a2baa02b46a034bd962797e20abf435e4">TemplateDataCollector</a>, <a class="el" href="class_m_p_u_data_collector.html#af65e6becc61a70d58405419780336d18">MPUDataCollector</a>, <a class="el" href="class_d_t_s_data_collector.html#ac1f8e57f780d8a1b6bdfbb6b1a979538">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a205123ea60f1ca18477c0bed241ef5f9">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a854e9d008a8aa6b3eef3b647bfee4f79">ADSDataCollector</a>.</p>
+
+</div>
+</div>
+<a id="a8a3e4d12f6331f62694d506a75d5f90b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a3e4d12f6331f62694d506a75d5f90b">&#9670;&nbsp;</a></span>needsReInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool IDataCollector::needsReInit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Override this function to tell the main loop that a reinit call is needed. Be sure to clean your data before. </p>
+
+<p>Reimplemented in <a class="el" href="class_template_data_collector.html#aeae2b05fffd4e0de9de3f85469fff2f1">TemplateDataCollector</a>, <a class="el" href="class_m_p_u_data_collector.html#abb9d8e383d18cfdd7e2293d4d5142a8e">MPUDataCollector</a>, and <a class="el" href="class_b_m_e_data_collector.html#a07ad49a43e845e7b7a2dbcf711fb0f0e">BMEDataCollector</a>.</p>
 
 </div>
 </div>
@@ -188,7 +220,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Can be called multiple times after init used to reinitialize used protocolls in case of an overlaying event (wake up) but keeps the allready defined dataStorage called after sleep </p>
 
-<p>Implemented in <a class="el" href="class_d_t_s_data_collector.html#af39f74ad3905ed86545c45e89bd36784">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#adcaabac084e06d76450fb2b187c81967">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a616bea63d1c8ab5fe89c52369d45ef15">ADSDataCollector</a>.</p>
+<p>Implemented in <a class="el" href="class_template_data_collector.html#acf3a396208342d3e8863dea7de1ebed1">TemplateDataCollector</a>, <a class="el" href="class_m_p_u_data_collector.html#a4fe1255dc5ed28cfaf835ff132c4fb23">MPUDataCollector</a>, <a class="el" href="class_d_t_s_data_collector.html#af39f74ad3905ed86545c45e89bd36784">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#adcaabac084e06d76450fb2b187c81967">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a616bea63d1c8ab5fe89c52369d45ef15">ADSDataCollector</a>.</p>
 
 </div>
 </div>
@@ -216,7 +248,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>informal call that the System wants to save current, used by implemenation to shutdown not used parts (timers, interrupts etc) no update calls should be done after sleep has been called. Wakeup is triggered by reinit </p>
 
-<p>Implemented in <a class="el" href="class_d_t_s_data_collector.html#a106f0e7a501ac52eacdd09d12e11ed59">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a15c4c0df85282925b886483035660c52">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a85e8c240aa8614634b2050f994eadb19">ADSDataCollector</a>.</p>
+<p>Implemented in <a class="el" href="class_template_data_collector.html#a5dbab12c72936bf90b98e4250c29470b">TemplateDataCollector</a>, <a class="el" href="class_m_p_u_data_collector.html#a116e585439edefc4017ad5dea30c1f7c">MPUDataCollector</a>, <a class="el" href="class_d_t_s_data_collector.html#a106f0e7a501ac52eacdd09d12e11ed59">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a15c4c0df85282925b886483035660c52">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#a85e8c240aa8614634b2050f994eadb19">ADSDataCollector</a>.</p>
 
 </div>
 </div>
@@ -244,7 +276,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>called after init or reinit, not called after sleep Reads data from the Implemented Sensor and stores it to the <a class="el" href="class_data_storage.html">DataStorage</a> If multiple Values needs to be stored into one <a class="el" href="class_data_storage.html">DataStorage</a> use Channelformat name CHANNELNAME.VALUETYPE like BMECHANNEL.TEMP and BMECHANNEL.PRESSURE Can be called after init or reinit, calls after <a class="el" href="class_i_data_collector.html#a8b4221226cbc427c66766af49ac08a97">sleep()</a> are not defined and may produce invalid data </p>
 
-<p>Implemented in <a class="el" href="class_d_t_s_data_collector.html#aa17da1dc3e88b11e776cf571242580a4">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a5364086b6178cc630c6775bef7dae048">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#ad951d4ced0bf1916fa239ed22de9cd5e">ADSDataCollector</a>.</p>
+<p>Implemented in <a class="el" href="class_template_data_collector.html#a3a6b58b52c69fd61b0acdf858fb62351">TemplateDataCollector</a>, <a class="el" href="class_m_p_u_data_collector.html#ae496df121f658a03713ef0248551510a">MPUDataCollector</a>, <a class="el" href="class_d_t_s_data_collector.html#aa17da1dc3e88b11e776cf571242580a4">DTSDataCollector</a>, <a class="el" href="class_b_m_e_data_collector.html#a5364086b6178cc630c6775bef7dae048">BMEDataCollector</a>, and <a class="el" href="class_a_d_s_data_collector.html#ad951d4ced0bf1916fa239ed22de9cd5e">ADSDataCollector</a>.</p>
 
 </div>
 </div>

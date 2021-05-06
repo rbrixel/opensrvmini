@@ -72,39 +72,48 @@ $(function() {
 <div class="title">IDataCollector.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_i_data_collector_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IDATACOLLECTOR_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IDATACOLLECTOR_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_data_storage_8h.html">IDataStorage.h</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_i_data_collector.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_data_collector.html">IDataCollector</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#ae2aea6c98add73a205df2cd6103b6609">   15</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#ae2aea6c98add73a205df2cd6103b6609">init</a>(<a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)=0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a48c8fc572a1b53415b615da3a36fa0b9">   22</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#a48c8fc572a1b53415b615da3a36fa0b9">reInit</a>()=0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">   30</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">updateData</a>()=0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a5b6689dcf51681ac99bc6523f48a159c">   35</a></span>&#160;      <span class="keyword">virtual</span> std::string <a class="code" href="class_i_data_collector.html#a5b6689dcf51681ac99bc6523f48a159c">getName</a>()=0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a8b4221226cbc427c66766af49ac08a97">   42</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#a8b4221226cbc427c66766af49ac08a97">sleep</a>()=0;</div>
+<a href="_i_data_collector_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * IDataCollector.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: April 2021</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: Frank Weichert</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef IDATACOLLECTOR_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define IDATACOLLECTOR_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_data_storage_8h.html">IDataStorage.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_i_data_collector.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_data_collector.html">IDataCollector</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#ae2aea6c98add73a205df2cd6103b6609">   21</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#ae2aea6c98add73a205df2cd6103b6609">init</a>(<a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)=0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a48c8fc572a1b53415b615da3a36fa0b9">   28</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#a48c8fc572a1b53415b615da3a36fa0b9">reInit</a>()=0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a8a3e4d12f6331f62694d506a75d5f90b">   34</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="class_i_data_collector.html#a8a3e4d12f6331f62694d506a75d5f90b">needsReInit</a>(){ <span class="keywordflow">return</span> <span class="keyword">false</span>; };</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">   42</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">updateData</a>()=0;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;   <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">   45</a></span>&#160;      <a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">_dataStorage</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a5b6689dcf51681ac99bc6523f48a159c">   47</a></span>&#160;      <span class="keyword">virtual</span> std::string <a class="code" href="class_i_data_collector.html#a5b6689dcf51681ac99bc6523f48a159c">getName</a>()=0;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a8b4221226cbc427c66766af49ac08a97">   54</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_collector.html#a8b4221226cbc427c66766af49ac08a97">sleep</a>()=0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;   <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">   57</a></span>&#160;      <a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">_dataStorage</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;};</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_i_data_storage_8h_html"><div class="ttname"><a href="_i_data_storage_8h.html">IDataStorage.h</a></div></div>
-<div class="ttc" id="aclass_i_data_collector_html"><div class="ttname"><a href="class_i_data_collector.html">IDataCollector</a></div><div class="ttdef"><b>Definition:</b> IDataCollector.h:10</div></div>
-<div class="ttc" id="aclass_i_data_collector_html_a3c2f03d14b6e3a0a1db5ffccccf68725"><div class="ttname"><a href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">IDataCollector::_dataStorage</a></div><div class="ttdeci">IDataStorage * _dataStorage</div><div class="ttdef"><b>Definition:</b> IDataCollector.h:45</div></div>
+<div class="ttc" id="aclass_i_data_collector_html"><div class="ttname"><a href="class_i_data_collector.html">IDataCollector</a></div><div class="ttdef"><b>Definition:</b> IDataCollector.h:16</div></div>
+<div class="ttc" id="aclass_i_data_collector_html_a3c2f03d14b6e3a0a1db5ffccccf68725"><div class="ttname"><a href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">IDataCollector::_dataStorage</a></div><div class="ttdeci">IDataStorage * _dataStorage</div><div class="ttdef"><b>Definition:</b> IDataCollector.h:57</div></div>
 <div class="ttc" id="aclass_i_data_collector_html_a48c8fc572a1b53415b615da3a36fa0b9"><div class="ttname"><a href="class_i_data_collector.html#a48c8fc572a1b53415b615da3a36fa0b9">IDataCollector::reInit</a></div><div class="ttdeci">virtual void reInit()=0</div></div>
 <div class="ttc" id="aclass_i_data_collector_html_a5b6689dcf51681ac99bc6523f48a159c"><div class="ttname"><a href="class_i_data_collector.html#a5b6689dcf51681ac99bc6523f48a159c">IDataCollector::getName</a></div><div class="ttdeci">virtual std::string getName()=0</div></div>
+<div class="ttc" id="aclass_i_data_collector_html_a8a3e4d12f6331f62694d506a75d5f90b"><div class="ttname"><a href="class_i_data_collector.html#a8a3e4d12f6331f62694d506a75d5f90b">IDataCollector::needsReInit</a></div><div class="ttdeci">virtual bool needsReInit()</div><div class="ttdef"><b>Definition:</b> IDataCollector.h:34</div></div>
 <div class="ttc" id="aclass_i_data_collector_html_a8b4221226cbc427c66766af49ac08a97"><div class="ttname"><a href="class_i_data_collector.html#a8b4221226cbc427c66766af49ac08a97">IDataCollector::sleep</a></div><div class="ttdeci">virtual void sleep()=0</div></div>
 <div class="ttc" id="aclass_i_data_collector_html_ae2aea6c98add73a205df2cd6103b6609"><div class="ttname"><a href="class_i_data_collector.html#ae2aea6c98add73a205df2cd6103b6609">IDataCollector::init</a></div><div class="ttdeci">virtual void init(IDataStorage *storage)=0</div></div>
 <div class="ttc" id="aclass_i_data_collector_html_af4ab1e0c6fdd0f8aca3c067e9b573d18"><div class="ttname"><a href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">IDataCollector::updateData</a></div><div class="ttdeci">virtual void updateData()=0</div></div>
-<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:12</div></div>
-<div class="ttc" id="amain_8cpp_html_a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e"><div class="ttname"><a href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a></div><div class="ttdeci">IDataStorage * storage</div><div class="ttdef"><b>Definition:</b> main.cpp:46</div></div>
+<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:19</div></div>
+<div class="ttc" id="amain_8cpp_html_a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e"><div class="ttname"><a href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a></div><div class="ttdeci">IDataStorage * storage</div><div class="ttdef"><b>Definition:</b> main.cpp:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

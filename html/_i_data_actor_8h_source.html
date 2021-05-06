@@ -72,34 +72,40 @@ $(function() {
 <div class="title">IDataActor.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_i_data_actor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef IDATAACTOR_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define IDATAACTOR_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_data_storage_8h.html">IDataStorage.h</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_i_data_actor.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_data_actor.html">IDataActor</a> {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#adc6553cdef9152561f0e5d04a2e54839">   15</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#adc6553cdef9152561f0e5d04a2e54839">init</a>()=0;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#a252f66e2f8ef7430ac46e877f01d493d">   22</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#a252f66e2f8ef7430ac46e877f01d493d">reInit</a>()=0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">   28</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">action</a>(<a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">_dataStorage</a>)=0;</div>
+<a href="_i_data_actor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * IDataActor.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: April 2021</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: Frank Weichert</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef IDATAACTOR_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define IDATAACTOR_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_data_storage_8h.html">IDataStorage.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_i_data_actor.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_i_data_actor.html">IDataActor</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#adc6553cdef9152561f0e5d04a2e54839">   21</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#adc6553cdef9152561f0e5d04a2e54839">init</a>()=0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#a252f66e2f8ef7430ac46e877f01d493d">   28</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#a252f66e2f8ef7430ac46e877f01d493d">reInit</a>()=0;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#af500d96296b0a908348c7d78b2ca70a2">   35</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#af500d96296b0a908348c7d78b2ca70a2">sleep</a>()=0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;   <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">   38</a></span>&#160;      <a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">_dataStorage</a>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">   34</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">action</a>(<a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">_dataStorage</a>)=0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#af500d96296b0a908348c7d78b2ca70a2">   41</a></span>&#160;      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="class_i_data_actor.html#af500d96296b0a908348c7d78b2ca70a2">sleep</a>()=0;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">   44</a></span>&#160;      <a class="code" href="class_i_data_storage.html">IDataStorage</a> *<a class="code" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">_dataStorage</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_i_data_storage_8h_html"><div class="ttname"><a href="_i_data_storage_8h.html">IDataStorage.h</a></div></div>
-<div class="ttc" id="aclass_i_data_actor_html"><div class="ttname"><a href="class_i_data_actor.html">IDataActor</a></div><div class="ttdef"><b>Definition:</b> IDataActor.h:10</div></div>
+<div class="ttc" id="aclass_i_data_actor_html"><div class="ttname"><a href="class_i_data_actor.html">IDataActor</a></div><div class="ttdef"><b>Definition:</b> IDataActor.h:16</div></div>
 <div class="ttc" id="aclass_i_data_actor_html_a252f66e2f8ef7430ac46e877f01d493d"><div class="ttname"><a href="class_i_data_actor.html#a252f66e2f8ef7430ac46e877f01d493d">IDataActor::reInit</a></div><div class="ttdeci">virtual void reInit()=0</div></div>
-<div class="ttc" id="aclass_i_data_actor_html_a7e9d4c4095ec7b3a0157fdace97e5971"><div class="ttname"><a href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">IDataActor::_dataStorage</a></div><div class="ttdeci">IDataStorage * _dataStorage</div><div class="ttdef"><b>Definition:</b> IDataActor.h:38</div></div>
+<div class="ttc" id="aclass_i_data_actor_html_a7e9d4c4095ec7b3a0157fdace97e5971"><div class="ttname"><a href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">IDataActor::_dataStorage</a></div><div class="ttdeci">IDataStorage * _dataStorage</div><div class="ttdef"><b>Definition:</b> IDataActor.h:44</div></div>
 <div class="ttc" id="aclass_i_data_actor_html_ad81e304b8acfcf7366fa574d67419345"><div class="ttname"><a href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">IDataActor::action</a></div><div class="ttdeci">virtual void action(IDataStorage *_dataStorage)=0</div></div>
 <div class="ttc" id="aclass_i_data_actor_html_adc6553cdef9152561f0e5d04a2e54839"><div class="ttname"><a href="class_i_data_actor.html#adc6553cdef9152561f0e5d04a2e54839">IDataActor::init</a></div><div class="ttdeci">virtual void init()=0</div></div>
 <div class="ttc" id="aclass_i_data_actor_html_af500d96296b0a908348c7d78b2ca70a2"><div class="ttname"><a href="class_i_data_actor.html#af500d96296b0a908348c7d78b2ca70a2">IDataActor::sleep</a></div><div class="ttdeci">virtual void sleep()=0</div></div>
-<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:12</div></div>
+<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

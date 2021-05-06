@@ -72,34 +72,40 @@ $(function() {
 <div class="title">DataStorage.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="_data_storage_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DATASTORAGE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DATASTORAGE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_data_storage_8h.html">IDataStorage.h</a>&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_data_storage.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_data_storage.html">DataStorage</a> : <span class="keyword">public</span> <a class="code" href="class_i_data_storage.html">IDataStorage</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;   <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_data_storage.html#ad42937e02d1145b4363e33729ff9cd94">addData</a>(std::string channelName, <span class="keywordtype">double</span> data);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">double</span> <a class="code" href="class_data_storage.html#af18d849e1d13b2379df826883bdda2e5">getData</a>(std::string channelName) ;</div>
+<a href="_data_storage_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * DataStorage.h</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *  Created on: April 2021</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *      Author: Frank Weichert</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef DATASTORAGE_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define DATASTORAGE_H</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="_i_data_storage_8h.html">IDataStorage.h</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_data_storage.html">   17</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_data_storage.html">DataStorage</a> : <span class="keyword">public</span> <a class="code" href="class_i_data_storage.html">IDataStorage</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;   <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">void</span> <a class="code" href="class_data_storage.html#ad42937e02d1145b4363e33729ff9cd94">addData</a>(std::string channelName, <span class="keywordtype">double</span> data);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="class_data_storage.html#a2520252b923415fcae10bba0e43dead0">isChannelExistant</a>(std::string channelName);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      std::map&lt;std::string, double&gt; <a class="code" href="class_data_storage.html#a069d8db21e899634cd4d8899b448aed0">getMapCopy</a>();</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;   <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">   30</a></span>&#160;      std::map&lt;std::string, double&gt; <a class="code" href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">_map</a>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keywordtype">double</span> <a class="code" href="class_data_storage.html#af18d849e1d13b2379df826883bdda2e5">getData</a>(std::string channelName) ;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keywordtype">bool</span> <a class="code" href="class_data_storage.html#a2520252b923415fcae10bba0e43dead0">isChannelExistant</a>(std::string channelName);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      std::map&lt;std::string, double&gt; <a class="code" href="class_data_storage.html#a069d8db21e899634cd4d8899b448aed0">getMapCopy</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;   <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">   36</a></span>&#160;      std::map&lt;std::string, double&gt; <a class="code" href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">_map</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a_i_data_storage_8h_html"><div class="ttname"><a href="_i_data_storage_8h.html">IDataStorage.h</a></div></div>
-<div class="ttc" id="aclass_data_storage_html"><div class="ttname"><a href="class_data_storage.html">DataStorage</a></div><div class="ttdef"><b>Definition:</b> DataStorage.h:11</div></div>
-<div class="ttc" id="aclass_data_storage_html_a069d8db21e899634cd4d8899b448aed0"><div class="ttname"><a href="class_data_storage.html#a069d8db21e899634cd4d8899b448aed0">DataStorage::getMapCopy</a></div><div class="ttdeci">std::map&lt; std::string, double &gt; getMapCopy()</div><div class="ttdoc">Returns a copy of the internal DataStorage Map.</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:33</div></div>
-<div class="ttc" id="aclass_data_storage_html_a2520252b923415fcae10bba0e43dead0"><div class="ttname"><a href="class_data_storage.html#a2520252b923415fcae10bba0e43dead0">DataStorage::isChannelExistant</a></div><div class="ttdeci">bool isChannelExistant(std::string channelName)</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:11</div></div>
-<div class="ttc" id="aclass_data_storage_html_a7682ad2fdd8998f9fc3ee5ec3c5c75dd"><div class="ttname"><a href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">DataStorage::_map</a></div><div class="ttdeci">std::map&lt; std::string, double &gt; _map</div><div class="ttdef"><b>Definition:</b> DataStorage.h:30</div></div>
-<div class="ttc" id="aclass_data_storage_html_ad42937e02d1145b4363e33729ff9cd94"><div class="ttname"><a href="class_data_storage.html#ad42937e02d1145b4363e33729ff9cd94">DataStorage::addData</a></div><div class="ttdeci">void addData(std::string channelName, double data)</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:6</div></div>
-<div class="ttc" id="aclass_data_storage_html_af18d849e1d13b2379df826883bdda2e5"><div class="ttname"><a href="class_data_storage.html#af18d849e1d13b2379df826883bdda2e5">DataStorage::getData</a></div><div class="ttdeci">double getData(std::string channelName)</div><div class="ttdoc">Resolves the channelName and returns the stored Data.</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:22</div></div>
-<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:12</div></div>
+<div class="ttc" id="aclass_data_storage_html"><div class="ttname"><a href="class_data_storage.html">DataStorage</a></div><div class="ttdef"><b>Definition:</b> DataStorage.h:17</div></div>
+<div class="ttc" id="aclass_data_storage_html_a069d8db21e899634cd4d8899b448aed0"><div class="ttname"><a href="class_data_storage.html#a069d8db21e899634cd4d8899b448aed0">DataStorage::getMapCopy</a></div><div class="ttdeci">std::map&lt; std::string, double &gt; getMapCopy()</div><div class="ttdoc">Returns a copy of the internal DataStorage Map.</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:38</div></div>
+<div class="ttc" id="aclass_data_storage_html_a2520252b923415fcae10bba0e43dead0"><div class="ttname"><a href="class_data_storage.html#a2520252b923415fcae10bba0e43dead0">DataStorage::isChannelExistant</a></div><div class="ttdeci">bool isChannelExistant(std::string channelName)</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:16</div></div>
+<div class="ttc" id="aclass_data_storage_html_a7682ad2fdd8998f9fc3ee5ec3c5c75dd"><div class="ttname"><a href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">DataStorage::_map</a></div><div class="ttdeci">std::map&lt; std::string, double &gt; _map</div><div class="ttdef"><b>Definition:</b> DataStorage.h:36</div></div>
+<div class="ttc" id="aclass_data_storage_html_ad42937e02d1145b4363e33729ff9cd94"><div class="ttname"><a href="class_data_storage.html#ad42937e02d1145b4363e33729ff9cd94">DataStorage::addData</a></div><div class="ttdeci">void addData(std::string channelName, double data)</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:11</div></div>
+<div class="ttc" id="aclass_data_storage_html_af18d849e1d13b2379df826883bdda2e5"><div class="ttname"><a href="class_data_storage.html#af18d849e1d13b2379df826883bdda2e5">DataStorage::getData</a></div><div class="ttdeci">double getData(std::string channelName)</div><div class="ttdoc">Resolves the channelName and returns the stored Data.</div><div class="ttdef"><b>Definition:</b> DataStorage.cpp:27</div></div>
+<div class="ttc" id="aclass_i_data_storage_html"><div class="ttname"><a href="class_i_data_storage.html">IDataStorage</a></div><div class="ttdef"><b>Definition:</b> IDataStorage.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['one_5fwire_5fbus_63',['ONE_WIRE_BUS',['../_d_t_s_data_collector_8h.html#a4260ed8874da804fb9ef9abba200b487',1,'DTSDataCollector.h']]],
-  ['opensrvdebug_64',['OPENSRVDEBUG',['../_a_d_s_data_collector_8h.html#aa5cc77bff0b99d22b57afd0b74c7b9b5',1,'OPENSRVDEBUG():&#160;ADSDataCollector.h'],['../_b_m_e_data_collector_8h.html#aa5cc77bff0b99d22b57afd0b74c7b9b5',1,'OPENSRVDEBUG():&#160;BMEDataCollector.h'],['../_d_t_s_data_collector_8h.html#aa5cc77bff0b99d22b57afd0b74c7b9b5',1,'OPENSRVDEBUG():&#160;DTSDataCollector.h']]]
+  ['needsreinit_78',['needsReInit',['../class_b_m_e_data_collector.html#a07ad49a43e845e7b7a2dbcf711fb0f0e',1,'BMEDataCollector::needsReInit()'],['../class_i_data_collector.html#a8a3e4d12f6331f62694d506a75d5f90b',1,'IDataCollector::needsReInit()'],['../class_m_p_u_data_collector.html#abb9d8e383d18cfdd7e2293d4d5142a8e',1,'MPUDataCollector::needsReInit()'],['../class_template_data_collector.html#aeae2b05fffd4e0de9de3f85469fff2f1',1,'TemplateDataCollector::needsReInit()']]]
 ];
