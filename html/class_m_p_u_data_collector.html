@@ -114,10 +114,22 @@ Public Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a241101406feac25e88f28509d307e577"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a241101406feac25e88f28509d307e577">_isInitialized</a> = false</td></tr>
 <tr class="separator:a241101406feac25e88f28509d307e577"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0939d665bb7a992251f6afdba306365e"><td class="memItemLeft" align="right" valign="top">Adafruit_MPU6050 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a0939d665bb7a992251f6afdba306365e">_mpu</a></td></tr>
-<tr class="separator:a0939d665bb7a992251f6afdba306365e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1551d129dc047c83d09dc40c4c1bafc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ad1551d129dc047c83d09dc40c4c1bafc">_channelName</a> = &quot;MPU6050&quot;</td></tr>
 <tr class="separator:ad1551d129dc047c83d09dc40c4c1bafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa50ca3be7e1838978837fbb4ae5328da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smoother.html">Smoother</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aa50ca3be7e1838978837fbb4ae5328da">_smoother_X</a></td></tr>
+<tr class="separator:aa50ca3be7e1838978837fbb4ae5328da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ea89f2be21c97a53e98f905b8a77e17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smoother.html">Smoother</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a1ea89f2be21c97a53e98f905b8a77e17">_smoother_Y</a></td></tr>
+<tr class="separator:a1ea89f2be21c97a53e98f905b8a77e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae053a00040f03fc12491bd3b724bd18c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smoother.html">Smoother</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ae053a00040f03fc12491bd3b724bd18c">_smoother_Z</a></td></tr>
+<tr class="separator:ae053a00040f03fc12491bd3b724bd18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad514567b5d74133efc6a97bca0089eb1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ad514567b5d74133efc6a97bca0089eb1">_mpuAddr</a> = 0x68</td></tr>
+<tr class="separator:ad514567b5d74133efc6a97bca0089eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3cc7d2427c16932a0a2c32665076daf"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ac3cc7d2427c16932a0a2c32665076daf">_accelerometer_x</a></td></tr>
+<tr class="separator:ac3cc7d2427c16932a0a2c32665076daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcbe26861ff898a2aabb38714ff90cd4"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#afcbe26861ff898a2aabb38714ff90cd4">_accelerometer_y</a></td></tr>
+<tr class="separator:afcbe26861ff898a2aabb38714ff90cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80b5733ef0ac378e0ee2917a6ed3188b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a80b5733ef0ac378e0ee2917a6ed3188b">_accelerometer_z</a></td></tr>
+<tr class="separator:a80b5733ef0ac378e0ee2917a6ed3188b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_i_data_collector"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_i_data_collector')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_i_data_collector.html">IDataCollector</a></td></tr>
 <tr class="memitem:a3c2f03d14b6e3a0a1db5ffccccf68725 inherit pro_attribs_class_i_data_collector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_data_storage.html">IDataStorage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">_dataStorage</a></td></tr>
 <tr class="separator:a3c2f03d14b6e3a0a1db5ffccccf68725 inherit pro_attribs_class_i_data_collector"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -340,6 +352,72 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac3cc7d2427c16932a0a2c32665076daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3cc7d2427c16932a0a2c32665076daf">&#9670;&nbsp;</a></span>_accelerometer_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t MPUDataCollector::_accelerometer_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcbe26861ff898a2aabb38714ff90cd4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcbe26861ff898a2aabb38714ff90cd4">&#9670;&nbsp;</a></span>_accelerometer_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t MPUDataCollector::_accelerometer_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80b5733ef0ac378e0ee2917a6ed3188b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80b5733ef0ac378e0ee2917a6ed3188b">&#9670;&nbsp;</a></span>_accelerometer_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t MPUDataCollector::_accelerometer_z</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad1551d129dc047c83d09dc40c4c1bafc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1551d129dc047c83d09dc40c4c1bafc">&#9670;&nbsp;</a></span>_channelName</h2>
 
@@ -384,8 +462,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0939d665bb7a992251f6afdba306365e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0939d665bb7a992251f6afdba306365e">&#9670;&nbsp;</a></span>_mpu</h2>
+<a id="ad514567b5d74133efc6a97bca0089eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad514567b5d74133efc6a97bca0089eb1">&#9670;&nbsp;</a></span>_mpuAddr</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,7 +472,73 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Adafruit_MPU6050* MPUDataCollector::_mpu</td>
+          <td class="memname">const int MPUDataCollector::_mpuAddr = 0x68</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa50ca3be7e1838978837fbb4ae5328da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa50ca3be7e1838978837fbb4ae5328da">&#9670;&nbsp;</a></span>_smoother_X</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smoother.html">Smoother</a>* MPUDataCollector::_smoother_X</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ea89f2be21c97a53e98f905b8a77e17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ea89f2be21c97a53e98f905b8a77e17">&#9670;&nbsp;</a></span>_smoother_Y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smoother.html">Smoother</a>* MPUDataCollector::_smoother_Y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae053a00040f03fc12491bd3b724bd18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae053a00040f03fc12491bd3b724bd18c">&#9670;&nbsp;</a></span>_smoother_Z</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_smoother.html">Smoother</a>* MPUDataCollector::_smoother_Z</td>
         </tr>
       </table>
   </td>

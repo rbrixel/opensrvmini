@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['needsreinit_143',['needsReInit',['../class_b_m_e_data_collector.html#a07ad49a43e845e7b7a2dbcf711fb0f0e',1,'BMEDataCollector::needsReInit()'],['../class_i_data_collector.html#a8a3e4d12f6331f62694d506a75d5f90b',1,'IDataCollector::needsReInit()'],['../class_m_p_u_data_collector.html#abb9d8e383d18cfdd7e2293d4d5142a8e',1,'MPUDataCollector::needsReInit()'],['../class_template_data_collector.html#aeae2b05fffd4e0de9de3f85469fff2f1',1,'TemplateDataCollector::needsReInit()']]]
+  ['mpudatacollector_157',['MPUDataCollector',['../class_m_p_u_data_collector.html#a0fe9ca36f3c1e83c66923f0815339067',1,'MPUDataCollector::MPUDataCollector()'],['../class_m_p_u_data_collector.html#af49f0e5e6c1cddab483735b060bd5c6d',1,'MPUDataCollector::MPUDataCollector(std::string channelName)']]]
 ];

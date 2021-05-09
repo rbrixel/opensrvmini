@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['templatedatacollector_106',['TemplateDataCollector',['../class_template_data_collector.html',1,'']]]
+  ['smoother_116',['Smoother',['../class_smoother.html',1,'']]]
 ];

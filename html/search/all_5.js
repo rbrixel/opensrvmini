@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['extractchannelvalue_52',['extractChannelValue',['../class_range_data_actor.html#a618322d091ef25a52701acd304338b4c',1,'RangeDataActor']]]
+  ['extractchannelvalue_59',['extractChannelValue',['../class_range_data_actor.html#a618322d091ef25a52701acd304338b4c',1,'RangeDataActor']]]
 ];
