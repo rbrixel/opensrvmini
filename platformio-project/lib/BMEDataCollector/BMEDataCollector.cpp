@@ -74,7 +74,7 @@ bool BMEDataCollector::needsReInit()
 void BMEDataCollector::updateData()
 {
     if (!_bmeIsReady) {
-        #ifdef OPENSRVDEBUG
+        #ifdef BMEDATACOLLECTOR_H_DEBUG
             Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(-200,400);
             double result = randomVal/10;

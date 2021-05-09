@@ -2,7 +2,6 @@
   Smoother.h - Library for smoothing inputs
   Frank Weichert
 */
-#include <Arduino.h>
 #include <Smoother.h>
 
 Smoother::Smoother(int arraySize)
@@ -80,9 +79,9 @@ int16_t Smoother::getSmoothed()
   {
     return  _values[_insertIndex];
   }
-  
+
   memcpy(_sortedValues,_values , (sizeof _sortedValues)*_arraySize);
-  qsort(_sortedValues, _arraySize, sizeof(_sortedValues[0]), qsortComparer  );
+  qsort(_sortedValues, _arraySize, sizeof(_sortedValues[0]), qsortComparer );
   //debugArray("_sortedValues:",_sortedValues);
   int32_t average=0;
 

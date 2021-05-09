@@ -4,6 +4,10 @@
  *  Created on: April 2021
  *      Author: Frank Weichert
  */
+
+// Comment this line to acitivate Real Sensors
+// #define MPUDATACOLLECTOR_H_DEBUG 
+
 #ifndef MPUDATACOLLECTOR_H
 #define MPUDATACOLLECTOR_H
 
@@ -15,10 +19,12 @@
 #include <Smoother.h>
 #include <Wire.h>
 
+#ifdef MPUDATACOLLECTOR_H_DEBUG 
 #include <random>
+#endif
 
-// Comment this line to acitivate Real Sensors
-// #define OPENSRVDEBUG 
+//#define MPU_USEGYRO 
+//#define MPU_USETEMPERATURE
 
 ///
 /// MPUDataCollector implementing IDataCollector
@@ -37,15 +43,20 @@ class MPUDataCollector : public IDataCollector {
               bool _isInitialized = false;
               // Adafruit_MPU6050 *_mpu;
               std::string _channelName = "MPU6050";
-
-
               Smoother *_smoother_X;
               Smoother *_smoother_Y;
               Smoother *_smoother_Z;
+
               const int _mpuAddr = 0x68; // I2C address of the MPU-6050. If AD0 pin is set to HIGH, the I2C address will be 0x69.
               int16_t _accelerometer_x, _accelerometer_y, _accelerometer_z; // variables for accelerometer raw data
-              // int16_t _gyro_x, _gyro_y, _gyro_z; // variables for gyro raw data
-              
+              #ifdef MPU_USEGYRO
+              int16_t _gyro_x, _gyro_y, _gyro_z; // variables for gyro raw data
+              #endif
+
+              #ifdef MPU_USETEMPERATURE
+              int16_t _temperature;
+              #endif
+
 };
 
 #endif

@@ -46,7 +46,7 @@ void DTSDataCollector::reInit()
 /// Updates Dallas Temperature Data into DataStorage
 void DTSDataCollector::updateData()
 {
-    #ifdef OPENSRVDEBUG
+    #ifdef DTSDATACOLLECTOR_H_DEBUG
         Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(-200,400);
         double result = randomVal/10;

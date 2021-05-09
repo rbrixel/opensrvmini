@@ -7,11 +7,15 @@
 #ifndef BMEDATACOLLECTOR_H
 #define BMEDATACOLLECTOR_H
 
-#include <IDataCollector.h>
-#include <random>
-#include <BME280_I2C.h>
 // Comment this line to acitivate Real Sensors
-#define OPENSRVDEBUG 
+//#define BMEDATACOLLECTOR_H_DEBUG 
+
+#include <IDataCollector.h>
+#include <BME280_I2C.h>
+
+#ifdef BMEDATACOLLECTOR_H_DEBUG
+#include <random>
+#endif
 
 ///
 /// BMEDataCollector implementing IDataCollector

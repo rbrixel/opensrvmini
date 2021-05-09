@@ -9,22 +9,24 @@
 #define MPUCHEXTACCY ".ACCY"
 #define MPUCHEXTACCZ ".ACCZ"
 
-// #define MPUCHEXTGYRX ".GYRX"
-// #define MPUCHEXTGYRY ".GYRY"
-// #define MPUCHEXTGYRZ ".GYRZ"
+#ifdef MPU_USEGYRO
+    #define MPUCHEXTGYRX ".GYRX"
+    #define MPUCHEXTGYRY ".GYRY"
+    #define MPUCHEXTGYRZ ".GYRZ"
+#endif
+
+#ifdef MPU_USETEMPERATURE
+    #define MPUCHEXTTEMP ".TEMP"
+#endif
 
 ///
 /// Constructing using default channelname
 MPUDataCollector::MPUDataCollector()
 {
     // _mpu = new Adafruit_MPU6050();
-
     _smoother_X = new Smoother(15);
     _smoother_Y = new Smoother(15);;
     _smoother_Z = new Smoother(15);;
-
- 
-    // time=millis();
 }
 
 ///
@@ -33,6 +35,9 @@ MPUDataCollector::MPUDataCollector(std::string channelName)
 {
     _channelName = channelName;
     // _mpu = new Adafruit_MPU6050();
+    _smoother_X = new Smoother(15);
+    _smoother_Y = new Smoother(15);;
+    _smoother_Z = new Smoother(15);;
 }
 
 ///
@@ -94,7 +99,7 @@ void MPUDataCollector::reInit()
 /// Updates Data into DataStorage
 void MPUDataCollector::updateData()
 {
-    #ifdef OPENSRVDEBUG
+    #ifdef MPUDATACOLLECTOR_H_DEBUG
         Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(-1000,1000);
         double result = randomVal/10;
@@ -108,20 +113,28 @@ void MPUDataCollector::updateData()
 
         Wire.beginTransmission(_mpuAddr);
         Wire.write(0x3B); // starting with register 0x3B (ACCEL_XOUT_H) [MPU-6000 and MPU-6050 Register Map and Descriptions Revision 4.2, p.40]
-        Wire.endTransmission(false); // the parameter indicates that the Arduino will send a restart. As a result, the connection is kept active.
-        Wire.requestFrom(_mpuAddr, 7*2, true); // request a total of 7*2=14 registers
+        Wire.endTransmission(false); // the paramet0er indicates that the Arduino will send a restart. As a result, the connection is kept active.
+        Wire.requestFrom(_mpuAddr, 7*2, 1); // request a total of 7*2=14 registers
 
         // "Wire.read()<<8 | Wire.read();" means two registers are read and stored in the same variable
         _accelerometer_x = Wire.read()<<8 | Wire.read(); // reading registers: 0x3B (ACCEL_XOUT_H) and 0x3C (ACCEL_XOUT_L)
         _accelerometer_y = Wire.read()<<8 | Wire.read(); // reading registers: 0x3D (ACCEL_YOUT_H) and 0x3E (ACCEL_YOUT_L)
         _accelerometer_z = Wire.read()<<8 | Wire.read(); // reading registers: 0x3F (ACCEL_ZOUT_H) and 0x40 (ACCEL_ZOUT_L)
-        //temperature = Wire.read()<<8 | Wire.read(); // reading registers: 0x41 (TEMP_OUT_H) and 0x42 (TEMP_OUT_L)
-        //gyro_x = Wire.read()<<8 | Wire.read(); // reading registers: 0x43 (GYRO_XOUT_H) and 0x44 (GYRO_XOUT_L)
-        //gyro_y = Wire.read()<<8 | Wire.read(); // reading registers: 0x45 (GYRO_YOUT_H) and 0x46 (GYRO_YOUT_L)
-        //gyro_z = Wire.read()<<8 | Wire.read(); // reading registers: 0x47 (GYRO_ZOUT_H) and 0x48 (GYRO_ZOUT_L)
+
+        #ifdef MPU_USETEMPERATURE
+        _temperature = Wire.read()<<8 | Wire.read(); // reading registers: 0x41 (TEMP_OUT_H) and 0x42 (TEMP_OUT_L)
+        #endif 
+
+        #ifdef MPU_USEGYRO
+        _gyro_x = Wire.read()<<8 | Wire.read(); // reading registers: 0x43 (GYRO_XOUT_H) and 0x44 (GYRO_XOUT_L)
+        _gyro_y = Wire.read()<<8 | Wire.read(); // reading registers: 0x45 (GYRO_YOUT_H) and 0x46 (GYRO_YOUT_L)
+        _gyro_z = Wire.read()<<8 | Wire.read(); // reading registers: 0x47 (GYRO_ZOUT_H) and 0x48 (GYRO_ZOUT_L)
+        #endif
+
         _smoother_X->pushValue(_accelerometer_x);
         _smoother_Y->pushValue(_accelerometer_y);
         _smoother_Z->pushValue(_accelerometer_z);
+
         int16_t tmpX = _smoother_X->getSmoothed();
         int16_t tmpY = _smoother_Y->getSmoothed();
         int16_t tmpZ = _smoother_Z->getSmoothed();
@@ -131,9 +144,16 @@ void MPUDataCollector::updateData()
         _dataStorage->addData(_channelName + MPUCHEXTACCX , tmpX);
         _dataStorage->addData(_channelName + MPUCHEXTACCY , tmpY);
         _dataStorage->addData(_channelName + MPUCHEXTACCZ , tmpZ);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRX , g.gyro.x);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRY , g.gyro.y);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRZ , g.gyro.z);
+
+        #ifdef MPU_USEGYRO
+        _dataStorage->addData(_channelName + MPUCHEXTGYRX , _gyro_x);
+        _dataStorage->addData(_channelName + MPUCHEXTGYRY , _gyro_y);
+        _dataStorage->addData(_channelName + MPUCHEXTGYRZ , _gyro_z);
+        #endif
+
+        #ifdef MPU_USETEMPERATURE
+        _dataStorage->addData(_channelName + MPUCHEXTTEMP , _temperature);
+        #endif
     #endif
 }
 
