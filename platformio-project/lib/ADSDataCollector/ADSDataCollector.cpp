@@ -44,7 +44,7 @@ void ADSDataCollector::reInit()
 /// Updates BME Data into DataStorage
 void ADSDataCollector::updateData()
 {
-    #ifdef OPENSRVDEBUG
+    #ifdef ADSDATACOLLECTOR_H_DEBUG
         Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(100,160);
         double result = randomVal/10;

@@ -7,6 +7,8 @@
 #ifndef DTSDATACOLLECTOR_H
 #define DTSDATACOLLECTOR_H
 
+// Comment this line to acitivate Real Sensors
+//#define DTSDATACOLLECTOR_H_DEBUG 
 
 #include <IDataCollector.h>
 #include <random>
@@ -15,8 +17,7 @@
 
 #define ONE_WIRE_BUS 2
 
-// Comment this line to acitivate Real Sensors
-#define OPENSRVDEBUG 
+
 
 ///
 /// DTSDataCollector implementing IDataCollector
