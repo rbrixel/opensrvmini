@@ -8,7 +8,7 @@
 #define ADSDATACOLLECTOR_H
 
 // Comment this line to acitivate Real Sensors
-//#define ADSDATACOLLECTOR_H_DEBUG 
+#define ADSDATACOLLECTOR_H_DEBUG 
 
 #include <IDataCollector.h>
 #include <ADS1X15.h>

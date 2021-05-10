@@ -7,23 +7,21 @@
 #include <BTDataActor.h>
 #include <Arduino.h>
 
-
-class MyCallbacks: public BLECharacteristicCallbacks {
+// class MyCallbacks: public BLECharacteristicCallbacks {
   
-    void onWrite(BLECharacteristic *pCharacteristic) {
-      std::string value = pCharacteristic->getValue();
+//     void onWrite(BLECharacteristic *pCharacteristic) {
+//       std::string value = pCharacteristic->getValue();
 
-      if (value.length() > 0) {
-        Serial.println("*********");
-        Serial.print("New value: ");
-        for (int i = 0; i < value.length(); i++)
-          Serial.print(value[i]);
-
-        Serial.println();
-        Serial.println("*********");
-      }
-    }
-};
+//       if (value.length() > 0) {
+//         Serial.println("*********");
+//         Serial.print("New value: ");
+//         for (int i = 0; i < value.length(); i++)
+//           Serial.print(value[i]);
+//         Serial.println();
+//         Serial.println("*********");
+//       }
+//     }
+// };
 
 ///
 /// Instanciation of BTDataActor 
@@ -48,12 +46,17 @@ void BTDataActor::init()
                                          BLECharacteristic::PROPERTY_WRITE
                                        );
 
-    _pCharacteristic->setCallbacks(new MyCallbacks());
-
+    //_pCharacteristic->setCallbacks(new MyCallbacks());
     _pCharacteristic->setValue("");
     _pService->start();
 
     BLEAdvertising *pAdvertising = _pServer->getAdvertising();
+    // BLEAdvertisementData advertisementData;
+    // advertisementData.addData("Test");
+    // advertisementData.
+    // // set the properties of the advertisement data
+    // // See the setter methods of the BLEAdvertisementData class
+    // pAdvertising->setAdvertisementData(advertisementData);
     pAdvertising->start();
 }
 

@@ -115,8 +115,9 @@ void loop()
   Serial.println("************************************");
   for (std::size_t i = 0; i < dataCollectors.size(); ++i)
   {
+    Serial.printf("UPDATING: %s\n", dataCollectors[i]->getName().c_str());
     dataCollectors[i]->updateData();
-    Serial.printf("UPDATE: %s\n", dataCollectors[i]->getName().c_str());
+    Serial.printf("UPDATED: %s\n", dataCollectors[i]->getName().c_str());
   }
 
   Serial.println("************************************");
