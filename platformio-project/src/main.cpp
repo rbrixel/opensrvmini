@@ -46,6 +46,12 @@ std::vector<IDataCollector *> dataCollectors;
 std::vector<IDataActor *> dataActors;
 
 IDataStorage *storage = new DataStorage();
+volatile int speed=3000;
+void setSpeed(int s)
+{
+  Serial.printf("Set Speed to %d",s);
+  speed=s;
+}
 
 void setup()
 {
@@ -85,6 +91,7 @@ void setup()
   {
     Serial.printf("INIT Actor\n");
     dataActors[i]->init();
+    dataActors[i]->setSpeedCallback(&setSpeed);
   }
 
 }
@@ -153,5 +160,5 @@ void loop()
   Serial.println("");
   Serial.println("");
   Serial.println("");
-  delay(500);
+  delay(speed);
 }

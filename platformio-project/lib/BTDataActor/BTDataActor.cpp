@@ -7,27 +7,51 @@
 #include <BTDataActor.h>
 #include <Arduino.h>
 
-class MyCallbacks: public BLECharacteristicCallbacks {
-  
-  	void onNotify(BLECharacteristic* pChar){
-          Serial.printf("OnNotify %s",pChar->getData() );
-      }
-	void onStatus(BLECharacteristic* pChar, Status s, uint32_t code){
-        Serial.printf("OnStatus %s",pChar->getData() );
-    }
-    void onWrite(BLECharacteristic *pCharacteristic) {
-      std::string value = pCharacteristic->getValue();
+// class MyServerCallbacks: public BLEServerCallbacks {
+//     void onConnect(BLEServer* pServer) {
+//       Serial.println("Connected");
+//       //BLEDevice::startAdvertising();
+//     };
+//     void onDisconnect(BLEServer* pServer) {
+//       Serial.println("DISConnected");
+//     }
+// };
 
-      if (value.length() > 0) {
-        Serial.println("*********");
-        Serial.print("New value: ");
-        for (int i = 0; i < value.length(); i++)
-          Serial.print(value[i]);
-        Serial.println();
-        Serial.println("*********");
-      }
-    }
+// class MyCallbacks: public BLECharacteristicCallbacks {
+//   	void onNotify(BLECharacteristic* pChar){
+//           Serial.printf("OnNotify %s",pChar->getData() );
+//       }
+// 	void onStatus(BLECharacteristic* pChar, Status s, uint32_t code){
+//         Serial.printf("OnStatus %s",pChar->getData() );
+//     }
+//     void onWrite(BLECharacteristic *pCharacteristic) {
+//       std::string value = pCharacteristic->getValue();
+//       if (value.length() > 0) {
+//         Serial.println("*********");
+//         Serial.print("New value: ");
+//         for (int i = 0; i < value.length(); i++)
+//           Serial.print(value[i]);
+//         Serial.println();
+//         Serial.println("*********");
+//       }
+//     }
+// };
+
+void BTDataActor::setSpeedCallback(void (*spcb)(int s))
+{
+  _speedCallBack=spcb;
+}
+
+void BTDataActor::onConnect(BLEServer* pServer) {
+  Serial.println("Connected");
+  _speedCallBack(500);
 };
+
+void BTDataActor::onDisconnect(BLEServer* pServer) {
+  Serial.println("DISConnected");
+  _pAdvertising->start();
+  _speedCallBack(5000);
+}
 
 ///
 /// Instanciation of BTDataActor 
@@ -54,20 +78,17 @@ void BTDataActor::init()
 
     _pCharacteristic->setValue("");
     _pService->start();
-
-    BLEAdvertising *pAdvertising = _pServer->getAdvertising();
-    BLEAdvertisementData advertisementData;
-    //advertisementData.setName("AdvertName");
     
-    //advertisementData.setServiceData(BLEUUID("0x1801"),"OpenSRVBLE");
-    advertisementData.setManufacturerData("FrankW");
-    advertisementData.setShortName("Shorty");
-    advertisementData.setServiceData(BLEUUID("0x1800"),"FWDATA");
+    _pServer->setCallbacks(this);
 
-    pAdvertising->setAdvertisementData(advertisementData);
-    //pAdvertising->addServiceUUID()//
-    pAdvertising->start();
+    _pAdvertising = _pServer->getAdvertising();
+    _pAdvertisementData = new BLEAdvertisementData();
 
+    //BLEAdvertisementData advertisementData;
+    _pAdvertisementData->setManufacturerData("  OpenSRV");
+    _pAdvertisementData->setShortName("Shorty");
+    _pAdvertising->setAdvertisementData(*_pAdvertisementData);
+    _pAdvertising->start();
 }
 
 ///
@@ -81,7 +102,6 @@ void BTDataActor::reInit()
 /// Updates BME Data into DataStorage
 void BTDataActor::action(IDataStorage *dataStorage)
 {
-    
     std::map<std::string, double> data = dataStorage->getMapCopy();
     std::map<std::string, double>::iterator it;
     std::string value;  
