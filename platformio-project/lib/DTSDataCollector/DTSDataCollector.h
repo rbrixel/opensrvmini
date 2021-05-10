@@ -15,7 +15,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-#define ONE_WIRE_BUS 5 // GPIO 5 / "D5"
+//#define ONE_WIRE_BUS 5 // #rb: wird nicht benötigt; geht auch ohne
 
 
 ///
@@ -35,7 +35,7 @@ class DTSDataCollector : public IDataCollector {
               DallasTemperature *_ds18sensors;
 
               std::string _channelName = "DTSCollector";
-              uint8_t _oneWirePin = 5; // GPIO 5 / "D5"
+              uint8_t _oneWirePin = 5;
               double _temp = 0;
               double _pressure = 0;    
 };

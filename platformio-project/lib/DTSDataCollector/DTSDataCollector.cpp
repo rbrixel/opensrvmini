@@ -15,12 +15,13 @@
 DTSDataCollector::DTSDataCollector(std::string channelName)
 {
     _channelName = channelName;
+    _oneWire = new OneWire(_oneWirePin);
     _ds18sensors = new DallasTemperature(_oneWire);
 }
 
 ///
-/// Constructing with a channelName
-DTSDataCollector::DTSDataCollector(std::string channelName,uint8_t oneWirePin )
+/// Constructing with a channelName and a onewire-pin
+DTSDataCollector::DTSDataCollector(std::string channelName, uint8_t oneWirePin)
 {
     _channelName = channelName;
     _oneWirePin = oneWirePin;
@@ -33,6 +34,7 @@ DTSDataCollector::DTSDataCollector(std::string channelName,uint8_t oneWirePin )
 void DTSDataCollector::init(IDataStorage *storage)
 {
     _dataStorage = storage;
+    //_ds18sensors->begin(); // #rb: begin() wird nicht benötigt - geht auch ohne! Ist wohl so Arduino-IDE-Ding ;)
 }
 
 ///
@@ -50,16 +52,18 @@ void DTSDataCollector::updateData()
         Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(-200,400);
         double result = randomVal/10;
-        _dataStorage->addData(_channelName + CHANNELEXTTEMP ,result);
+        _dataStorage->addData(_channelName + CHANNELEXTTEMP, result);
     #else
+        // #rb: Der getDeviceCount führt dazu, dass die FW den Sensor nicht findet
+        /*
         if (_ds18sensors->getDeviceCount()==0){
-            Serial.println("SENSOR DS18B20(0) NOT FOUND!");
+            Serial.println("SENSOR DS18B20 (GPIO5) NOT FOUND!");
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
             return;
         }
+        */
         _ds18sensors->requestTemperatures(); // Send the command to get temperatures
         _temp = _ds18sensors->getTempCByIndex(0); // read first sensor
-        //Serial.println("SENSOR DATA DS18B20: " + _ds18sensors->getTempCByIndex(0).toString());
         if(_temp != DEVICE_DISCONNECTED_C) {
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
         } else {
