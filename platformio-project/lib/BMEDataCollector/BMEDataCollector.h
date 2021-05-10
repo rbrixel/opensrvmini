@@ -8,7 +8,7 @@
 #define BMEDATACOLLECTOR_H
 
 // Comment this line to acitivate Real Sensors
-//#define BMEDATACOLLECTOR_H_DEBUG 
+#define BMEDATACOLLECTOR_H_DEBUG 
 
 #include <IDataCollector.h>
 #include <BME280_I2C.h>

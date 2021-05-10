@@ -53,11 +53,13 @@ void DTSDataCollector::updateData()
         _dataStorage->addData(_channelName + CHANNELEXTTEMP ,result);
     #else
         if (_ds18sensors->getDeviceCount()==0){
+            Serial.println("SENSOR DS18B20(0) NOT FOUND!");
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
             return;
         }
         _ds18sensors->requestTemperatures(); // Send the command to get temperatures
         _temp = _ds18sensors->getTempCByIndex(0); // read first sensor
+        //Serial.println("SENSOR DATA DS18B20: " + _ds18sensors->getTempCByIndex(0).toString());
         if(_temp != DEVICE_DISCONNECTED_C) {
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
         } else {
