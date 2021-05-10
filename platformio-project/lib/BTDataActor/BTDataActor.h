@@ -20,6 +20,7 @@
 
 #define SERVICE_UUID        "e07ec36a-ab39-11eb-bcbc-0242ac130002"
 #define CHARACTERISTIC_UUID "e51a315c-ab39-11eb-bcbc-0242ac130002"
+#define CHARACTERISTIC2_UUID "f53ab440-b18c-11eb-8529-0242ac130003"
 
 ///
 /// BTDataActor is configured to observe a datastorage and sends out all Daat via Bluetooth
@@ -35,6 +36,7 @@ class BTDataActor : public IDataActor {
               BLEServer *_pServer;
               BLEService *_pService;
               BLECharacteristic *_pCharacteristic;
+              // BLECharacteristic *_pCharacteristic2;
 
               std::string _deviceName;
 

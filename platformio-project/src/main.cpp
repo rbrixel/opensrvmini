@@ -153,5 +153,5 @@ void loop()
   Serial.println("");
   Serial.println("");
   Serial.println("");
-  delay(5000);
+  delay(500);
 }
