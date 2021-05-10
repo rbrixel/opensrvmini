@@ -58,9 +58,12 @@ void BTDataActor::init()
     BLEAdvertising *pAdvertising = _pServer->getAdvertising();
     BLEAdvertisementData advertisementData;
     //advertisementData.setName("AdvertName");
+    
     //advertisementData.setServiceData(BLEUUID("0x1801"),"OpenSRVBLE");
     advertisementData.setManufacturerData("FrankW");
     advertisementData.setShortName("Shorty");
+    advertisementData.setServiceData(BLEUUID("0x1800"),"FWDATA");
+
     pAdvertising->setAdvertisementData(advertisementData);
     //pAdvertising->addServiceUUID()//
     pAdvertising->start();
