@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Daat via Bluetooth.">BTDataActor</a> is configured to observe a datastorage and sends out all Daat via Bluetooth.  
+<p><a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth.">BTDataActor</a> is configured to observe a datastorage and sends out all Data via Bluetooth.  
  <a href="class_b_t_data_actor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_b_t_data_actor_8h_source.html">BTDataActor.h</a>&gt;</code></p>
@@ -83,14 +83,14 @@ Inheritance diagram for BTDataActor:</div>
  <div class="center">
   <img src="class_b_t_data_actor.png" usemap="#BTDataActor_map" alt=""/>
   <map id="BTDataActor_map" name="BTDataActor_map">
-<area href="class_i_data_actor.html" alt="IDataActor" shape="rect" coords="0,0,84,24"/>
+<area href="class_i_data_actor.html" alt="IDataActor" shape="rect" coords="0,0,129,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a208ea6e4c0f8d019853308bb49814320"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a208ea6e4c0f8d019853308bb49814320">BTDataActor</a> (std::string deviceName)</td></tr>
-<tr class="memdesc:a208ea6e4c0f8d019853308bb49814320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instanciation of <a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Daat via Bluetooth.">BTDataActor</a>.  <a href="class_b_t_data_actor.html#a208ea6e4c0f8d019853308bb49814320">More...</a><br /></td></tr>
+<tr class="memdesc:a208ea6e4c0f8d019853308bb49814320"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instanciation of <a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth.">BTDataActor</a>.  <a href="class_b_t_data_actor.html#a208ea6e4c0f8d019853308bb49814320">More...</a><br /></td></tr>
 <tr class="separator:a208ea6e4c0f8d019853308bb49814320"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a103c34206e04fa1c2f250eb2dc8f8dd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a103c34206e04fa1c2f250eb2dc8f8dd3">init</a> ()</td></tr>
 <tr class="memdesc:a103c34206e04fa1c2f250eb2dc8f8dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_b_t_data_actor.html#a103c34206e04fa1c2f250eb2dc8f8dd3">More...</a><br /></td></tr>
@@ -103,6 +103,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a39a4a1b281ef59bba095d06361008322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1b9cc3e2b8042018a037e839dccb5e74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a1b9cc3e2b8042018a037e839dccb5e74">action</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *dataStorage)</td></tr>
 <tr class="separator:a1b9cc3e2b8042018a037e839dccb5e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adff5358b758e021fa7566420615bf2ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#adff5358b758e021fa7566420615bf2ac">setSpeedCallback</a> (void(*fcnPtr)(int s))</td></tr>
+<tr class="separator:adff5358b758e021fa7566420615bf2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6325e8e2eab8d3dbf541b9e3d3212618"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a6325e8e2eab8d3dbf541b9e3d3212618">onDisconnect</a> (BLEServer *pServer)</td></tr>
+<tr class="separator:a6325e8e2eab8d3dbf541b9e3d3212618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40d00965019b9275ab7ceec9e845f760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a40d00965019b9275ab7ceec9e845f760">onConnect</a> (BLEServer *pServer)</td></tr>
+<tr class="separator:a40d00965019b9275ab7ceec9e845f760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -112,6 +118,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a97c6c17b7dfaf642a6e573f1628d6064"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0604fd42028b5c43bf57b75914bce137"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a0604fd42028b5c43bf57b75914bce137">_pCharacteristic</a></td></tr>
 <tr class="separator:a0604fd42028b5c43bf57b75914bce137"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab032c11951e949826a3bf7f82ae37f0d"><td class="memItemLeft" align="right" valign="top">BLEAdvertising *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#ab032c11951e949826a3bf7f82ae37f0d">_pAdvertising</a></td></tr>
+<tr class="separator:ab032c11951e949826a3bf7f82ae37f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530e66f5a262e1419a39d3b5e6fed10a"><td class="memItemLeft" align="right" valign="top">BLEAdvertisementData *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a530e66f5a262e1419a39d3b5e6fed10a">_pAdvertisementData</a></td></tr>
+<tr class="separator:a530e66f5a262e1419a39d3b5e6fed10a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa00c6b54ed56533071e1c68c7c13720f"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#aa00c6b54ed56533071e1c68c7c13720f">_speedCallBack</a> )(int s)</td></tr>
+<tr class="separator:aa00c6b54ed56533071e1c68c7c13720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcee4a61578a7690d70fda5ab1cd412"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a2dcee4a61578a7690d70fda5ab1cd412">_deviceName</a></td></tr>
 <tr class="separator:a2dcee4a61578a7690d70fda5ab1cd412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_i_data_actor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_i_data_actor')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_i_data_actor.html">IDataActor</a></td></tr>
@@ -119,7 +131,7 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a7e9d4c4095ec7b3a0157fdace97e5971 inherit pro_attribs_class_i_data_actor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Daat via Bluetooth.">BTDataActor</a> is configured to observe a datastorage and sends out all Daat via Bluetooth. </p>
+<div class="textblock"><p><a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth.">BTDataActor</a> is configured to observe a datastorage and sends out all Data via Bluetooth. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a208ea6e4c0f8d019853308bb49814320"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a208ea6e4c0f8d019853308bb49814320">&#9670;&nbsp;</a></span>BTDataActor()</h2>
@@ -137,7 +149,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Instanciation of <a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Daat via Bluetooth.">BTDataActor</a>. </p>
+<p>Instanciation of <a class="el" href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth.">BTDataActor</a>. </p>
 
 </div>
 </div>
@@ -200,6 +212,42 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a40d00965019b9275ab7ceec9e845f760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40d00965019b9275ab7ceec9e845f760">&#9670;&nbsp;</a></span>onConnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::onConnect </td>
+          <td>(</td>
+          <td class="paramtype">BLEServer *&#160;</td>
+          <td class="paramname"><em>pServer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6325e8e2eab8d3dbf541b9e3d3212618"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6325e8e2eab8d3dbf541b9e3d3212618">&#9670;&nbsp;</a></span>onDisconnect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::onDisconnect </td>
+          <td>(</td>
+          <td class="paramtype">BLEServer *&#160;</td>
+          <td class="paramname"><em>pServer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a1981c568413be377b4e3c3577a3be5c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1981c568413be377b4e3c3577a3be5c4">&#9670;&nbsp;</a></span>reInit()</h2>
 
@@ -226,6 +274,34 @@ Protected Attributes</h2></td></tr>
 <p>Initializes the component. </p>
 
 <p>Implements <a class="el" href="class_i_data_actor.html#a252f66e2f8ef7430ac46e877f01d493d">IDataActor</a>.</p>
+
+</div>
+</div>
+<a id="adff5358b758e021fa7566420615bf2ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adff5358b758e021fa7566420615bf2ac">&#9670;&nbsp;</a></span>setSpeedCallback()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::setSpeedCallback </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(int s)&#160;</td>
+          <td class="paramname"><em>fcnPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements <a class="el" href="class_i_data_actor.html#ad20dde7042b210d131f62a1571fbac26">IDataActor</a>.</p>
 
 </div>
 </div>
@@ -270,6 +346,50 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::string BTDataActor::_deviceName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a530e66f5a262e1419a39d3b5e6fed10a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530e66f5a262e1419a39d3b5e6fed10a">&#9670;&nbsp;</a></span>_pAdvertisementData</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLEAdvertisementData* BTDataActor::_pAdvertisementData</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab032c11951e949826a3bf7f82ae37f0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab032c11951e949826a3bf7f82ae37f0d">&#9670;&nbsp;</a></span>_pAdvertising</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLEAdvertising* BTDataActor::_pAdvertising</td>
         </tr>
       </table>
   </td>
@@ -336,6 +456,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">BLEService* BTDataActor::_pService</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa00c6b54ed56533071e1c68c7c13720f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa00c6b54ed56533071e1c68c7c13720f">&#9670;&nbsp;</a></span>_speedCallBack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void(* BTDataActor::_speedCallBack) (int s)</td>
         </tr>
       </table>
   </td>
