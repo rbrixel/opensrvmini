@@ -1,28 +1,33 @@
+/*
+ * BTDataActor.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <BTDataActor.h>
 #include <Arduino.h>
 
+// class MyCallbacks: public BLECharacteristicCallbacks {
+  
+//     void onWrite(BLECharacteristic *pCharacteristic) {
+//       std::string value = pCharacteristic->getValue();
 
-class MyCallbacks: public BLECharacteristicCallbacks {
-    void onWrite(BLECharacteristic *pCharacteristic) {
-      std::string value = pCharacteristic->getValue();
-
-      if (value.length() > 0) {
-        Serial.println("*********");
-        Serial.print("New value: ");
-        for (int i = 0; i < value.length(); i++)
-          Serial.print(value[i]);
-
-        Serial.println();
-        Serial.println("*********");
-      }
-    }
-};
+//       if (value.length() > 0) {
+//         Serial.println("*********");
+//         Serial.print("New value: ");
+//         for (int i = 0; i < value.length(); i++)
+//           Serial.print(value[i]);
+//         Serial.println();
+//         Serial.println("*********");
+//       }
+//     }
+// };
 
 ///
 /// Instanciation of BTDataActor 
-BTDataActor::BTDataActor()
+BTDataActor::BTDataActor(std::string deviceName)
 {
-
+  _deviceName = deviceName;
 }
 
 ///
@@ -30,7 +35,7 @@ BTDataActor::BTDataActor()
 void BTDataActor::init()
 {
        // _serialBT.begin("ESP32"); //Name des ESP32;;
-  BLEDevice::init("MyESP32");
+  BLEDevice::init(_deviceName);
   _pServer = BLEDevice::createServer();
 
   _pService = _pServer->createService(SERVICE_UUID);
@@ -41,12 +46,17 @@ void BTDataActor::init()
                                          BLECharacteristic::PROPERTY_WRITE
                                        );
 
-    _pCharacteristic->setCallbacks(new MyCallbacks());
-
+    //_pCharacteristic->setCallbacks(new MyCallbacks());
     _pCharacteristic->setValue("");
     _pService->start();
 
     BLEAdvertising *pAdvertising = _pServer->getAdvertising();
+    // BLEAdvertisementData advertisementData;
+    // advertisementData.addData("Test");
+    // advertisementData.
+    // // set the properties of the advertisement data
+    // // See the setter methods of the BLEAdvertisementData class
+    // pAdvertising->setAdvertisementData(advertisementData);
     pAdvertising->start();
 }
 

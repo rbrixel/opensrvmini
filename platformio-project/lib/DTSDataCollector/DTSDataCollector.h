@@ -1,16 +1,22 @@
+/*
+ * DTSDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef DTSDATACOLLECTOR_H
 #define DTSDATACOLLECTOR_H
 
+// Comment this line to acitivate Real Sensors
+//#define DTSDATACOLLECTOR_H_DEBUG 
 
 #include <IDataCollector.h>
 #include <random>
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-#define ONE_WIRE_BUS 2
+//#define ONE_WIRE_BUS 5 // #rb: wird nicht benötigt; geht auch ohne
 
-// Comment this line to acitivate Real Sensors
-#define OPENSRVDEBUG 
 
 ///
 /// DTSDataCollector implementing IDataCollector

@@ -1,12 +1,21 @@
+/*
+ * ADSDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef ADSDATACOLLECTOR_H
 #define ADSDATACOLLECTOR_H
 
+// Comment this line to acitivate Real Sensors
+#define ADSDATACOLLECTOR_H_DEBUG 
+
 #include <IDataCollector.h>
-#include <random>
 #include <ADS1X15.h>
 
-// Comment this line to acitivate Real Sensors
-#define OPENSRVDEBUG 
+#ifdef ADSDATACOLLECTOR_H_DEBUG
+#include <random>
+#endif
 
 ///
 /// ADSDataCollector implementing IDataCollector

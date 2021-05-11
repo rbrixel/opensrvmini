@@ -1,11 +1,21 @@
+/*
+ * BMEDataCollector.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef BMEDATACOLLECTOR_H
 #define BMEDATACOLLECTOR_H
 
-#include <IDataCollector.h>
-#include <random>
-#include <BME280_I2C.h>
 // Comment this line to acitivate Real Sensors
-#define OPENSRVDEBUG 
+#define BMEDATACOLLECTOR_H_DEBUG 
+
+#include <IDataCollector.h>
+#include <BME280_I2C.h>
+
+#ifdef BMEDATACOLLECTOR_H_DEBUG
+#include <random>
+#endif
 
 ///
 /// BMEDataCollector implementing IDataCollector
@@ -18,6 +28,7 @@ class BMEDataCollector : public IDataCollector {
               void reInit();
               void sleep();
               void updateData();
+              bool needsReInit();
               std::string getName();
        protected:
               BME280_I2C *_bme280; //BME280_I2C bme(0x76); // uint i2c-address

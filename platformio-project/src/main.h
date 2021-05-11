@@ -7,6 +7,7 @@
 #include <WiFiUdp.h>
 
 #include <BMEDataCollector.h>
+#include <MPUDataCollector.h>
 #include <DTSDataCollector.h>
 #include <ADSDataCollector.h>
 #include <DataStorage.h>
@@ -15,5 +16,7 @@
 #include <BTDataActor.h>
 
 // void initOTA();
+
+
 
 #endif

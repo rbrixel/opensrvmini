@@ -1,3 +1,9 @@
+/*
+ * ADSDataCollector.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <ADSDataCollector.h>
 #include <Arduino.h>
 
@@ -38,7 +44,7 @@ void ADSDataCollector::reInit()
 /// Updates BME Data into DataStorage
 void ADSDataCollector::updateData()
 {
-    #ifdef OPENSRVDEBUG
+    #ifdef ADSDATACOLLECTOR_H_DEBUG
         Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(100,160);
         double result = randomVal/10;

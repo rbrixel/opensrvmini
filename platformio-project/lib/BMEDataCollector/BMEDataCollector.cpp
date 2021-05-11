@@ -1,3 +1,9 @@
+/*
+ * BMEDataCollector.cpp
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #include <BMEDataCollector.h>
 #include <Arduino.h>
 #define CHANNELEXTTEMP ".TEMP"
@@ -8,7 +14,7 @@
 BMEDataCollector::BMEDataCollector(std::string channelName)
 {
     _channelName = channelName;
-    _bme280 = new BME280_I2C(_address,_i2cSDA, _i2cSCL);
+    _bme280 = new BME280_I2C(_address, _i2cSDA, _i2cSCL);
 }
 
 BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL)
@@ -46,7 +52,21 @@ void BMEDataCollector::init(IDataStorage *storage)
 /// Initializes the component
 void BMEDataCollector::reInit()
 {
-    ;
+    _bmeIsReady = _bme280->begin(
+                            _bme280->BME280_STANDBY_0_5,
+                            _bme280->BME280_FILTER_16,
+                            _bme280->BME280_SPI3_DISABLE,
+                            _bme280->BME280_OVERSAMPLING_2,
+                            _bme280->BME280_OVERSAMPLING_16,
+                            _bme280->BME280_OVERSAMPLING_1,
+                            _bme280->BME280_MODE_NORMAL);
+}
+
+///
+/// Initializes the component
+bool BMEDataCollector::needsReInit()
+{
+    return _bmeIsReady;
 }
 
 /// 
@@ -54,7 +74,7 @@ void BMEDataCollector::reInit()
 void BMEDataCollector::updateData()
 {
     if (!_bmeIsReady) {
-        #ifdef OPENSRVDEBUG
+        #ifdef BMEDATACOLLECTOR_H_DEBUG
             Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(-200,400);
             double result = randomVal/10;

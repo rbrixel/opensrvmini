@@ -1,3 +1,9 @@
+/*
+ * BTDataActor.h
+ *
+ *  Created on: April 2021
+ *      Author: Frank Weichert
+ */
 #ifndef BTDATAACTOR_H
 #define BTDATAACTOR_H
 
@@ -19,7 +25,7 @@
 /// BTDataActor is configured to observe a datastorage and sends out all Daat via Bluetooth
 class BTDataActor : public IDataActor {
        public:
-              BTDataActor( );
+              BTDataActor(std::string deviceName);
               void init();
               void reInit();
               void sleep();
@@ -29,10 +35,9 @@ class BTDataActor : public IDataActor {
               BLEServer *_pServer;
               BLEService *_pService;
               BLECharacteristic *_pCharacteristic;
-              
-              std::string _observedChannel;
-              bool isInRange(double value);
-              double extractChannelValue(IDataStorage *dataStorage);
+
+              std::string _deviceName;
+
 };
 
 #endif
