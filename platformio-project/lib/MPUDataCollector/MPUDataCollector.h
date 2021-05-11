@@ -13,18 +13,20 @@
 
 #include <IDataCollector.h>
 #include <Arduino.h>
-// #include <Adafruit_MPU6050.h>
-// #include <Adafruit_Sensor.h>
+
 
 #include <Smoother.h>
 #include <Wire.h>
+#include <MPU6050_light.h>
+
 
 #ifdef MPUDATACOLLECTOR_H_DEBUG 
 #include <random>
 #endif
 
-//#define MPU_USEGYRO 
-//#define MPU_USETEMPERATURE
+#define MPU_USEGYRO 
+#define MPU_USETEMPERATURE
+
 
 ///
 /// MPUDataCollector implementing IDataCollector
@@ -40,13 +42,19 @@ class MPUDataCollector : public IDataCollector {
               bool needsReInit();
               std::string getName();
        protected:
+              TwoWire lightWire = TwoWire(0);
+              MPU6050 *_mpu;
+
+
               bool _isInitialized = false;
               // Adafruit_MPU6050 *_mpu;
               std::string _channelName = "MPU6050";
-              Smoother *_smoother_X;
-              Smoother *_smoother_Y;
-              Smoother *_smoother_Z;
+              // Smoother *_smoother_X;
+              // Smoother *_smoother_Y;
+              // Smoother *_smoother_Z;
 
+
+              // TwoWire *mpuWire;
               const int _mpuAddr = 0x68; // I2C address of the MPU-6050. If AD0 pin is set to HIGH, the I2C address will be 0x69.
               int16_t _accelerometer_x, _accelerometer_y, _accelerometer_z; // variables for accelerometer raw data
               #ifdef MPU_USEGYRO

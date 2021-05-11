@@ -46,7 +46,7 @@ std::vector<IDataCollector *> dataCollectors;
 std::vector<IDataActor *> dataActors;
 
 IDataStorage *storage = new DataStorage();
-volatile int speed=3000;
+volatile int speed=100;
 void setSpeed(int s)
 {
   Serial.printf("Set Speed to %d",s);
@@ -60,9 +60,10 @@ void setup()
   /* *******************************************************************************
       Create Datacollectors 
   */
-  dataCollectors.push_back(new BMEDataCollector("Channel-BME"));  // Get Temperature and Pressure
-  dataCollectors.push_back(new ADSDataCollector("Channel-ADS"));  // get Board Voltage
-  dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));  // get outer temperature
+  //dataCollectors.push_back(new BMEDataCollector("Channel-BME"));  // Get Temperature and Pressure
+  //dataCollectors.push_back(new ADSDataCollector("Channel-ADS"));  // get Board Voltage
+  //dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));  // get outer temperature
+  dataCollectors.push_back(new MPUDataCollector("Channel-MPU"));  // get outer gyro acc
 
   /* *******************************************************************************
       Create DataActors 
@@ -93,7 +94,6 @@ void setup()
     dataActors[i]->init();
     dataActors[i]->setSpeedCallback(&setSpeed);
   }
-
 }
 
 /* ************************************************************************** */

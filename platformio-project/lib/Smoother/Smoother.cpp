@@ -14,8 +14,8 @@ Smoother::Smoother(int arraySize)
 
 void Smoother::cleanUp()
 {
-  memset(_values,0,(sizeof _values)*_arraySize);
-  memset(_sortedValues,0,(sizeof _values)*_arraySize);
+  memset(_values,0,(sizeof *_values)*_arraySize);
+  memset(_sortedValues,0,(sizeof *_values)*_arraySize);
   _insertIndex=0;
   _isFirstValue=true;
   _smoothingActive=true;
@@ -80,7 +80,7 @@ int16_t Smoother::getSmoothed()
     return  _values[_insertIndex];
   }
 
-  memcpy(_sortedValues,_values , (sizeof _sortedValues)*_arraySize);
+  memcpy(_sortedValues,_values , (sizeof *_sortedValues)*_arraySize);
   qsort(_sortedValues, _arraySize, sizeof(_sortedValues[0]), qsortComparer );
   //debugArray("_sortedValues:",_sortedValues);
   int32_t average=0;
