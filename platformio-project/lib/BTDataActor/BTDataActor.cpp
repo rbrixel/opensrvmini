@@ -72,9 +72,9 @@ void BTDataActor::init()
  
     _pCharacteristic = _pService->createCharacteristic(
                                             CHARACTERISTIC_UUID,
-                                            BLECharacteristic::PROPERTY_READ |
-                                            BLECharacteristic::PROPERTY_WRITE
+                                            BLECharacteristic::PROPERTY_READ 
                                         );
+                                        //| BLECharacteristic::PROPERTY_WRITE
 
     _pCharacteristic->setValue("");
     _pService->start();
@@ -85,8 +85,8 @@ void BTDataActor::init()
     _pAdvertisementData = new BLEAdvertisementData();
 
     //BLEAdvertisementData advertisementData;
-    _pAdvertisementData->setManufacturerData("  OpenSRV");
-    _pAdvertisementData->setShortName("Shorty");
+    _pAdvertisementData->setManufacturerData("  OpenSRVmini");
+    _pAdvertisementData->setShortName("osrv");
     _pAdvertising->setAdvertisementData(*_pAdvertisementData);
     _pAdvertising->start();
 }
@@ -105,14 +105,14 @@ void BTDataActor::action(IDataStorage *dataStorage)
     std::map<std::string, double> data = dataStorage->getMapCopy();
     std::map<std::string, double>::iterator it;
     std::string value;  
-    Serial.printf("Action BLE\n");
+    //Serial.printf("Action BLE\n");
     for (it = data.begin(); it != data.end(); it++)
     {
         char tmp[255];
-        sprintf(tmp, "BLE: %s-%.2f..",it->first.c_str(),it->second);
+        sprintf(tmp, "%s=%.2f##",it->first.c_str(),it->second);
         value.append( tmp);
     }
-    Serial.println(value.c_str());
+    //Serial.println(value.c_str());
     _pCharacteristic->setValue(value.c_str());
 }
 
