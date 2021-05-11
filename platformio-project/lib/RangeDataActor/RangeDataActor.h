@@ -23,6 +23,7 @@ class RangeDataActor : public IDataActor {
               void reInit();
               void sleep();
               void action(IDataStorage *dataStorage);
+              void setSpeedCallback(void (*spcb)(int s));
               std::string getName();
        protected:
               std::string _observedChannel;
