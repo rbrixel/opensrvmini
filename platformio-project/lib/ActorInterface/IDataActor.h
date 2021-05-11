@@ -40,6 +40,8 @@ class IDataActor {
       /// Wakeup is triggered by reinit
       virtual void sleep()=0;
 
+      virtual void setSpeedCallback(void (*fcnPtr)(int s)) =0;
+
    protected:
       IDataStorage *_dataStorage;
 };

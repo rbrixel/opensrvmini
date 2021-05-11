@@ -30,6 +30,11 @@ void RangeDataActor::init()
     ;
 }
 
+void RangeDataActor::setSpeedCallback(void (*spcb)(int s))
+{
+  ;
+}
+
 ///
 /// Initializes the component
 void RangeDataActor::reInit()
