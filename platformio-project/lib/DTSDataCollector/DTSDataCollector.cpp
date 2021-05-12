@@ -30,6 +30,19 @@ DTSDataCollector::DTSDataCollector(std::string channelName, uint8_t oneWirePin)
 }
 
 ///
+/// Constructing with a channelName 
+/// a positive or degative temperatureOffset to adjust sensor tolerances
+/// a onewire-pin
+DTSDataCollector::DTSDataCollector(std::string channelName, double temperatureOffset,uint8_t oneWirePin)
+{
+    _channelName = channelName;
+    _oneWirePin = oneWirePin;
+    _oneWire = new OneWire(_oneWirePin);
+    _temperatureOffset = temperatureOffset;
+    _ds18sensors = new DallasTemperature(_oneWire);
+}
+
+///
 /// Initializes the Component and its DataStorage
 void DTSDataCollector::init(IDataStorage *storage)
 {
@@ -65,7 +78,7 @@ void DTSDataCollector::updateData()
         _ds18sensors->requestTemperatures(); // Send the command to get temperatures
         _temp = _ds18sensors->getTempCByIndex(0); // read first sensor
         if(_temp != DEVICE_DISCONNECTED_C) {
-            _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
+            _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp + _temperatureOffset);
         } else {
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
         }

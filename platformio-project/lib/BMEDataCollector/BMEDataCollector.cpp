@@ -17,9 +17,26 @@ BMEDataCollector::BMEDataCollector(std::string channelName)
     _bme280 = new BME280_I2C(_address, _i2cSDA, _i2cSCL);
 }
 
+BMEDataCollector::BMEDataCollector(std::string channelName, double temperatureOffset)
+{
+    _channelName = channelName;
+    _bme280 = new BME280_I2C(_address, _i2cSDA, _i2cSCL);
+    _temperatureOffset=temperatureOffset;
+}
+
 BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL)
 {
     _channelName = channelName;
+    _i2cSDA=i2cSDA;
+    _i2cSCL=i2cSCL;
+    _address=address;
+    _bme280 = new BME280_I2C(_address,_i2cSDA, _i2cSCL);
+}
+
+BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL, double tempoeratureOffset)
+{
+    _channelName = channelName;
+    _temperatureOffset=tempoeratureOffset;
     _i2cSDA=i2cSDA;
     _i2cSCL=i2cSCL;
     _address=address;
@@ -40,12 +57,6 @@ void BMEDataCollector::init(IDataStorage *storage)
                                 _bme280->BME280_OVERSAMPLING_16,
                                 _bme280->BME280_OVERSAMPLING_1,
                                 _bme280->BME280_MODE_NORMAL);
-
-    // if (!_bmeIsReady) {
-    //   Serial.println("can NOT initialize for using BME280.\n");
-    // } else {
-    //   Serial.println("ready to using BME280.\n");
-    // }
 }
 
 ///
@@ -89,7 +100,7 @@ void BMEDataCollector::updateData()
         return;
     }
     readBMEData();
-    _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp);
+    _dataStorage->addData(_channelName + CHANNELEXTTEMP , _temp + _temperatureOffset);
     _dataStorage->addData(_channelName + CHANNELEXTPRESSURE , _pressure);
 }
 
