@@ -8,7 +8,7 @@
 #define BMEDATACOLLECTOR_H
 
 // Comment this line to acitivate Real Sensors
-#define BMEDATACOLLECTOR_H_DEBUG 
+// #define BMEDATACOLLECTOR_H_DEBUG 
 
 #include <IDataCollector.h>
 #include <BME280_I2C.h>
@@ -23,7 +23,9 @@
 class BMEDataCollector : public IDataCollector {
        public:
               BMEDataCollector(std::string channelName);
+              BMEDataCollector(std::string channelName, double tempoeratureOffset);
               BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL);
+              BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL, double tempoeratureOffset);
               void init(IDataStorage *storage);
               void reInit();
               void sleep();
@@ -34,6 +36,7 @@ class BMEDataCollector : public IDataCollector {
               BME280_I2C *_bme280; //BME280_I2C bme(0x76); // uint i2c-address
               std::string _channelName = "BMECollector";
               void readBMEData();     
+              double _temperatureOffset=0;
               double _temp = 0;
               double _pressure = 0;    
               bool _bmeIsReady=0;
