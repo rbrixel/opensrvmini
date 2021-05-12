@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['channelextfaxe_224',['CHANNELEXTFAXE',['../_template_data_collector_8cpp.html#acaba76a1923c73894d98371823d88323',1,'TemplateDataCollector.cpp']]],
-  ['channelextpressure_225',['CHANNELEXTPRESSURE',['../_b_m_e_data_collector_8cpp.html#a5d37be771224460366dde14caaec6b3b',1,'CHANNELEXTPRESSURE():&#160;BMEDataCollector.cpp'],['../_d_t_s_data_collector_8cpp.html#a5d37be771224460366dde14caaec6b3b',1,'CHANNELEXTPRESSURE():&#160;DTSDataCollector.cpp']]],
-  ['channelexttemp_226',['CHANNELEXTTEMP',['../_b_m_e_data_collector_8cpp.html#aa1bb381e5d5b211aeb4371514e60515c',1,'CHANNELEXTTEMP():&#160;BMEDataCollector.cpp'],['../_d_t_s_data_collector_8cpp.html#aa1bb381e5d5b211aeb4371514e60515c',1,'CHANNELEXTTEMP():&#160;DTSDataCollector.cpp']]],
-  ['channelextvcc_227',['CHANNELEXTVCC',['../_a_d_s_data_collector_8cpp.html#a468cb0c8d5c83787d51e114d0cbb5d86',1,'ADSDataCollector.cpp']]],
-  ['characteristic2_5fuuid_228',['CHARACTERISTIC2_UUID',['../_b_t_data_actor_8h.html#a6c7b33803fed1deb965cef9413f4bc43',1,'BTDataActor.h']]],
-  ['characteristic_5fuuid_229',['CHARACTERISTIC_UUID',['../_b_t_data_actor_8h.html#a94aefdd5f54049079364e832dc15b336',1,'BTDataActor.h']]]
+  ['mpuchextaccx_230',['MPUCHEXTACCX',['../_m_p_u_data_collector_8cpp.html#ad1b4fbbccf573b4e925edee568aaa05d',1,'MPUDataCollector.cpp']]],
+  ['mpuchextaccy_231',['MPUCHEXTACCY',['../_m_p_u_data_collector_8cpp.html#a34446e9302ee092aad1d35e6a8906ce5',1,'MPUDataCollector.cpp']]],
+  ['mpuchextaccz_232',['MPUCHEXTACCZ',['../_m_p_u_data_collector_8cpp.html#a381987de30808e1cdcff1e7a62b3bc46',1,'MPUDataCollector.cpp']]]
 ];

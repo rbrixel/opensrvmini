@@ -90,8 +90,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f9a7ae2083fc68d5b028834197aba1e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#a7f9a7ae2083fc68d5b028834197aba1e">BMEDataCollector</a> (std::string channelName)</td></tr>
 <tr class="memdesc:a7f9a7ae2083fc68d5b028834197aba1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName.  <a href="class_b_m_e_data_collector.html#a7f9a7ae2083fc68d5b028834197aba1e">More...</a><br /></td></tr>
 <tr class="separator:a7f9a7ae2083fc68d5b028834197aba1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06155f37c9b9940408d4a6bed52c8cfd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#a06155f37c9b9940408d4a6bed52c8cfd">BMEDataCollector</a> (std::string channelName, double tempoeratureOffset)</td></tr>
+<tr class="separator:a06155f37c9b9940408d4a6bed52c8cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53643741b021273e4a892bc527591357"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#a53643741b021273e4a892bc527591357">BMEDataCollector</a> (std::string channelName, byte address, byte i2cSDA, byte i2cSCL)</td></tr>
 <tr class="separator:a53643741b021273e4a892bc527591357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7afaf471d8c80fe3b809d2f847cce26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#ac7afaf471d8c80fe3b809d2f847cce26">BMEDataCollector</a> (std::string channelName, byte address, byte i2cSDA, byte i2cSCL, double tempoeratureOffset)</td></tr>
+<tr class="separator:ac7afaf471d8c80fe3b809d2f847cce26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a205123ea60f1ca18477c0bed241ef5f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#a205123ea60f1ca18477c0bed241ef5f9">init</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *<a class="el" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)</td></tr>
 <tr class="memdesc:a205123ea60f1ca18477c0bed241ef5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_b_m_e_data_collector.html#a205123ea60f1ca18477c0bed241ef5f9">More...</a><br /></td></tr>
 <tr class="separator:a205123ea60f1ca18477c0bed241ef5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +126,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a8fe0539aa2495460c134cc27964dc9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af22f85b85f763228a3b770bc6f5fb049"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#af22f85b85f763228a3b770bc6f5fb049">_channelName</a> = &quot;BMECollector&quot;</td></tr>
 <tr class="separator:af22f85b85f763228a3b770bc6f5fb049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ed5abcdff80fd8693dba46f8416b5b7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#a2ed5abcdff80fd8693dba46f8416b5b7">_temperatureOffset</a> =0</td></tr>
+<tr class="separator:a2ed5abcdff80fd8693dba46f8416b5b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0435f72be458f1f5915c47383558147"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#aa0435f72be458f1f5915c47383558147">_temp</a> = 0</td></tr>
 <tr class="separator:aa0435f72be458f1f5915c47383558147"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f541e8e70881623673ecae846f3d559"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_m_e_data_collector.html#a4f541e8e70881623673ecae846f3d559">_pressure</a> = 0</td></tr>
@@ -142,7 +148,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_b_m_e_data_collector.html">BMEDataCollector</a> implementing <a class="el" href="class_i_data_collector.html">IDataCollector</a> used to collect temperature and pressure from a BME280 sensor </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a7f9a7ae2083fc68d5b028834197aba1e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f9a7ae2083fc68d5b028834197aba1e">&#9670;&nbsp;</a></span>BMEDataCollector() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f9a7ae2083fc68d5b028834197aba1e">&#9670;&nbsp;</a></span>BMEDataCollector() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -161,8 +167,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a06155f37c9b9940408d4a6bed52c8cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06155f37c9b9940408d4a6bed52c8cfd">&#9670;&nbsp;</a></span>BMEDataCollector() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BMEDataCollector::BMEDataCollector </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tempoeratureOffset</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a53643741b021273e4a892bc527591357"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a53643741b021273e4a892bc527591357">&#9670;&nbsp;</a></span>BMEDataCollector() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a53643741b021273e4a892bc527591357">&#9670;&nbsp;</a></span>BMEDataCollector() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,6 +224,52 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">byte&#160;</td>
           <td class="paramname"><em>i2cSCL</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7afaf471d8c80fe3b809d2f847cce26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7afaf471d8c80fe3b809d2f847cce26">&#9670;&nbsp;</a></span>BMEDataCollector() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">BMEDataCollector::BMEDataCollector </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>i2cSDA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>i2cSCL</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>tempoeratureOffset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -569,6 +649,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">double BMEDataCollector::_temp = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ed5abcdff80fd8693dba46f8416b5b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ed5abcdff80fd8693dba46f8416b5b7">&#9670;&nbsp;</a></span>_temperatureOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double BMEDataCollector::_temperatureOffset =0</td>
         </tr>
       </table>
   </td>

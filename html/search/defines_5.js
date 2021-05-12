@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['service_5fuuid_234',['SERVICE_UUID',['../_b_t_data_actor_8h.html#a445125ee8c34695376c85f10b38844d6',1,'BTDataActor.h']]]
+  ['unknownresult_235',['UNKNOWNRESULT',['../_i_data_storage_8h.html#acbf8c4ac5bd4efaea53b91ed9c97f2a8',1,'IDataStorage.h']]]
 ];

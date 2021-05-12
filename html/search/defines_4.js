@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opensrvdebug_233',['OPENSRVDEBUG',['../_template_data_collector_8h.html#aa5cc77bff0b99d22b57afd0b74c7b9b5',1,'TemplateDataCollector.h']]]
+  ['service_5fuuid_234',['SERVICE_UUID',['../_b_t_data_actor_8h.html#a445125ee8c34695376c85f10b38844d6',1,'BTDataActor.h']]]
 ];

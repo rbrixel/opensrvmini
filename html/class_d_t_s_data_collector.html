@@ -92,6 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a51a5629a1cccd2663f45c53db49fd077"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a51a5629a1cccd2663f45c53db49fd077">DTSDataCollector</a> (std::string channelName, uint8_t oneWirePin)</td></tr>
 <tr class="memdesc:a51a5629a1cccd2663f45c53db49fd077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName and a onewire-pin.  <a href="class_d_t_s_data_collector.html#a51a5629a1cccd2663f45c53db49fd077">More...</a><br /></td></tr>
 <tr class="separator:a51a5629a1cccd2663f45c53db49fd077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02f833ae329fef82524c8ad9e579a460"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a02f833ae329fef82524c8ad9e579a460">DTSDataCollector</a> (std::string channelName, double temperatureOffset, uint8_t oneWirePin=5)</td></tr>
+<tr class="separator:a02f833ae329fef82524c8ad9e579a460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1f8e57f780d8a1b6bdfbb6b1a979538"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#ac1f8e57f780d8a1b6bdfbb6b1a979538">init</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *<a class="el" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)</td></tr>
 <tr class="memdesc:ac1f8e57f780d8a1b6bdfbb6b1a979538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_d_t_s_data_collector.html#ac1f8e57f780d8a1b6bdfbb6b1a979538">More...</a><br /></td></tr>
 <tr class="separator:ac1f8e57f780d8a1b6bdfbb6b1a979538"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -120,6 +122,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:acf71732f5fc27e5b7e0a33bc8a194b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a868379cca05838869a574951a6037133"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a868379cca05838869a574951a6037133">_oneWirePin</a> = 5</td></tr>
 <tr class="separator:a868379cca05838869a574951a6037133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84baca398e961f47444d92bbe1109d7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#ae84baca398e961f47444d92bbe1109d7">_temperatureOffset</a> = 0</td></tr>
+<tr class="separator:ae84baca398e961f47444d92bbe1109d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adce990bbc25d34941d1840de0458ad40"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#adce990bbc25d34941d1840de0458ad40">_temp</a> = 0</td></tr>
 <tr class="separator:adce990bbc25d34941d1840de0458ad40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fc4af4598ba371682d6d07043943201"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a2fc4af4598ba371682d6d07043943201">_pressure</a> = 0</td></tr>
@@ -132,7 +136,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_d_t_s_data_collector.html">DTSDataCollector</a> implementing <a class="el" href="class_i_data_collector.html">IDataCollector</a> used to collect temperature and pressure from a DS18B2ß sensor </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1f0eff33b36cb86ba855b462f8d17dae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f0eff33b36cb86ba855b462f8d17dae">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f0eff33b36cb86ba855b462f8d17dae">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +156,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a id="a51a5629a1cccd2663f45c53db49fd077"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51a5629a1cccd2663f45c53db49fd077">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a51a5629a1cccd2663f45c53db49fd077">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -178,6 +182,41 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Constructing with a channelName and a onewire-pin. </p>
+
+</div>
+</div>
+<a id="a02f833ae329fef82524c8ad9e579a460"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02f833ae329fef82524c8ad9e579a460">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DTSDataCollector::DTSDataCollector </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>temperatureOffset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>oneWirePin</em> = <code>5</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructing with a channelName a positive or degative temperatureOffset to adjust sensor tolerances a onewire-pin </p>
 
 </div>
 </div>
@@ -449,6 +488,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">double DTSDataCollector::_temp = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae84baca398e961f47444d92bbe1109d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84baca398e961f47444d92bbe1109d7">&#9670;&nbsp;</a></span>_temperatureOffset</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double DTSDataCollector::_temperatureOffset = 0</td>
         </tr>
       </table>
   </td>
