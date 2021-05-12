@@ -39,14 +39,12 @@
 
 #include <main.h>
 
-
-
 // Sample Usage of Interfaces for Data Collection
 std::vector<IDataCollector *> dataCollectors;
 std::vector<IDataActor *> dataActors;
 
 IDataStorage *storage = new DataStorage();
-volatile int speed=100;
+volatile int speed=1000;
 void setSpeed(int s)
 {
   Serial.printf("Set Speed to %d",s);

@@ -14,19 +14,21 @@
 #include <IDataCollector.h>
 #include <Arduino.h>
 
-
-#include <Smoother.h>
+//#include <Smoother.h>
 #include <Wire.h>
 #include <MPU6050_light.h>
-
 
 #ifdef MPUDATACOLLECTOR_H_DEBUG 
 #include <random>
 #endif
 
-#define MPU_USEGYRO 
-#define MPU_USETEMPERATURE
-
+struct MPUTaskData
+{
+    MPU6050 *initializedMPU;
+    volatile float temp, accX, accY, accZ, gyroX, gyroY, gyroZ;
+    volatile float angleAccX, angleAccY;
+    volatile float angleX, angleY, angleZ;
+};
 
 ///
 /// MPUDataCollector implementing IDataCollector
@@ -40,31 +42,18 @@ class MPUDataCollector : public IDataCollector {
               void sleep();
               void updateData();
               bool needsReInit();
+              static void updateDataThread( void * parameter);
               std::string getName();
        protected:
               TwoWire lightWire = TwoWire(0);
               MPU6050 *_mpu;
-
-
+              
               bool _isInitialized = false;
-              // Adafruit_MPU6050 *_mpu;
               std::string _channelName = "MPU6050";
-              // Smoother *_smoother_X;
-              // Smoother *_smoother_Y;
-              // Smoother *_smoother_Z;
-
-
-              // TwoWire *mpuWire;
-              const int _mpuAddr = 0x68; // I2C address of the MPU-6050. If AD0 pin is set to HIGH, the I2C address will be 0x69.
-              int16_t _accelerometer_x, _accelerometer_y, _accelerometer_z; // variables for accelerometer raw data
-              #ifdef MPU_USEGYRO
-              int16_t _gyro_x, _gyro_y, _gyro_z; // variables for gyro raw data
-              #endif
-
-              #ifdef MPU_USETEMPERATURE
-              int16_t _temperature;
-              #endif
-
+ 
+              // Threading
+              TaskHandle_t getDataTask;
+              MPUTaskData *_data;
 };
 
 #endif

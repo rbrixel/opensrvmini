@@ -5,52 +5,64 @@
  *      Author: Frank Weichert
  */
 #include <MPUDataCollector.h>
-#define MPUCHEXTACCX ".ACCX"
-#define MPUCHEXTACCY ".ACCY"
-#define MPUCHEXTACCZ ".ACCZ"
 
-#ifdef MPU_USEGYRO
-    #define MPUCHEXTGYRX ".GYRX"
-    #define MPUCHEXTGYRY ".GYRY"
-    #define MPUCHEXTGYRZ ".GYRZ"
-#endif
+#define MPUCHEXTTEMP        ".TEMP"
+#define MPUCHEXTACCX        ".ACCX"
+#define MPUCHEXTACCY        ".ACCY"
+#define MPUCHEXTACCZ        ".ACCZ"
+#define MPUCHEXTGYRX        ".GYRX"
+#define MPUCHEXTGYRY        ".GYRY"
+#define MPUCHEXTGYRZ        ".GYRZ"
+#define MPUCHEXTACCANGLEX   ".ACAX"
+#define MPUCHEXTACCANGLEY   ".ACAY"
+#define MPUCHEXTANGLEX      ".ANGX"
+#define MPUCHEXTANGLEY      ".ANGY"
+#define MPUCHEXTANGLEZ      ".ANGZ"
 
-#ifdef MPU_USETEMPERATURE
-    #define MPUCHEXTTEMP ".TEMP"
-#endif
 
 ///
 /// Constructing using default channelname
 MPUDataCollector::MPUDataCollector()
 {
-    // _mpu = new Adafruit_MPU6050();
-    // mpuWire = new TwoWire(0);
-    // mpuWire->setPins(19,18);
-    // mpuWire->begin();
+    _data = new MPUTaskData();
     lightWire.setPins(19,18);
     lightWire.begin();
     _mpu = new MPU6050(lightWire);
-
-    // _smoother_X = new Smoother(3);
-    // _smoother_Y = new Smoother(3);    
-    // _smoother_Z = new Smoother(3);
 }
 
 ///
 /// Constructing with a channelName
 MPUDataCollector::MPUDataCollector(std::string channelName)
 {
+    _data = new MPUTaskData();
     _channelName = channelName;
-    // mpuWire = new TwoWire(0);
-    // mpuWire->setPins(19,18);
-    // mpuWire->begin();
     lightWire.setPins(19,18);
     lightWire.begin();
     _mpu = new MPU6050(lightWire);
+}
 
-    // _smoother_X = new Smoother(3);
-    // _smoother_Y = new Smoother(3);
-    // _smoother_Z = new Smoother(3);
+void MPUDataCollector::updateDataThread( void * taskData)
+{
+    MPUTaskData *localTaskData = (MPUTaskData*) taskData;
+    for(;;) {
+
+        localTaskData->initializedMPU->update();
+
+        localTaskData->temp  = localTaskData->initializedMPU->getTemp();
+        localTaskData->accX  = localTaskData->initializedMPU->getAccX();
+        localTaskData->accY  = localTaskData->initializedMPU->getAccY();
+        localTaskData->accZ  = localTaskData->initializedMPU->getAccZ();
+        localTaskData->gyroX = localTaskData->initializedMPU->getGyroX();
+        localTaskData->gyroY = localTaskData->initializedMPU->getGyroY();
+        localTaskData->gyroZ = localTaskData->initializedMPU->getGyroZ();
+        localTaskData->angleAccX  = localTaskData->initializedMPU->getAccAngleX();
+        localTaskData->angleAccY  = localTaskData->initializedMPU->getAccAngleY();
+        localTaskData->angleX  = localTaskData->initializedMPU->getAngleX();
+        localTaskData->angleY  = localTaskData->initializedMPU->getAngleY();
+        localTaskData->angleZ  = localTaskData->initializedMPU->getAngleZ();
+
+        delay(100);
+    }
 }
 
 ///
@@ -70,17 +82,16 @@ void MPUDataCollector::init(IDataStorage *storage)
     _mpu->calcOffsets(true,true); // gyro and accelero
     Serial.println("Done!\n");
 
+    _data->initializedMPU = _mpu;
 
-    // mpuWire->begin();
-    // mpuWire->beginTransmission(_mpuAddr); // Begins a transmission to the I2C slave (GY-521 board)
-    // mpuWire->write(0x6B); // PWR_MGMT_1 register
-    // mpuWire->write(0); // set to zero (wakes up the MPU-6050)
-    // mpuWire->endTransmission(true);
-
-    // _smoother_X->cleanUp();
-    // _smoother_Y->cleanUp();
-    // _smoother_Z->cleanUp();
-
+    xTaskCreatePinnedToCore(
+        this->updateDataThread, /* Function to implement the task */
+        "updateDataThread", /* Name of the task */
+        10000,  /* Stack size in words */
+        _data,  /* Task input parameter */
+        0,  /* Priority of the task */
+        &getDataTask,  /* Task handle. */
+        0); /* Core where the task should run */
 }
 
 ///
@@ -94,11 +105,7 @@ bool MPUDataCollector::needsReInit()
 /// Initializes the component
 void MPUDataCollector::reInit()
 {
-    // mpuWire->begin();
-    // mpuWire->beginTransmission(_mpuAddr); // Begins a transmission to the I2C slave (GY-521 board)
-    // mpuWire->write(0x6B); // PWR_MGMT_1 register
-    // mpuWire->write(0); // set to zero (wakes up the MPU-6050)
-    // mpuWire->endTransmission(true);
+    ;
 }
 
 /// 
@@ -116,68 +123,19 @@ void MPUDataCollector::updateData()
         // _dataStorage->addData(_channelName + MPUCHEXTGYRY , result);
         // _dataStorage->addData(_channelName + MPUCHEXTGYRZ , result);
     #else
-        
-    _mpu->update();
-
-    Serial.print(F("TEMPERATURE: "));Serial.println(_mpu->getTemp());
-    Serial.print(F("ACCELERO  X: "));Serial.print(_mpu->getAccX());
-    Serial.print("\tY: ");Serial.print(_mpu->getAccY());
-    Serial.print("\tZ: ");Serial.println(_mpu->getAccZ());
-  
-    Serial.print(F("GYRO      X: "));Serial.print(_mpu->getGyroX());
-    Serial.print("\tY: ");Serial.print(_mpu->getGyroY());
-    Serial.print("\tZ: ");Serial.println(_mpu->getGyroZ());
-  
-    Serial.print(F("ACC ANGLE X: "));Serial.print(_mpu->getAccAngleX());
-    Serial.print("\tY: ");Serial.println(_mpu->getAccAngleY());
-    
-    Serial.print(F("ANGLE     X: "));Serial.print(_mpu->getAngleX());
-    Serial.print("\tY: ");Serial.print(_mpu->getAngleY());
-    Serial.print("\tZ: ");Serial.println(_mpu->getAngleZ());
-    Serial.println(F("=====================================================\n"));
- 
-        
-        // mpuWire->beginTransmission(_mpuAddr);
-        // mpuWire->write(0x3B); // starting with register 0x3B (ACCEL_XOUT_H) [MPU-6000 and MPU-6050 Register Map and Descriptions Revision 4.2, p.40]
-        // mpuWire->endTransmission(false); // the parameter indicates that the Arduino will send a restart. As a result, the connection is kept active.
-        // mpuWire->requestFrom(_mpuAddr, (int) 7*2, (int) true); // request a total of 7*2=14 registers
-        
-        // // "Wire.read()<<8 | Wire.read();" means two registers are read and stored in the same variable
-        // _accelerometer_x = mpuWire->read()<<8 | mpuWire->read(); // reading registers: 0x3B (ACCEL_XOUT_H) and 0x3C (ACCEL_XOUT_L)
-        // _accelerometer_y = mpuWire->read()<<8 | mpuWire->read(); // reading registers: 0x3D (ACCEL_YOUT_H) and 0x3E (ACCEL_YOUT_L)
-        // _accelerometer_z = mpuWire->read()<<8 | mpuWire->read(); // reading registers: 0x3F (ACCEL_ZOUT_H) and 0x40 (ACCEL_ZOUT_L)
-
-        // #ifdef MPU_USETEMPERATURE
-        // _temperature = Wire.read()<<8 | Wire.read(); // reading registers: 0x41 (TEMP_OUT_H) and 0x42 (TEMP_OUT_L)
-        // #endif 
-
-        // #ifdef MPU_USEGYRO
-        // _gyro_x = mpuWire->read()<<8 | mpuWire->read(); // reading registers: 0x43 (GYRO_XOUT_H) and 0x44 (GYRO_XOUT_L)
-        // _gyro_y = mpuWire->read()<<8 | mpuWire->read(); // reading registers: 0x45 (GYRO_YOUT_H) and 0x46 (GYRO_YOUT_L)
-        // _gyro_z = mpuWire->read()<<8 | mpuWire->read(); // reading registers: 0x47 (GYRO_ZOUT_H) and 0x48 (GYRO_ZOUT_L)
-        // #endif
-
-        // _smoother_X->pushValue(_accelerometer_x);
-        // _smoother_Y->pushValue(_accelerometer_y);
-        // _smoother_Z->pushValue(_accelerometer_z);
-
-        // int16_t tmpX = _smoother_X->getSmoothed();
-        // int16_t tmpY = _smoother_Y->getSmoothed();
-        // int16_t tmpZ = _smoother_Z->getSmoothed();
-
-        // _dataStorage->addData(_channelName + MPUCHEXTACCX , tmpX);
-        // _dataStorage->addData(_channelName + MPUCHEXTACCY , tmpY);
-        // _dataStorage->addData(_channelName + MPUCHEXTACCZ , tmpZ);
-
-        // #ifdef MPU_USEGYRO
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRX , _gyro_x);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRY , _gyro_y);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRZ , _gyro_z);
-        // #endif
-
-        // #ifdef MPU_USETEMPERATURE
-        // _dataStorage->addData(_channelName + MPUCHEXTTEMP , _temperature);
-        // #endif
+        // _mpu->update();
+        _dataStorage->addData(_channelName + MPUCHEXTTEMP      , _data->temp);
+        _dataStorage->addData(_channelName + MPUCHEXTACCX      , _data->accX );
+        _dataStorage->addData(_channelName + MPUCHEXTACCY      , _data->accY );
+        _dataStorage->addData(_channelName + MPUCHEXTACCZ      , _data->accZ );
+        _dataStorage->addData(_channelName + MPUCHEXTGYRX      , _data->gyroX );
+        _dataStorage->addData(_channelName + MPUCHEXTGYRY      , _data->gyroY );
+        _dataStorage->addData(_channelName + MPUCHEXTGYRZ      , _data->gyroZ );
+        _dataStorage->addData(_channelName + MPUCHEXTACCANGLEX , _data->angleAccX );
+        _dataStorage->addData(_channelName + MPUCHEXTACCANGLEY , _data->angleAccY );
+        _dataStorage->addData(_channelName + MPUCHEXTANGLEX    , _data->angleX );
+        _dataStorage->addData(_channelName + MPUCHEXTANGLEY    , _data->angleY );
+        _dataStorage->addData(_channelName + MPUCHEXTANGLEZ    , _data->angleZ );
     #endif
 }
 
