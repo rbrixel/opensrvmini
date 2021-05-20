@@ -27,9 +27,10 @@ MPUDataCollector::MPUDataCollector(const unsigned int sdaPIN,const unsigned int 
     _data = new MPUTaskData();
     _sdaPIN = sdaPIN;
     _sclPIN = sclPIN;
-    lightWire.setPins(_sdaPIN,_sclPIN);
-    lightWire.begin();
-    _mpu = new MPU6050(lightWire);
+    _lightWire = new TwoWire(0);
+    _lightWire->setPins(_sdaPIN,_sclPIN);
+    _lightWire->begin();
+    _mpu = new MPU6050(*_lightWire);
 }
 
 ///
@@ -40,9 +41,20 @@ MPUDataCollector::MPUDataCollector(std::string channelName, const unsigned int s
     _channelName = channelName;
     _sdaPIN = sdaPIN;
     _sclPIN = sclPIN;
-    lightWire.setPins(_sdaPIN,_sclPIN);
-    lightWire.begin();
-    _mpu = new MPU6050(lightWire);
+    _lightWire = new TwoWire(0);
+    _lightWire->setPins(_sdaPIN,_sclPIN);
+    _lightWire->begin();
+    _mpu = new MPU6050(*_lightWire);
+}
+
+///
+/// Constructing with a channelName
+MPUDataCollector::MPUDataCollector(std::string channelName, TwoWire *lightWire)
+{
+    _data = new MPUTaskData();
+    _channelName = channelName;
+    _lightWire= lightWire;
+    _mpu = new MPU6050(*_lightWire);
 }
 
 void MPUDataCollector::updateDataThread( void * taskData)

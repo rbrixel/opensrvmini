@@ -23,13 +23,15 @@
 class ADSDataCollector : public IDataCollector {
        public:
               ADSDataCollector(std::string channelName);
-              ADSDataCollector(std::string channelName, byte address, uint8_t analogInputPin);
+              ADSDataCollector(std::string channelName, TwoWire *adsWire );
+              ADSDataCollector(std::string channelName, byte address,const  uint8_t analogInputPin = 4);
               void init(IDataStorage *storage);
               void reInit();
               void sleep();
               void updateData();
               std::string getName();
        protected:
+              TwoWire *_adsWire;
               std::string _channelName = "ADSCollector";
               ADS1115 *_ads;
               byte _address=0x48;

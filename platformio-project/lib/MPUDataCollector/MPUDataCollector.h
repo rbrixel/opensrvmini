@@ -37,6 +37,7 @@ class MPUDataCollector : public IDataCollector {
        public:
               MPUDataCollector(const unsigned int sdaPIN = GPIO_NUM_19,const unsigned int sclPIN  = GPIO_NUM_18 );
               MPUDataCollector(std::string channelName,const unsigned int sdaPIN = GPIO_NUM_19,const unsigned int sclPIN  = GPIO_NUM_18 );
+              MPUDataCollector(std::string channelName, TwoWire *lightWire );
               void init(IDataStorage *storage);
               void reInit();
               void sleep();
@@ -45,7 +46,7 @@ class MPUDataCollector : public IDataCollector {
               static void updateDataThread( void * parameter);
               std::string getName();
        protected:
-              TwoWire lightWire = TwoWire(0);
+              TwoWire *_lightWire;
               MPU6050 *_mpu;
               
               int _sdaPIN=GPIO_NUM_19;
