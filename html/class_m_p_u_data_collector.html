@@ -93,6 +93,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8bda175323f716b13f7092712b88ee0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ad8bda175323f716b13f7092712b88ee0">MPUDataCollector</a> (std::string channelName, const unsigned int sdaPIN=GPIO_NUM_19, const unsigned int sclPIN=GPIO_NUM_18)</td></tr>
 <tr class="memdesc:ad8bda175323f716b13f7092712b88ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName.  <a href="class_m_p_u_data_collector.html#ad8bda175323f716b13f7092712b88ee0">More...</a><br /></td></tr>
 <tr class="separator:ad8bda175323f716b13f7092712b88ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b7c828edd03c6e869b2e14913492b76"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a0b7c828edd03c6e869b2e14913492b76">MPUDataCollector</a> (std::string channelName, TwoWire *lightWire)</td></tr>
+<tr class="memdesc:a0b7c828edd03c6e869b2e14913492b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName.  <a href="class_m_p_u_data_collector.html#a0b7c828edd03c6e869b2e14913492b76">More...</a><br /></td></tr>
+<tr class="separator:a0b7c828edd03c6e869b2e14913492b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af65e6becc61a70d58405419780336d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#af65e6becc61a70d58405419780336d18">init</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *<a class="el" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)</td></tr>
 <tr class="memdesc:af65e6becc61a70d58405419780336d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_m_p_u_data_collector.html#af65e6becc61a70d58405419780336d18">More...</a><br /></td></tr>
 <tr class="separator:af65e6becc61a70d58405419780336d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,8 +121,8 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aa1f038ed4ca1e6d97e656f5788c15e3b"><td class="memItemLeft" align="right" valign="top">TwoWire&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aa1f038ed4ca1e6d97e656f5788c15e3b">lightWire</a> = TwoWire(0)</td></tr>
-<tr class="separator:aa1f038ed4ca1e6d97e656f5788c15e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebf179afc818f03682e7044381b9fce9"><td class="memItemLeft" align="right" valign="top">TwoWire *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aebf179afc818f03682e7044381b9fce9">_lightWire</a></td></tr>
+<tr class="separator:aebf179afc818f03682e7044381b9fce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0b8a37db10c9912e6af00d661f45990"><td class="memItemLeft" align="right" valign="top">MPU6050 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ac0b8a37db10c9912e6af00d661f45990">_mpu</a></td></tr>
 <tr class="separator:ac0b8a37db10c9912e6af00d661f45990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5f3c6932f768730e63cef5219b5f7bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#af5f3c6932f768730e63cef5219b5f7bc">_sdaPIN</a> =GPIO_NUM_19</td></tr>
@@ -142,7 +145,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_m_p_u_data_collector.html">MPUDataCollector</a> implementing <a class="el" href="class_i_data_collector.html">IDataCollector</a> Take a copy of this to start implementing your own collector </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a66efdc85b0171dbba75b88ba378d2f41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66efdc85b0171dbba75b88ba378d2f41">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a66efdc85b0171dbba75b88ba378d2f41">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +175,7 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ad8bda175323f716b13f7092712b88ee0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8bda175323f716b13f7092712b88ee0">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8bda175323f716b13f7092712b88ee0">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -194,6 +197,36 @@ Protected Attributes</h2></td></tr>
           <td></td>
           <td class="paramtype">const unsigned int&#160;</td>
           <td class="paramname"><em>sclPIN</em> = <code>GPIO_NUM_18</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructing with a channelName. </p>
+
+</div>
+</div>
+<a id="a0b7c828edd03c6e869b2e14913492b76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7c828edd03c6e869b2e14913492b76">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MPUDataCollector::MPUDataCollector </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TwoWire *&#160;</td>
+          <td class="paramname"><em>lightWire</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -475,6 +508,28 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="aebf179afc818f03682e7044381b9fce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebf179afc818f03682e7044381b9fce9">&#9670;&nbsp;</a></span>_lightWire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TwoWire* MPUDataCollector::_lightWire</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac0b8a37db10c9912e6af00d661f45990"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0b8a37db10c9912e6af00d661f45990">&#9670;&nbsp;</a></span>_mpu</h2>
 
@@ -552,28 +607,6 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">TaskHandle_t MPUDataCollector::getDataTask</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa1f038ed4ca1e6d97e656f5788c15e3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1f038ed4ca1e6d97e656f5788c15e3b">&#9670;&nbsp;</a></span>lightWire</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">TwoWire MPUDataCollector::lightWire = TwoWire(0)</td>
         </tr>
       </table>
   </td>

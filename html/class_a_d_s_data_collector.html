@@ -89,8 +89,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afad6c30a75506705ec7b03fd55a7f705"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#afad6c30a75506705ec7b03fd55a7f705">ADSDataCollector</a> (std::string channelName)</td></tr>
 <tr class="memdesc:afad6c30a75506705ec7b03fd55a7f705"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName.  <a href="class_a_d_s_data_collector.html#afad6c30a75506705ec7b03fd55a7f705">More...</a><br /></td></tr>
 <tr class="separator:afad6c30a75506705ec7b03fd55a7f705"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a711d46f571f6d4b114ae7f9c1eb72316"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#a711d46f571f6d4b114ae7f9c1eb72316">ADSDataCollector</a> (std::string channelName, byte address, uint8_t analogInputPin)</td></tr>
-<tr class="separator:a711d46f571f6d4b114ae7f9c1eb72316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa284376feea76a3538f5b72c47d899a9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#aa284376feea76a3538f5b72c47d899a9">ADSDataCollector</a> (std::string channelName, TwoWire *adsWire)</td></tr>
+<tr class="separator:aa284376feea76a3538f5b72c47d899a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8889f5b2b0093de422c6bc541ffbfa58"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#a8889f5b2b0093de422c6bc541ffbfa58">ADSDataCollector</a> (std::string channelName, byte address, const uint8_t analogInputPin=4)</td></tr>
+<tr class="separator:a8889f5b2b0093de422c6bc541ffbfa58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a854e9d008a8aa6b3eef3b647bfee4f79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#a854e9d008a8aa6b3eef3b647bfee4f79">init</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *<a class="el" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)</td></tr>
 <tr class="memdesc:a854e9d008a8aa6b3eef3b647bfee4f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_a_d_s_data_collector.html#a854e9d008a8aa6b3eef3b647bfee4f79">More...</a><br /></td></tr>
 <tr class="separator:a854e9d008a8aa6b3eef3b647bfee4f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -111,6 +113,8 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:adbf7fa63a36353ddeed29274738321a6"><td class="memItemLeft" align="right" valign="top">TwoWire *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#adbf7fa63a36353ddeed29274738321a6">_adsWire</a></td></tr>
+<tr class="separator:adbf7fa63a36353ddeed29274738321a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3425f7e44f68e421d741d8e1e1985dde"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#a3425f7e44f68e421d741d8e1e1985dde">_channelName</a> = &quot;ADSCollector&quot;</td></tr>
 <tr class="separator:a3425f7e44f68e421d741d8e1e1985dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab285184672d0c9c484cd731ac71929a"><td class="memItemLeft" align="right" valign="top">ADS1115 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_d_s_data_collector.html#aab285184672d0c9c484cd731ac71929a">_ads</a></td></tr>
@@ -127,7 +131,7 @@ Protected Attributes</h2></td></tr>
 <div class="textblock"><p><a class="el" href="class_a_d_s_data_collector.html">ADSDataCollector</a> implementing <a class="el" href="class_i_data_collector.html">IDataCollector</a> used to collect voltage of ADS1115 Sensor </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afad6c30a75506705ec7b03fd55a7f705"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afad6c30a75506705ec7b03fd55a7f705">&#9670;&nbsp;</a></span>ADSDataCollector() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afad6c30a75506705ec7b03fd55a7f705">&#9670;&nbsp;</a></span>ADSDataCollector() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,8 +150,36 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a711d46f571f6d4b114ae7f9c1eb72316"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a711d46f571f6d4b114ae7f9c1eb72316">&#9670;&nbsp;</a></span>ADSDataCollector() <span class="overload">[2/2]</span></h2>
+<a id="aa284376feea76a3538f5b72c47d899a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa284376feea76a3538f5b72c47d899a9">&#9670;&nbsp;</a></span>ADSDataCollector() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ADSDataCollector::ADSDataCollector </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">TwoWire *&#160;</td>
+          <td class="paramname"><em>adsWire</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8889f5b2b0093de422c6bc541ffbfa58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8889f5b2b0093de422c6bc541ffbfa58">&#9670;&nbsp;</a></span>ADSDataCollector() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,8 +199,8 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>analogInputPin</em>&#160;</td>
+          <td class="paramtype">const uint8_t&#160;</td>
+          <td class="paramname"><em>analogInputPin</em> = <code>4</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -360,6 +392,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">ADS1115* ADSDataCollector::_ads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adbf7fa63a36353ddeed29274738321a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf7fa63a36353ddeed29274738321a6">&#9670;&nbsp;</a></span>_adsWire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TwoWire* ADSDataCollector::_adsWire</td>
         </tr>
       </table>
   </td>
