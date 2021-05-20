@@ -22,21 +22,25 @@
 
 ///
 /// Constructing using default channelname
-MPUDataCollector::MPUDataCollector()
+MPUDataCollector::MPUDataCollector(const unsigned int sdaPIN,const unsigned int sclPIN)
 {
     _data = new MPUTaskData();
-    lightWire.setPins(19,18);
+    _sdaPIN = sdaPIN;
+    _sclPIN = sclPIN;
+    lightWire.setPins(_sdaPIN,_sclPIN);
     lightWire.begin();
     _mpu = new MPU6050(lightWire);
 }
 
 ///
 /// Constructing with a channelName
-MPUDataCollector::MPUDataCollector(std::string channelName)
+MPUDataCollector::MPUDataCollector(std::string channelName, const unsigned int sdaPIN ,const unsigned int sclPIN)
 {
     _data = new MPUTaskData();
     _channelName = channelName;
-    lightWire.setPins(19,18);
+    _sdaPIN = sdaPIN;
+    _sclPIN = sclPIN;
+    lightWire.setPins(_sdaPIN,_sclPIN);
     lightWire.begin();
     _mpu = new MPU6050(lightWire);
 }

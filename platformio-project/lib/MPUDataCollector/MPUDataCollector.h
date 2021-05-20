@@ -35,8 +35,8 @@ struct MPUTaskData
 /// Take a copy of this to start implementing your own collector
 class MPUDataCollector : public IDataCollector {
        public:
-              MPUDataCollector();
-              MPUDataCollector(std::string channelName);
+              MPUDataCollector(const unsigned int sdaPIN = GPIO_NUM_19,const unsigned int sclPIN  = GPIO_NUM_18 );
+              MPUDataCollector(std::string channelName,const unsigned int sdaPIN = GPIO_NUM_19,const unsigned int sclPIN  = GPIO_NUM_18 );
               void init(IDataStorage *storage);
               void reInit();
               void sleep();
@@ -47,6 +47,9 @@ class MPUDataCollector : public IDataCollector {
        protected:
               TwoWire lightWire = TwoWire(0);
               MPU6050 *_mpu;
+              
+              int _sdaPIN=GPIO_NUM_19;
+              int _sclPIN=GPIO_NUM_18;
               
               bool _isInitialized = false;
               std::string _channelName = "MPU6050";
