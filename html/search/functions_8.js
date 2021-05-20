@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mpudatacollector_165',['MPUDataCollector',['../class_m_p_u_data_collector.html#a0fe9ca36f3c1e83c66923f0815339067',1,'MPUDataCollector::MPUDataCollector()'],['../class_m_p_u_data_collector.html#af49f0e5e6c1cddab483735b060bd5c6d',1,'MPUDataCollector::MPUDataCollector(std::string channelName)']]]
+  ['mpudatacollector_190',['MPUDataCollector',['../class_m_p_u_data_collector.html#a66efdc85b0171dbba75b88ba378d2f41',1,'MPUDataCollector::MPUDataCollector(const unsigned int sdaPIN=GPIO_NUM_19, const unsigned int sclPIN=GPIO_NUM_18)'],['../class_m_p_u_data_collector.html#ad8bda175323f716b13f7092712b88ee0',1,'MPUDataCollector::MPUDataCollector(std::string channelName, const unsigned int sdaPIN=GPIO_NUM_19, const unsigned int sclPIN=GPIO_NUM_18)']]]
 ];

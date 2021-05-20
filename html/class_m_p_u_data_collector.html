@@ -66,6 +66,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="class_m_p_u_data_collector-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -86,12 +87,12 @@ Inheritance diagram for MPUDataCollector:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0fe9ca36f3c1e83c66923f0815339067"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a0fe9ca36f3c1e83c66923f0815339067">MPUDataCollector</a> ()</td></tr>
-<tr class="memdesc:a0fe9ca36f3c1e83c66923f0815339067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing using default channelname.  <a href="class_m_p_u_data_collector.html#a0fe9ca36f3c1e83c66923f0815339067">More...</a><br /></td></tr>
-<tr class="separator:a0fe9ca36f3c1e83c66923f0815339067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af49f0e5e6c1cddab483735b060bd5c6d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#af49f0e5e6c1cddab483735b060bd5c6d">MPUDataCollector</a> (std::string channelName)</td></tr>
-<tr class="memdesc:af49f0e5e6c1cddab483735b060bd5c6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName.  <a href="class_m_p_u_data_collector.html#af49f0e5e6c1cddab483735b060bd5c6d">More...</a><br /></td></tr>
-<tr class="separator:af49f0e5e6c1cddab483735b060bd5c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66efdc85b0171dbba75b88ba378d2f41"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a66efdc85b0171dbba75b88ba378d2f41">MPUDataCollector</a> (const unsigned int sdaPIN=GPIO_NUM_19, const unsigned int sclPIN=GPIO_NUM_18)</td></tr>
+<tr class="memdesc:a66efdc85b0171dbba75b88ba378d2f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing using default channelname.  <a href="class_m_p_u_data_collector.html#a66efdc85b0171dbba75b88ba378d2f41">More...</a><br /></td></tr>
+<tr class="separator:a66efdc85b0171dbba75b88ba378d2f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8bda175323f716b13f7092712b88ee0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ad8bda175323f716b13f7092712b88ee0">MPUDataCollector</a> (std::string channelName, const unsigned int sdaPIN=GPIO_NUM_19, const unsigned int sclPIN=GPIO_NUM_18)</td></tr>
+<tr class="memdesc:ad8bda175323f716b13f7092712b88ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName.  <a href="class_m_p_u_data_collector.html#ad8bda175323f716b13f7092712b88ee0">More...</a><br /></td></tr>
+<tr class="separator:ad8bda175323f716b13f7092712b88ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af65e6becc61a70d58405419780336d18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#af65e6becc61a70d58405419780336d18">init</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *<a class="el" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)</td></tr>
 <tr class="memdesc:af65e6becc61a70d58405419780336d18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_m_p_u_data_collector.html#af65e6becc61a70d58405419780336d18">More...</a><br /></td></tr>
 <tr class="separator:af65e6becc61a70d58405419780336d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,26 +111,29 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a033acd03cdcabedc2f331b1aa1f18ca6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns this channelsName.  <a href="class_m_p_u_data_collector.html#a033acd03cdcabedc2f331b1aa1f18ca6">More...</a><br /></td></tr>
 <tr class="separator:a033acd03cdcabedc2f331b1aa1f18ca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae6e96c609f8caecb7319c106b0be5524"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ae6e96c609f8caecb7319c106b0be5524">updateDataThread</a> (void *parameter)</td></tr>
+<tr class="separator:ae6e96c609f8caecb7319c106b0be5524"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:aa1f038ed4ca1e6d97e656f5788c15e3b"><td class="memItemLeft" align="right" valign="top">TwoWire&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aa1f038ed4ca1e6d97e656f5788c15e3b">lightWire</a> = TwoWire(0)</td></tr>
+<tr class="separator:aa1f038ed4ca1e6d97e656f5788c15e3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0b8a37db10c9912e6af00d661f45990"><td class="memItemLeft" align="right" valign="top">MPU6050 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ac0b8a37db10c9912e6af00d661f45990">_mpu</a></td></tr>
+<tr class="separator:ac0b8a37db10c9912e6af00d661f45990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5f3c6932f768730e63cef5219b5f7bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#af5f3c6932f768730e63cef5219b5f7bc">_sdaPIN</a> =GPIO_NUM_19</td></tr>
+<tr class="separator:af5f3c6932f768730e63cef5219b5f7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb21f71ac54c6186fd4f70e303580f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aebb21f71ac54c6186fd4f70e303580f4">_sclPIN</a> =GPIO_NUM_18</td></tr>
+<tr class="separator:aebb21f71ac54c6186fd4f70e303580f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a241101406feac25e88f28509d307e577"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a241101406feac25e88f28509d307e577">_isInitialized</a> = false</td></tr>
 <tr class="separator:a241101406feac25e88f28509d307e577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1551d129dc047c83d09dc40c4c1bafc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ad1551d129dc047c83d09dc40c4c1bafc">_channelName</a> = &quot;MPU6050&quot;</td></tr>
 <tr class="separator:ad1551d129dc047c83d09dc40c4c1bafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa50ca3be7e1838978837fbb4ae5328da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smoother.html">Smoother</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aa50ca3be7e1838978837fbb4ae5328da">_smoother_X</a></td></tr>
-<tr class="separator:aa50ca3be7e1838978837fbb4ae5328da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ea89f2be21c97a53e98f905b8a77e17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smoother.html">Smoother</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a1ea89f2be21c97a53e98f905b8a77e17">_smoother_Y</a></td></tr>
-<tr class="separator:a1ea89f2be21c97a53e98f905b8a77e17"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae053a00040f03fc12491bd3b724bd18c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_smoother.html">Smoother</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ae053a00040f03fc12491bd3b724bd18c">_smoother_Z</a></td></tr>
-<tr class="separator:ae053a00040f03fc12491bd3b724bd18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad514567b5d74133efc6a97bca0089eb1"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ad514567b5d74133efc6a97bca0089eb1">_mpuAddr</a> = 0x68</td></tr>
-<tr class="separator:ad514567b5d74133efc6a97bca0089eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3cc7d2427c16932a0a2c32665076daf"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#ac3cc7d2427c16932a0a2c32665076daf">_accelerometer_x</a></td></tr>
-<tr class="separator:ac3cc7d2427c16932a0a2c32665076daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcbe26861ff898a2aabb38714ff90cd4"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#afcbe26861ff898a2aabb38714ff90cd4">_accelerometer_y</a></td></tr>
-<tr class="separator:afcbe26861ff898a2aabb38714ff90cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80b5733ef0ac378e0ee2917a6ed3188b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a80b5733ef0ac378e0ee2917a6ed3188b">_accelerometer_z</a></td></tr>
-<tr class="separator:a80b5733ef0ac378e0ee2917a6ed3188b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa76a3da374f244d5a41d1ce4515cdc06"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#aa76a3da374f244d5a41d1ce4515cdc06">getDataTask</a></td></tr>
+<tr class="separator:aa76a3da374f244d5a41d1ce4515cdc06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cf3e586a90f2aeb8b5517f36bb44577"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_p_u_task_data.html">MPUTaskData</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_m_p_u_data_collector.html#a0cf3e586a90f2aeb8b5517f36bb44577">_data</a></td></tr>
+<tr class="separator:a0cf3e586a90f2aeb8b5517f36bb44577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_i_data_collector"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_i_data_collector')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_i_data_collector.html">IDataCollector</a></td></tr>
 <tr class="memitem:a3c2f03d14b6e3a0a1db5ffccccf68725 inherit pro_attribs_class_i_data_collector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_data_storage.html">IDataStorage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">_dataStorage</a></td></tr>
 <tr class="separator:a3c2f03d14b6e3a0a1db5ffccccf68725 inherit pro_attribs_class_i_data_collector"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,8 +141,8 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_m_p_u_data_collector.html">MPUDataCollector</a> implementing <a class="el" href="class_i_data_collector.html">IDataCollector</a> Take a copy of this to start implementing your own collector </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0fe9ca36f3c1e83c66923f0815339067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fe9ca36f3c1e83c66923f0815339067">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[1/2]</span></h2>
+<a id="a66efdc85b0171dbba75b88ba378d2f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66efdc85b0171dbba75b88ba378d2f41">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,8 +150,19 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">MPUDataCollector::MPUDataCollector </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>sdaPIN</em> = <code>GPIO_NUM_19</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>sclPIN</em> = <code>GPIO_NUM_18</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -156,8 +171,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af49f0e5e6c1cddab483735b060bd5c6d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af49f0e5e6c1cddab483735b060bd5c6d">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[2/2]</span></h2>
+<a id="ad8bda175323f716b13f7092712b88ee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8bda175323f716b13f7092712b88ee0">&#9670;&nbsp;</a></span>MPUDataCollector() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,8 +181,24 @@ Protected Attributes</h2></td></tr>
           <td class="memname">MPUDataCollector::MPUDataCollector </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>sdaPIN</em> = <code>GPIO_NUM_19</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname"><em>sclPIN</em> = <code>GPIO_NUM_18</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -351,73 +382,33 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="ae6e96c609f8caecb7319c106b0be5524"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6e96c609f8caecb7319c106b0be5524">&#9670;&nbsp;</a></span>updateDataThread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MPUDataCollector::updateDataThread </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parameter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac3cc7d2427c16932a0a2c32665076daf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3cc7d2427c16932a0a2c32665076daf">&#9670;&nbsp;</a></span>_accelerometer_x</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int16_t MPUDataCollector::_accelerometer_x</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="afcbe26861ff898a2aabb38714ff90cd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcbe26861ff898a2aabb38714ff90cd4">&#9670;&nbsp;</a></span>_accelerometer_y</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int16_t MPUDataCollector::_accelerometer_y</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a80b5733ef0ac378e0ee2917a6ed3188b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80b5733ef0ac378e0ee2917a6ed3188b">&#9670;&nbsp;</a></span>_accelerometer_z</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int16_t MPUDataCollector::_accelerometer_z</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="ad1551d129dc047c83d09dc40c4c1bafc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1551d129dc047c83d09dc40c4c1bafc">&#9670;&nbsp;</a></span>_channelName</h2>
 
@@ -429,6 +420,28 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::string MPUDataCollector::_channelName = &quot;MPU6050&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0cf3e586a90f2aeb8b5517f36bb44577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cf3e586a90f2aeb8b5517f36bb44577">&#9670;&nbsp;</a></span>_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_m_p_u_task_data.html">MPUTaskData</a>* MPUDataCollector::_data</td>
         </tr>
       </table>
   </td>
@@ -462,8 +475,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad514567b5d74133efc6a97bca0089eb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad514567b5d74133efc6a97bca0089eb1">&#9670;&nbsp;</a></span>_mpuAddr</h2>
+<a id="ac0b8a37db10c9912e6af00d661f45990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0b8a37db10c9912e6af00d661f45990">&#9670;&nbsp;</a></span>_mpu</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -472,7 +485,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const int MPUDataCollector::_mpuAddr = 0x68</td>
+          <td class="memname">MPU6050* MPUDataCollector::_mpu</td>
         </tr>
       </table>
   </td>
@@ -484,8 +497,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa50ca3be7e1838978837fbb4ae5328da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa50ca3be7e1838978837fbb4ae5328da">&#9670;&nbsp;</a></span>_smoother_X</h2>
+<a id="aebb21f71ac54c6186fd4f70e303580f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb21f71ac54c6186fd4f70e303580f4">&#9670;&nbsp;</a></span>_sclPIN</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -494,7 +507,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_smoother.html">Smoother</a>* MPUDataCollector::_smoother_X</td>
+          <td class="memname">int MPUDataCollector::_sclPIN =GPIO_NUM_18</td>
         </tr>
       </table>
   </td>
@@ -506,8 +519,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1ea89f2be21c97a53e98f905b8a77e17"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1ea89f2be21c97a53e98f905b8a77e17">&#9670;&nbsp;</a></span>_smoother_Y</h2>
+<a id="af5f3c6932f768730e63cef5219b5f7bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5f3c6932f768730e63cef5219b5f7bc">&#9670;&nbsp;</a></span>_sdaPIN</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -516,7 +529,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_smoother.html">Smoother</a>* MPUDataCollector::_smoother_Y</td>
+          <td class="memname">int MPUDataCollector::_sdaPIN =GPIO_NUM_19</td>
         </tr>
       </table>
   </td>
@@ -528,8 +541,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae053a00040f03fc12491bd3b724bd18c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae053a00040f03fc12491bd3b724bd18c">&#9670;&nbsp;</a></span>_smoother_Z</h2>
+<a id="aa76a3da374f244d5a41d1ce4515cdc06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76a3da374f244d5a41d1ce4515cdc06">&#9670;&nbsp;</a></span>getDataTask</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -538,7 +551,29 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_smoother.html">Smoother</a>* MPUDataCollector::_smoother_Z</td>
+          <td class="memname">TaskHandle_t MPUDataCollector::getDataTask</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1f038ed4ca1e6d97e656f5788c15e3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1f038ed4ca1e6d97e656f5788c15e3b">&#9670;&nbsp;</a></span>lightWire</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TwoWire MPUDataCollector::lightWire = TwoWire(0)</td>
         </tr>
       </table>
   </td>

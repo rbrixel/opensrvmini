@@ -67,15 +67,6 @@ $(function() {
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a id="index__5F"></a>- _ -</h3><ul>
-<li>_accelerometer_x
-: <a class="el" href="class_m_p_u_data_collector.html#ac3cc7d2427c16932a0a2c32665076daf">MPUDataCollector</a>
-</li>
-<li>_accelerometer_y
-: <a class="el" href="class_m_p_u_data_collector.html#afcbe26861ff898a2aabb38714ff90cd4">MPUDataCollector</a>
-</li>
-<li>_accelerometer_z
-: <a class="el" href="class_m_p_u_data_collector.html#a80b5733ef0ac378e0ee2917a6ed3188b">MPUDataCollector</a>
-</li>
 <li>_address
 : <a class="el" href="class_a_d_s_data_collector.html#a3849966ff078d6c4c945eb9f42ab68fc">ADSDataCollector</a>
 , <a class="el" href="class_b_m_e_data_collector.html#ad8070532869fcc0907e54610e498f6f4">BMEDataCollector</a>
@@ -101,6 +92,9 @@ $(function() {
 </li>
 <li>_config1
 : <a class="el" href="class_template_data_collector.html#ab305d98d110d6caecf9cdd376d3545a1">TemplateDataCollector</a>
+</li>
+<li>_data
+: <a class="el" href="class_m_p_u_data_collector.html#a0cf3e586a90f2aeb8b5517f36bb44577">MPUDataCollector</a>
 </li>
 <li>_dataStorage
 : <a class="el" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">IDataActor</a>
@@ -133,8 +127,8 @@ $(function() {
 <li>_map
 : <a class="el" href="class_data_storage.html#a7682ad2fdd8998f9fc3ee5ec3c5c75dd">DataStorage</a>
 </li>
-<li>_mpuAddr
-: <a class="el" href="class_m_p_u_data_collector.html#ad514567b5d74133efc6a97bca0089eb1">MPUDataCollector</a>
+<li>_mpu
+: <a class="el" href="class_m_p_u_data_collector.html#ac0b8a37db10c9912e6af00d661f45990">MPUDataCollector</a>
 </li>
 <li>_needsReInit
 : <a class="el" href="class_template_data_collector.html#abce1b82599e729ef9c011c4f9e56b235">TemplateDataCollector</a>
@@ -167,14 +161,11 @@ $(function() {
 <li>_pService
 : <a class="el" href="class_b_t_data_actor.html#a97c6c17b7dfaf642a6e573f1628d6064">BTDataActor</a>
 </li>
-<li>_smoother_X
-: <a class="el" href="class_m_p_u_data_collector.html#aa50ca3be7e1838978837fbb4ae5328da">MPUDataCollector</a>
+<li>_sclPIN
+: <a class="el" href="class_m_p_u_data_collector.html#aebb21f71ac54c6186fd4f70e303580f4">MPUDataCollector</a>
 </li>
-<li>_smoother_Y
-: <a class="el" href="class_m_p_u_data_collector.html#a1ea89f2be21c97a53e98f905b8a77e17">MPUDataCollector</a>
-</li>
-<li>_smoother_Z
-: <a class="el" href="class_m_p_u_data_collector.html#ae053a00040f03fc12491bd3b724bd18c">MPUDataCollector</a>
+<li>_sdaPIN
+: <a class="el" href="class_m_p_u_data_collector.html#af5f3c6932f768730e63cef5219b5f7bc">MPUDataCollector</a>
 </li>
 <li>_speedCallBack
 : <a class="el" href="class_b_t_data_actor.html#aa00c6b54ed56533071e1c68c7c13720f">BTDataActor</a>
@@ -194,6 +185,15 @@ $(function() {
 
 
 <h3><a id="index_a"></a>- a -</h3><ul>
+<li>accX
+: <a class="el" href="struct_m_p_u_task_data.html#a5153f7ede74d4b70e581dee607775142">MPUTaskData</a>
+</li>
+<li>accY
+: <a class="el" href="struct_m_p_u_task_data.html#a3eea977b4896b764381a1f89a3662e4a">MPUTaskData</a>
+</li>
+<li>accZ
+: <a class="el" href="struct_m_p_u_task_data.html#ae51cd6fa752b2a6ca3b969f4ab679f6b">MPUTaskData</a>
+</li>
 <li>action()
 : <a class="el" href="class_b_t_data_actor.html#a1b9cc3e2b8042018a037e839dccb5e74">BTDataActor</a>
 , <a class="el" href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">IDataActor</a>
@@ -205,6 +205,21 @@ $(function() {
 </li>
 <li>ADSDataCollector()
 : <a class="el" href="class_a_d_s_data_collector.html#afad6c30a75506705ec7b03fd55a7f705">ADSDataCollector</a>
+</li>
+<li>angleAccX
+: <a class="el" href="struct_m_p_u_task_data.html#aa0674fa96574cefecd023edef1c8cad4">MPUTaskData</a>
+</li>
+<li>angleAccY
+: <a class="el" href="struct_m_p_u_task_data.html#a68d4967a20ce8b5208484204c016e8e4">MPUTaskData</a>
+</li>
+<li>angleX
+: <a class="el" href="struct_m_p_u_task_data.html#af606c8cdc84ff89f561d496ee52084b7">MPUTaskData</a>
+</li>
+<li>angleY
+: <a class="el" href="struct_m_p_u_task_data.html#afc916042e7fff2883103c561504631c0">MPUTaskData</a>
+</li>
+<li>angleZ
+: <a class="el" href="struct_m_p_u_task_data.html#ac04433466f1d845c55f80e11ec8cc22d">MPUTaskData</a>
 </li>
 </ul>
 
@@ -245,6 +260,9 @@ $(function() {
 : <a class="el" href="class_data_storage.html#af18d849e1d13b2379df826883bdda2e5">DataStorage</a>
 , <a class="el" href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">IDataStorage</a>
 </li>
+<li>getDataTask
+: <a class="el" href="class_m_p_u_data_collector.html#aa76a3da374f244d5a41d1ce4515cdc06">MPUDataCollector</a>
+</li>
 <li>getMapCopy()
 : <a class="el" href="class_data_storage.html#a069d8db21e899634cd4d8899b448aed0">DataStorage</a>
 , <a class="el" href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">IDataStorage</a>
@@ -261,6 +279,15 @@ $(function() {
 <li>getSmoothed()
 : <a class="el" href="class_smoother.html#a7febf5fc62a3113db8fbf38f81c464d3">Smoother</a>
 </li>
+<li>gyroX
+: <a class="el" href="struct_m_p_u_task_data.html#a67cad14d023bf4a4a3383ae9f82e86e1">MPUTaskData</a>
+</li>
+<li>gyroY
+: <a class="el" href="struct_m_p_u_task_data.html#a5ab0a417f3fa36ebd5e0ab1834646730">MPUTaskData</a>
+</li>
+<li>gyroZ
+: <a class="el" href="struct_m_p_u_task_data.html#a85995bec144dfe378bfb0e4f2c20c3d5">MPUTaskData</a>
+</li>
 </ul>
 
 
@@ -276,6 +303,9 @@ $(function() {
 , <a class="el" href="class_range_data_actor.html#afc1d2289b4ea63d6106aeb6f35a078de">RangeDataActor</a>
 , <a class="el" href="class_template_data_collector.html#a2baa02b46a034bd962797e20abf435e4">TemplateDataCollector</a>
 </li>
+<li>initializedMPU
+: <a class="el" href="struct_m_p_u_task_data.html#ad7de74af0100de5f6dbebc203c3f31e2">MPUTaskData</a>
+</li>
 <li>isChannelExistant()
 : <a class="el" href="class_data_storage.html#a2520252b923415fcae10bba0e43dead0">DataStorage</a>
 , <a class="el" href="class_i_data_storage.html#adbe6dd46d76e2bb31064d58a71b33018">IDataStorage</a>
@@ -286,9 +316,16 @@ $(function() {
 </ul>
 
 
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>lightWire
+: <a class="el" href="class_m_p_u_data_collector.html#aa1f038ed4ca1e6d97e656f5788c15e3b">MPUDataCollector</a>
+</li>
+</ul>
+
+
 <h3><a id="index_m"></a>- m -</h3><ul>
 <li>MPUDataCollector()
-: <a class="el" href="class_m_p_u_data_collector.html#a0fe9ca36f3c1e83c66923f0815339067">MPUDataCollector</a>
+: <a class="el" href="class_m_p_u_data_collector.html#a66efdc85b0171dbba75b88ba378d2f41">MPUDataCollector</a>
 </li>
 </ul>
 
@@ -368,6 +405,9 @@ $(function() {
 
 
 <h3><a id="index_t"></a>- t -</h3><ul>
+<li>temp
+: <a class="el" href="struct_m_p_u_task_data.html#a015d91d1ea0b69e426d2fc08169a773f">MPUTaskData</a>
+</li>
 <li>TemplateDataCollector()
 : <a class="el" href="class_template_data_collector.html#a7c25377dae7a50f5c0317ee9827dcbfc">TemplateDataCollector</a>
 </li>
@@ -382,6 +422,9 @@ $(function() {
 , <a class="el" href="class_i_data_collector.html#af4ab1e0c6fdd0f8aca3c067e9b573d18">IDataCollector</a>
 , <a class="el" href="class_m_p_u_data_collector.html#ae496df121f658a03713ef0248551510a">MPUDataCollector</a>
 , <a class="el" href="class_template_data_collector.html#a3a6b58b52c69fd61b0acdf858fb62351">TemplateDataCollector</a>
+</li>
+<li>updateDataThread()
+: <a class="el" href="class_m_p_u_data_collector.html#ae6e96c609f8caecb7319c106b0be5524">MPUDataCollector</a>
 </li>
 </ul>
 </div><!-- contents -->
