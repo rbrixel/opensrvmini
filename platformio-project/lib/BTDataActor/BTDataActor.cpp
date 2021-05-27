@@ -109,10 +109,10 @@ void BTDataActor::action(IDataStorage *dataStorage)
     for (it = data.begin(); it != data.end(); it++)
     {
         char tmp[255];
-        sprintf(tmp, "%s=%.2f##",it->first.c_str(),it->second);
+        sprintf(tmp, "%s=%.2f\n##",it->first.c_str(),it->second);
         value.append( tmp);
     }
-    //Serial.println(value.c_str());
+    Serial.println(value.c_str());
     _pCharacteristic->setValue(value.c_str());
 }
 

@@ -17,7 +17,14 @@ ADSDataCollector::ADSDataCollector(std::string channelName)
     _ads = new ADS1115(_address);
 }
 
-ADSDataCollector::ADSDataCollector(std::string channelName, byte address,uint8_t analogInputPin)
+ADSDataCollector::ADSDataCollector(std::string channelName, TwoWire *adsWire )
+{
+    _channelName = channelName;
+    _adsWire = adsWire;
+    _ads = new ADS1115(_address, adsWire);
+}
+
+ADSDataCollector::ADSDataCollector(std::string channelName, byte address, const uint8_t analogInputPin)
 {
     _channelName = channelName;
     _address=address;
