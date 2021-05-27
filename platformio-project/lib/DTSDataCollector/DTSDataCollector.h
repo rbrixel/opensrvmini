@@ -36,7 +36,7 @@ class DTSDataCollector : public IDataCollector {
               DallasTemperature *_ds18sensors;
 
               std::string _channelName = "DTSCollector";
-              uint8_t _oneWirePin = 5;
+              uint8_t _oneWirePin = GPIO_NUM_23;
               double _temperatureOffset = 0;
               double _temp = 0;
               double _pressure = 0;    
