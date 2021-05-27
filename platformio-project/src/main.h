@@ -14,6 +14,7 @@
 #include <IDataActor.h>
 #include <RangeDataActor.h>
 #include <BTDataActor.h>
+#include <DisplayDataActor.h>
 
 // void initOTA();
 

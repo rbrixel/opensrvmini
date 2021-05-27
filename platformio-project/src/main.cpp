@@ -39,12 +39,13 @@
 
 #include <main.h>
 
+
 // Sample Usage of Interfaces for Data Collection
 std::vector<IDataCollector *> dataCollectors;
 std::vector<IDataActor *> dataActors;
 
 IDataStorage *storage = new DataStorage();
-volatile int speed=1000;
+volatile int speed=250;
 void setSpeed(int s)
 {
   Serial.printf("Set Speed to %d",s);
@@ -69,6 +70,7 @@ void setup()
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_10,true )); // Raise PIN 10 to HIGH as long as board voltage is good
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_11,true )); // Raise PIN 11 as alarm to HIGH as voltage drops below 11.5V
   dataActors.push_back(new BTDataActor("OpenSRVmini")); 
+  dataActors.push_back(new DisplayDataActor("Channel-MPU.ACAX")); 
 
   Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
   Serial.printf("INIT: %d Actors found\n", dataActors.size());
