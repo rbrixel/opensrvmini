@@ -44,7 +44,9 @@ void DisplayDataActor::init()
     _lcd->begin(16,2);
     _lcd->clear();
     _lcd->setCursor(0, 0);
+    
     _lcd->printf("%.16s",_observedChannel.c_str());
+
 }
 
 void DisplayDataActor::setSpeedCallback(void (*spcb)(int s))
@@ -69,8 +71,14 @@ void DisplayDataActor::action(IDataStorage *dataStorage)
         //Serial.printf("No Action \n");
         return;
     }
+  
+    long val = (dataStorage->getData(_observedChannel) * 1000);
+    val = map (val,-40000,+40000,1,15);
     _lcd->setCursor(0,1);
-    _lcd->printf("%.2f",dataStorage->getData(_observedChannel));
+    _lcd->print("                ");
+    _lcd->setCursor(val,1);
+    _lcd->print("!");
+    //_lcd->printf("%.2f",dataStorage->getData(_observedChannel));
 }
 
 ///
