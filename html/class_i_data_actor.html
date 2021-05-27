@@ -80,8 +80,9 @@ Inheritance diagram for IDataActor:</div>
  <div class="center">
   <img src="class_i_data_actor.png" usemap="#IDataActor_map" alt=""/>
   <map id="IDataActor_map" name="IDataActor_map">
-<area href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth." alt="BTDataActor" shape="rect" coords="0,56,105,80"/>
-<area href="class_range_data_actor.html" alt="RangeDataActor" shape="rect" coords="115,56,220,80"/>
+<area href="class_b_t_data_actor.html" title="BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth." alt="BTDataActor" shape="rect" coords="0,56,111,80"/>
+<area href="class_display_data_actor.html" alt="DisplayDataActor" shape="rect" coords="121,56,232,80"/>
+<area href="class_range_data_actor.html" alt="RangeDataActor" shape="rect" coords="242,56,353,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -131,7 +132,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>called after init or reinit, not called after sleep Creates an action based on given Data in dataStorage Need some info to know what data channel should be used </p>
 
-<p>Implemented in <a class="el" href="class_range_data_actor.html#a4e711232aa32db796f1c77e83e2c6d65">RangeDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a1b9cc3e2b8042018a037e839dccb5e74">BTDataActor</a>.</p>
+<p>Implemented in <a class="el" href="class_range_data_actor.html#a4e711232aa32db796f1c77e83e2c6d65">RangeDataActor</a>, <a class="el" href="class_display_data_actor.html#aaa1f7270335896f03549cb7d525bc347">DisplayDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a1b9cc3e2b8042018a037e839dccb5e74">BTDataActor</a>.</p>
 
 </div>
 </div>
@@ -159,7 +160,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Called once after Instace creation Used to setup BUS protocoll etc used for communication </p>
 
-<p>Implemented in <a class="el" href="class_range_data_actor.html#afc1d2289b4ea63d6106aeb6f35a078de">RangeDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a103c34206e04fa1c2f250eb2dc8f8dd3">BTDataActor</a>.</p>
+<p>Implemented in <a class="el" href="class_range_data_actor.html#afc1d2289b4ea63d6106aeb6f35a078de">RangeDataActor</a>, <a class="el" href="class_display_data_actor.html#ac5b4372cd9ce7e3931e81f42f7f4c2c8">DisplayDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a103c34206e04fa1c2f250eb2dc8f8dd3">BTDataActor</a>.</p>
 
 </div>
 </div>
@@ -187,7 +188,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Can be called multiple times after init used to reinitialize used protocolls in case of an overlaying event (wake up) but keeps the allready defined dataStorage called after sleep </p>
 
-<p>Implemented in <a class="el" href="class_range_data_actor.html#af57774293515ecae5dc4f933e42f5953">RangeDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a1981c568413be377b4e3c3577a3be5c4">BTDataActor</a>.</p>
+<p>Implemented in <a class="el" href="class_range_data_actor.html#af57774293515ecae5dc4f933e42f5953">RangeDataActor</a>, <a class="el" href="class_display_data_actor.html#a5d0bb6f7917fcb2357fdae14fef01e85">DisplayDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a1981c568413be377b4e3c3577a3be5c4">BTDataActor</a>.</p>
 
 </div>
 </div>
@@ -215,7 +216,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_range_data_actor.html#ac199ba10ab982f5cea5ae4ae0f4bf4c7">RangeDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#adff5358b758e021fa7566420615bf2ac">BTDataActor</a>.</p>
+<p>Implemented in <a class="el" href="class_range_data_actor.html#ac199ba10ab982f5cea5ae4ae0f4bf4c7">RangeDataActor</a>, <a class="el" href="class_display_data_actor.html#a8a884c2a94b5c725a141fc5f69fc3f96">DisplayDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#adff5358b758e021fa7566420615bf2ac">BTDataActor</a>.</p>
 
 </div>
 </div>
@@ -243,7 +244,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>informal call that the System wants to save current, used by implemenation to shutdown not used parts (timers, interrupts etc) no update calls should be done after sleep has been called. Wakeup is triggered by reinit </p>
 
-<p>Implemented in <a class="el" href="class_range_data_actor.html#ae2849e5d5018237f4ede9f243cf8568e">RangeDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a39a4a1b281ef59bba095d06361008322">BTDataActor</a>.</p>
+<p>Implemented in <a class="el" href="class_range_data_actor.html#ae2849e5d5018237f4ede9f243cf8568e">RangeDataActor</a>, <a class="el" href="class_display_data_actor.html#adba9596e1ba799946c78ddcf3cd4c0de">DisplayDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#a39a4a1b281ef59bba095d06361008322">BTDataActor</a>.</p>
 
 </div>
 </div>
