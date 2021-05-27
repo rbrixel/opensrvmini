@@ -40,8 +40,8 @@ class BMEDataCollector : public IDataCollector {
               double _temp = 0;
               double _pressure = 0;    
               bool _bmeIsReady=0;
-              byte _i2cSDA=25;
-              byte _i2cSCL=26;
+              byte _i2cSDA=GPIO_NUM_21;
+              byte _i2cSCL=GPIO_NUM_22;
               byte _address=0x76;
 };
 

@@ -59,9 +59,9 @@ void setup()
   /* *******************************************************************************
       Create Datacollectors 
   */
-  //dataCollectors.push_back(new BMEDataCollector("Channel-BME"));  // Get Temperature and Pressure / Uses Wire for communication
-  //dataCollectors.push_back(new ADSDataCollector("Channel-ADS", &Wire));  // get Board Voltage / Uses the Wire for communication. Wire is setup by BME Internal controller allready
-  //dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));  // get outer temperature
+  dataCollectors.push_back(new BMEDataCollector("Channel-BME"));  // Get Temperature and Pressure / Uses Wire for communication
+  dataCollectors.push_back(new ADSDataCollector("Channel-ADS", &Wire));  // get Board Voltage / Uses the Wire for communication. Wire is setup by BME Internal controller allready
+  dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));  // get outer temperature
   dataCollectors.push_back(new MPUDataCollector("Channel-MPU", GPIO_NUM_19, GPIO_NUM_18));  // get outer gyro acc / Setup to I2C to 18 and 19 to ensure asnyc polling is not disturbing BME I2C
 
   /* *******************************************************************************

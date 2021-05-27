@@ -41,9 +41,9 @@ MPUDataCollector::MPUDataCollector(std::string channelName, const unsigned int s
     _channelName = channelName;
     _sdaPIN = sdaPIN;
     _sclPIN = sclPIN;
-    _lightWire = new TwoWire(0);
+    _lightWire = new TwoWire(1);
     _lightWire->setPins(_sdaPIN,_sclPIN);
-    _lightWire->begin();
+    _lightWire->begin(_sdaPIN,_sclPIN);
     _mpu = new MPU6050(*_lightWire);
 }
 
