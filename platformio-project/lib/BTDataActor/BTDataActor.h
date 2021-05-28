@@ -37,7 +37,6 @@ class BTDataActor : public IDataActor , public BLEServerCallbacks {
               void onDisconnect(BLEServer* pServer);
               void onConnect(BLEServer* pServer);
        protected:
-              //BluetoothSerial _serialBT;
               BLEServer *_pServer;
               BLEService *_pService;
               BLECharacteristic *_pCharacteristic;
@@ -45,7 +44,6 @@ class BTDataActor : public IDataActor , public BLEServerCallbacks {
               BLEAdvertisementData *_pAdvertisementData;
               void (*_speedCallBack)(int s);
               std::string _deviceName;
-
 };
 
 #endif

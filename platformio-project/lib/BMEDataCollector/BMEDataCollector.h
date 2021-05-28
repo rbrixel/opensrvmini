@@ -19,7 +19,6 @@
 
 ///
 /// BMEDataCollector implementing IDataCollector
-/// used to collect temperature and pressure from a BME280 sensor
 class BMEDataCollector : public IDataCollector {
        public:
               BMEDataCollector(std::string channelName);
