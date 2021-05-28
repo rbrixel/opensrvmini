@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>OpenSRV Mini: Main Page</title>
+<title>OpenSRV Mini: OpenSRVmini</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,11 +63,43 @@ $(function() {
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">OpenSRV Mini Documentation</div>  </div>
+<div class="title">OpenSRVmini </div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="Synopsis"></a>
+Synopsis</h1>
+<p>EN: OpenSRVmini is suitable for mobile homes and caravans. You can use it to measure the outside temperature, the inside temperature and the air humidity. Furthermore, a position sensor is included! DE: OpenSRVmini ist für Wohnmobile, sowie Wohnwägen geeignet. Du kannst damit die Außentemperatur, die Innentemperatur und die -Luftfeuchte messen. Des Weiteren ist ein Lagesensor dabei!</p>
+<h1><a class="anchor" id="Hardware"></a>
+Hardware</h1>
+<p>Hardware:</p><ul>
+<li>ESP32 "Dev Kit"</li>
+<li>BME280 (temperature, humidity and air pressure for indoor)</li>
+<li>MPU-6050 (3-axis-gyroscope)</li>
+<li>DS18B20 (waterproof for outdoor measurement)</li>
+<li>ADS1115 (4-Channel, 16-Bit AD, i2c)</li>
+</ul>
+<h1><a class="anchor" id="Info"></a>
+Info</h1>
+<ul>
+<li>I use the ADS1115-AD-Converter, because of the bad AD in the ESP32</li>
+<li>Wifi is only used for OTA-Update</li>
+<li>Bluetooth is used for communication with smartphone-app</li>
+</ul>
+<h1><a class="anchor" id="Libs"></a>
+Libs</h1>
+<p>From PlatformIO INI</p><ul>
+<li>ks-tec/BME280_I2C @ ^1.4.1</li>
+<li>paulstoffregen/OneWire @ ^2.3.5</li>
+<li>milesburton/DallasTemperature @ ^3.9.1</li>
+<li>robtillaart/ADS1X15 @ ^0.3.0</li>
+<li>adafruit/Adafruit MPU6050 @ ^2.0.4</li>
+</ul>
+<h1><a class="anchor" id="Contact"></a>
+Contact</h1>
+<p>Author: René Brixel <a href="#" onclick="location.href='mai'+'lto:'+'mai'+'l@'+'cam'+'pi'+'ngt'+'ec'+'h.d'+'e'; return false;">mail@<span style="display: none;">.nosp@m.</span>camp<span style="display: none;">.nosp@m.</span>ingte<span style="display: none;">.nosp@m.</span>ch.d<span style="display: none;">.nosp@m.</span>e</a> Support: Frank Weichert <a href="#" onclick="location.href='mai'+'lto:'+'ope'+'ns'+'rvm'+'in'+'i@h'+'um'+'anb'+'yt'+'e.d'+'e'; return false;">opens<span style="display: none;">.nosp@m.</span>rvmi<span style="display: none;">.nosp@m.</span>ni@hu<span style="display: none;">.nosp@m.</span>manb<span style="display: none;">.nosp@m.</span>yte.d<span style="display: none;">.nosp@m.</span>e</a> (@weichei) Date: 2021-04-22 (not so, but really initial Sketch) Version: 20210422-1 Web: <a href="https://campingtech.de/opensrv">https://campingtech.de/opensrv</a> GitHub: <a href="https://github.com/rbrixel">https://github.com/rbrixel</a> </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
