@@ -1,14 +1,16 @@
-/*
- * OpenSRVmini
- * -----------
- * 
+/*! \mainpage OpenSRVmini
+ *
+ * \section Synopsis
+ *
  * EN: OpenSRVmini is suitable for mobile homes and caravans. You can use it to
  *     measure the outside temperature, the inside temperature and the air humidity.
  *     Furthermore, a position sensor is included!
  * DE: OpenSRVmini ist für Wohnmobile, sowie Wohnwägen geeignet. Du kannst damit
  *     die Außentemperatur, die Innentemperatur und die -Luftfeuchte messen.
  *     Des Weiteren ist ein Lagesensor dabei!
- * 
+ *
+ * \section Hardware
+ *
  * Hardware: 
  * - ESP32 "Dev Kit"
  * - BME280 (temperature, humidity and air pressure for indoor)
@@ -16,18 +18,20 @@
  * - DS18B20 (waterproof for outdoor measurement)
  * - ADS1115 (4-Channel, 16-Bit AD, i2c)
  * 
- * Info:
+ * \section Info
  * - I use the ADS1115-AD-Converter, because of the bad AD in the ESP32
  * - Wifi is only used for OTA-Update
  * - Bluetooth is used for communication with smartphone-app
  * 
- * Libs: From PlatformIO INI 
+ * \section Libs
+ *   From PlatformIO INI 
  * - ks-tec/BME280_I2C @ ^1.4.1
  * - paulstoffregen/OneWire @ ^2.3.5
  * - milesburton/DallasTemperature @ ^3.9.1
  * - robtillaart/ADS1X15 @ ^0.3.0
  * - adafruit/Adafruit MPU6050 @ ^2.0.4
  * 
+ * \section Contact
  * Author:  René Brixel <mail@campingtech.de>
  * Support: Frank Weichert <opensrvmini@humanbyte.de> (@weichei)
  * Date:    2021-04-22 (not so, but really initial Sketch)
