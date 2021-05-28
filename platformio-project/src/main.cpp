@@ -45,9 +45,9 @@
 
 #define OUTPUT_ON
 // Sample Usage of Interfaces for Data Collection
-std::vector<IDataCollector *> dataCollectors;
-std::vector<IDataActor *> dataActors;
-IDataStorage *storage = new DataStorage();
+std::vector<IDataCollector *> dataCollectors; //!< all Collectors of this ESP 
+std::vector<IDataActor *> dataActors; //!< all Actors which will be active here
+IDataStorage *storage = new DataStorage();  //!< the Storage where all are working on
 
 volatile int speed=250;
 
