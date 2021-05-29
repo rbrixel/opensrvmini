@@ -1,3 +1,4 @@
+#include <Smoother.h>
 /**
  * Smoother.h - Library for smoothing inputs
  * stores all inputs in a buffer with a given size at construction.
@@ -5,10 +6,7 @@
  * and an average of the remaining items is calculated
  * 
  * Frank Weichert
-*/
-#include <Smoother.h>
-
-/**
+ * 
  * New Instance of a smoother object
  * @param arraySize the site of the internal array to build up. Will affect the latency of the smoothing effect
 */
@@ -102,6 +100,8 @@ void Smoother::debugArray(char*tag, int16_t *arr)
 
 /**
  * returns the smooth calculated value
+ * @see setSmoothingActive(bool active) 
+ * @return the smoothed value if smoothing is active, otherwise the last pushed value
 */
 int16_t Smoother::getSmoothed()
 {
