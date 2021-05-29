@@ -103,6 +103,13 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="_smoother_8h.html">Smoother.h</a> - Library for smoothing inputs stores all inputs in a buffer with a given size at construction. to get a smoothed value the content will be sortet, min and max values will be removed and an average of the remaining items is calculated</p>
+<p>Frank Weichert New Instance of a smoother object </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arraySize</td><td>the site of the internal array to build up. Will affect the latency of the smoothing effect </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -121,6 +128,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Cleans all internal arrays and values </p>
 
 </div>
 </div>
@@ -138,6 +146,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>returns the smooth calculated value </p>
 
 </div>
 </div>
@@ -156,6 +165,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Inserts a value at the current position in the internal array </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>the value to be stored </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -174,6 +189,12 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Switched smoothing on and off </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">active</td><td>true if smoothing is on </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
