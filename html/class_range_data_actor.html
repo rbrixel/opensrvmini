@@ -349,7 +349,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void RangeDataActor::setSpeedCallback </td>
           <td>(</td>
           <td class="paramtype">void(*)(int s)&#160;</td>
-          <td class="paramname"><em>spcb</em></td><td>)</td>
+          <td class="paramname"><em>fcnPtr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -359,6 +359,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>informal call that the System wants to save current, used by implemenation to shutdown not used parts (timers, interrupts etc) no update calls should be done after sleep has been called. Wakeup is triggered by reinit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fcnPtr</td><td>pointer to a callback function accepting an int for ms update </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_i_data_actor.html#ad20dde7042b210d131f62a1571fbac26">IDataActor</a>.</p>
 

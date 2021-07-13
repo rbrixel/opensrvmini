@@ -157,6 +157,23 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p><a class="el" href="_display_data_actor_8cpp.html">DisplayDataActor.cpp</a></p>
+<p>Created on: May 2021 Author: Frank Weichert Default connectins for a Devkit 4 </p><table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Display pinname   </th><th class="markdownTableHeadNone">Display pin   </th><th class="markdownTableHeadNone">ESP GPIO pin    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">rs   </td><td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">GPIO_NUM_25    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">enable   </td><td class="markdownTableBodyNone">6   </td><td class="markdownTableBodyNone">GPIO_NUM_26    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">d0   </td><td class="markdownTableBodyNone">11   </td><td class="markdownTableBodyNone">GPIO_NUM_0    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">d1   </td><td class="markdownTableBodyNone">12   </td><td class="markdownTableBodyNone">GPIO_NUM_4    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">d2   </td><td class="markdownTableBodyNone">13   </td><td class="markdownTableBodyNone">GPIO_NUM_16    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">d3   </td><td class="markdownTableBodyNone">14   </td><td class="markdownTableBodyNone">GPIO_NUM_17   </td></tr>
+</table>
 <p>Instanciation of Display Actor A default 16/2 display is used, first line contains the observed channel, second line the value. observedChannel is the channel in Datasotrage, this will be displayed on a 16,2 display in <a class="el" href="class_display_data_actor.html#aaa1f7270335896f03549cb7d525bc347">action()</a> method <br  />
  </p>
 
@@ -365,7 +382,7 @@ Protected Attributes</h2></td></tr>
           <td class="memname">void DisplayDataActor::setSpeedCallback </td>
           <td>(</td>
           <td class="paramtype">void(*)(int s)&#160;</td>
-          <td class="paramname"><em>spcb</em></td><td>)</td>
+          <td class="paramname"><em>fcnPtr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -375,6 +392,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>informal call that the System wants to save current, used by implemenation to shutdown not used parts (timers, interrupts etc) no update calls should be done after sleep has been called. Wakeup is triggered by reinit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fcnPtr</td><td>pointer to a callback function accepting an int for ms update </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implements <a class="el" href="class_i_data_actor.html#ad20dde7042b210d131f62a1571fbac26">IDataActor</a>.</p>
 

@@ -215,6 +215,12 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>informal call that the System wants to save current, used by implemenation to shutdown not used parts (timers, interrupts etc) no update calls should be done after sleep has been called. Wakeup is triggered by reinit </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fcnPtr</td><td>pointer to a callback function accepting an int for ms update </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_range_data_actor.html#ac199ba10ab982f5cea5ae4ae0f4bf4c7">RangeDataActor</a>, <a class="el" href="class_display_data_actor.html#a8a884c2a94b5c725a141fc5f69fc3f96">DisplayDataActor</a>, and <a class="el" href="class_b_t_data_actor.html#adff5358b758e021fa7566420615bf2ac">BTDataActor</a>.</p>
 
