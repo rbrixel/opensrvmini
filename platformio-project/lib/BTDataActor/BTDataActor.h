@@ -17,10 +17,10 @@
 
 // See the following for generating UUIDs:
 // https://www.uuidgenerator.net/
-
-#define SERVICE_UUID        "e07ec36a-ab39-11eb-bcbc-0242ac130002"
+#define SERVICE_UUID        "43633cad-1a87-42a6-9cde-7e2d437846dd" 
+//"e07ec36a-ab39-11eb-bcbc-0242ac130002"
 #define CHARACTERISTIC_UUID "e51a315c-ab39-11eb-bcbc-0242ac130002"
-#define CHARACTERISTIC2_UUID "f53ab440-b18c-11eb-8529-0242ac130003"
+//#define CHARACTERISTIC2_UUID "f53ab440-b18c-11eb-8529-0242ac130003"
 
 ///
 /// BTDataActor is configured to observe a datastorage and sends out all Data via Bluetooth

@@ -50,7 +50,7 @@ void BTDataActor::onConnect(BLEServer* pServer) {
 void BTDataActor::onDisconnect(BLEServer* pServer) {
   Serial.println("DISConnected");
   _pAdvertising->start();
-  _speedCallBack(5000);
+ // _speedCallBack(5000);
 }
 
 ///
@@ -67,27 +67,37 @@ void BTDataActor::init()
     // _serialBT.begin("ESP32"); //Name des ESP32;;
     BLEDevice::init(_deviceName);
     _pServer = BLEDevice::createServer();
-
     _pService = _pServer->createService(SERVICE_UUID);
- 
+
     _pCharacteristic = _pService->createCharacteristic(
                                             CHARACTERISTIC_UUID,
                                             BLECharacteristic::PROPERTY_READ 
+                                            | BLECharacteristic::PROPERTY_WRITE
+                                           // | BLECharacteristic::PROPERTY_NOTIFY 
+                                            //| BLECharacteristic::PROPERTY_INDICATE
                                         );
                                         //| BLECharacteristic::PROPERTY_WRITE
 
-    _pCharacteristic->setValue("");
+    //BLEDescriptor *desc = new BLEDescriptor(serviceUUID , 255);
+    //_pCharacteristic->addDescriptor(desc);
+    _pCharacteristic->setValue("Hello World");
     _pService->start();
     
+
     _pServer->setCallbacks(this);
-
     _pAdvertising = _pServer->getAdvertising();
-    _pAdvertisementData = new BLEAdvertisementData();
+    _pAdvertising->addServiceUUID(SERVICE_UUID);
+    _pAdvertising->setScanResponse(true);
 
+   // _pAdvertising->setMinPreferred(0x06);  // functions that help with iPhone connections issue
+   // _pAdvertising->setMinPreferred(0x12);
+
+
+   //_pAdvertisementData = new BLEAdvertisementData();
     //BLEAdvertisementData advertisementData;
-    _pAdvertisementData->setManufacturerData("  OpenSRVmini");
-    _pAdvertisementData->setShortName("osrv");
-    _pAdvertising->setAdvertisementData(*_pAdvertisementData);
+    //_pAdvertisementData->setManufacturerData("  OpenSRVmini");
+    //_pAdvertisementData->setShortName("osrv");
+    //_pAdvertising->setAdvertisementData(*_pAdvertisementData);
     _pAdvertising->start();
 }
 
@@ -109,11 +119,13 @@ void BTDataActor::action(IDataStorage *dataStorage)
     for (it = data.begin(); it != data.end(); it++)
     {
         char tmp[255];
-        sprintf(tmp, "%s=%.2f\n##",it->first.c_str(),it->second);
+        sprintf(tmp, "%s=%.2f\n",it->first.c_str(),it->second);
+        //sprintf(tmp, "%.2f#",it->second);
         value.append( tmp);
     }
-    Serial.println(value.c_str());
+    //Serial.println(value.c_str());
     _pCharacteristic->setValue(value.c_str());
+    _pCharacteristic->notify(); 
 }
 
 ///

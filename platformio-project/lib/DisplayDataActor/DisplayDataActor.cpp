@@ -1,17 +1,18 @@
-/*
- * DisplayDataActor.cpp
- *
- *  Created on: May 2021
- *      Author: Frank Weichert
- * Default connectins for a Devkit 4
- * Display pinname | Display pin | ESP GPIO pin
- * rs              |   4         | GPIO_NUM_25
- * enable          |   6         | GPIO_NUM_26
- * d0              |  11         | GPIO_NUM_0
- * d1              |  12         | GPIO_NUM_4
- * d2              |  13         | GPIO_NUM_16
- * d3              |  14         | GPIO_NUM_17
- */
+///
+/// DisplayDataActor.cpp
+///
+///  Created on: May 2021
+///      Author: Frank Weichert
+/// Default connectins for a Devkit 4
+/// Display pinname | Display pin | ESP GPIO pin
+/// ----------------|-------------|-------------
+/// rs              |   4         | GPIO_NUM_25
+/// enable          |   6         | GPIO_NUM_26
+/// d0              |  11         | GPIO_NUM_0
+/// d1              |  12         | GPIO_NUM_4
+/// d2              |  13         | GPIO_NUM_16
+/// d3              |  14         | GPIO_NUM_17
+///
 #include <DisplayDataActor.h>
 #include <Arduino.h>
 

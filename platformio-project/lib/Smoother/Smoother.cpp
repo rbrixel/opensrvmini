@@ -1,12 +1,7 @@
 #include <Smoother.h>
-/**
- * Smoother.h - Library for smoothing inputs
- * stores all inputs in a buffer with a given size at construction.
- * to get a smoothed value the content will be sortet, min and max values will be removed
- * and an average of the remaining items is calculated
- * 
- * Frank Weichert
- * 
+
+
+ /**
  * New Instance of a smoother object
  * @param arraySize the site of the internal array to build up. Will affect the latency of the smoothing effect
 */

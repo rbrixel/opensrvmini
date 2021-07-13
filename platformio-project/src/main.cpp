@@ -43,13 +43,14 @@
 
 #include <main.h>
 
-#define OUTPUT_ON
-// Sample Usage of Interfaces for Data Collection
-std::vector<IDataCollector *> dataCollectors; //!< all Collectors of this ESP 
-std::vector<IDataActor *> dataActors; //!< all Actors which will be active here
-IDataStorage *storage = new DataStorage();  //!< the Storage where all are working on
+#define OUTPUT_ON /*!< If defined, Serial Output will be sent. Undefine for live systems */
 
-volatile int speed=250;
+// Sample Usage of Interfaces for Data Collection
+std::vector<IDataCollector *> dataCollectors; //!< all @see IDataCollector instances of this ESP 
+std::vector<IDataActor *> dataActors; /*!< all @see IDataActor instances which will be active here */
+IDataStorage *storage = new DataStorage();  /*!< the Storage where all are working on */
+
+volatile int speed=1000;
 
 /// Callback to change cycle time
 void setSpeed(int s)
@@ -75,7 +76,7 @@ void setup()
   */
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_10,true )); // Raise PIN 10 to HIGH as long as board voltage is good
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_11,true )); // Raise PIN 11 as alarm to HIGH as voltage drops below 11.5V
-  dataActors.push_back(new BTDataActor("OpenSRVmini")); 
+  dataActors.push_back(new BTDataActor("OSRVm")); 
   dataActors.push_back(new DisplayDataActor("Channel-MPU.ACAX")); 
 
 #ifdef OUTPUT_ON
