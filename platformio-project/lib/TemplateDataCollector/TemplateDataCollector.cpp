@@ -54,7 +54,7 @@ void TemplateDataCollector::updateData()
         #ifdef OPENSRVDEBUG
             Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(0,_config1*10);
-            double result = randomVal/10;
+            float result = randomVal/10;
             if (result > 900)
             {
                 _needsReInit=true; // Create some fake reinit requests

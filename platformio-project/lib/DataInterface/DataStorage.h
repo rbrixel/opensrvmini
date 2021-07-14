@@ -16,13 +16,13 @@
 /// the Channel with the channelName
 class DataStorage : public IDataStorage {
    public:
-      void addData(std::string channelName, double data);
+      void addData(std::string channelName, float data);
 
       /// 
       /// Retrieved the last stored value of a channel
       /// requesting an unknown channelName will result in -99999.0
       /// use isChannelExistant(std::string channelName) to query if the requested channel exist
-      double getData(std::string channelName) ;
+      float getData(std::string channelName) ;
 
       ///
       /// True if the given channel exists in storage and can be queried
@@ -31,9 +31,9 @@ class DataStorage : public IDataStorage {
 
       ///
       /// Returns a copy of the internal DataStorage Map
-      std::map<std::string, double> getMapCopy();
+      std::map<std::string, float> getMapCopy();
    protected:
-      std::map<std::string, double> _map;
+      std::map<std::string, float> _map;
 };
 
 #endif

@@ -18,6 +18,7 @@
 #include <Wire.h>
 #include <MPU6050_light.h>
 
+//#define MPUDATACOLLECTOR_H_DEBUG
 #ifdef MPUDATACOLLECTOR_H_DEBUG 
 #include <random>
 #endif

@@ -40,7 +40,7 @@ class DisplayDataActor : public IDataActor {
               uint8_t _d2     = GPIO_NUM_16;
               uint8_t _d3     = GPIO_NUM_17;
 
-              double extractChannelValue(IDataStorage *dataStorage);
+              float extractChannelValue(IDataStorage *dataStorage);
 };
 
 #endif

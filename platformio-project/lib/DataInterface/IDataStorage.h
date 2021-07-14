@@ -19,19 +19,19 @@
 class IDataStorage {
    public:
       ///
-      /// stores a double Value (data) to the channel channelName
-      virtual void addData(std::string channelName, double data)=0;
+      /// stores a float Value (data) to the channel channelName
+      virtual void addData(std::string channelName, float data)=0;
 
       ///
-      /// retrieves a double from the specified channel
-      virtual double getData(std::string channelName)=0;
+      /// retrieves a float from the specified channel
+      virtual float getData(std::string channelName)=0;
 
       ///
       /// True if the given channel exists in storage and can be queried
       /// otherwise false
       virtual bool isChannelExistant(std::string channelName);
 
-      virtual  std::map<std::string, double> getMapCopy() =0;
+      virtual  std::map<std::string, float> getMapCopy() =0;
    protected:
 
 };

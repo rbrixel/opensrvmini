@@ -54,7 +54,7 @@ void ADSDataCollector::updateData()
     #ifdef ADSDATACOLLECTOR_H_DEBUG
         Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(100,160);
-        double result = randomVal/10;
+        float result = randomVal/10;
     #else
         float reference_vcc = 3.3; // Volt... ESP32 system voltage
         float vcc_max = 16.0; // Volt... maximum input on voltage divider
@@ -69,7 +69,7 @@ void ADSDataCollector::updateData()
         float voutRaw = vout / (reference_vcc / vcc_max);
         float rFactor = (float)resistor_to_gnd_max / (float)resistor_to_gnd; // It is important to cast a float!!
 
-        double result =  (voutRaw * rFactor);
+        float result =  (voutRaw * rFactor);
     #endif
     
     _dataStorage->addData(_channelName + CHANNELEXTVCC , result);
