@@ -92,8 +92,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a51a5629a1cccd2663f45c53db49fd077"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a51a5629a1cccd2663f45c53db49fd077">DTSDataCollector</a> (std::string channelName, uint8_t oneWirePin)</td></tr>
 <tr class="memdesc:a51a5629a1cccd2663f45c53db49fd077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructing with a channelName and a onewire-pin.  <a href="class_d_t_s_data_collector.html#a51a5629a1cccd2663f45c53db49fd077">More...</a><br /></td></tr>
 <tr class="separator:a51a5629a1cccd2663f45c53db49fd077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02f833ae329fef82524c8ad9e579a460"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a02f833ae329fef82524c8ad9e579a460">DTSDataCollector</a> (std::string channelName, double temperatureOffset, uint8_t oneWirePin=5)</td></tr>
-<tr class="separator:a02f833ae329fef82524c8ad9e579a460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f59d0bd4d4658c98bc74a0474dce8c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a6f59d0bd4d4658c98bc74a0474dce8c8">DTSDataCollector</a> (std::string channelName, float temperatureOffset, uint8_t oneWirePin=5)</td></tr>
+<tr class="separator:a6f59d0bd4d4658c98bc74a0474dce8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1f8e57f780d8a1b6bdfbb6b1a979538"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#ac1f8e57f780d8a1b6bdfbb6b1a979538">init</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *<a class="el" href="main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e">storage</a>)</td></tr>
 <tr class="memdesc:ac1f8e57f780d8a1b6bdfbb6b1a979538"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_d_t_s_data_collector.html#ac1f8e57f780d8a1b6bdfbb6b1a979538">More...</a><br /></td></tr>
 <tr class="separator:ac1f8e57f780d8a1b6bdfbb6b1a979538"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,12 +122,12 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:acf71732f5fc27e5b7e0a33bc8a194b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a868379cca05838869a574951a6037133"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a868379cca05838869a574951a6037133">_oneWirePin</a> = GPIO_NUM_23</td></tr>
 <tr class="separator:a868379cca05838869a574951a6037133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84baca398e961f47444d92bbe1109d7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#ae84baca398e961f47444d92bbe1109d7">_temperatureOffset</a> = 0</td></tr>
-<tr class="separator:ae84baca398e961f47444d92bbe1109d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adce990bbc25d34941d1840de0458ad40"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#adce990bbc25d34941d1840de0458ad40">_temp</a> = 0</td></tr>
-<tr class="separator:adce990bbc25d34941d1840de0458ad40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fc4af4598ba371682d6d07043943201"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a2fc4af4598ba371682d6d07043943201">_pressure</a> = 0</td></tr>
-<tr class="separator:a2fc4af4598ba371682d6d07043943201"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa8a65163d22d5e6276d0778eaaad25"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a3aa8a65163d22d5e6276d0778eaaad25">_temperatureOffset</a> = 0</td></tr>
+<tr class="separator:a3aa8a65163d22d5e6276d0778eaaad25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cec360d41dfe9ae4cd8311fe3401b3f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#a1cec360d41dfe9ae4cd8311fe3401b3f">_temp</a> = 0</td></tr>
+<tr class="separator:a1cec360d41dfe9ae4cd8311fe3401b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acac3fbc303665be4fd0b9b75f57e0044"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_d_t_s_data_collector.html#acac3fbc303665be4fd0b9b75f57e0044">_pressure</a> = 0</td></tr>
+<tr class="separator:acac3fbc303665be4fd0b9b75f57e0044"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_i_data_collector"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_i_data_collector')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_i_data_collector.html">IDataCollector</a></td></tr>
 <tr class="memitem:a3c2f03d14b6e3a0a1db5ffccccf68725 inherit pro_attribs_class_i_data_collector"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_data_storage.html">IDataStorage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_collector.html#a3c2f03d14b6e3a0a1db5ffccccf68725">_dataStorage</a></td></tr>
 <tr class="separator:a3c2f03d14b6e3a0a1db5ffccccf68725 inherit pro_attribs_class_i_data_collector"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -185,8 +185,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a02f833ae329fef82524c8ad9e579a460"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02f833ae329fef82524c8ad9e579a460">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[3/3]</span></h2>
+<a id="a6f59d0bd4d4658c98bc74a0474dce8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f59d0bd4d4658c98bc74a0474dce8c8">&#9670;&nbsp;</a></span>DTSDataCollector() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -200,7 +200,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>temperatureOffset</em>, </td>
         </tr>
         <tr>
@@ -455,8 +455,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a2fc4af4598ba371682d6d07043943201"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fc4af4598ba371682d6d07043943201">&#9670;&nbsp;</a></span>_pressure</h2>
+<a id="acac3fbc303665be4fd0b9b75f57e0044"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac3fbc303665be4fd0b9b75f57e0044">&#9670;&nbsp;</a></span>_pressure</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,7 +465,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double DTSDataCollector::_pressure = 0</td>
+          <td class="memname">float DTSDataCollector::_pressure = 0</td>
         </tr>
       </table>
   </td>
@@ -477,8 +477,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adce990bbc25d34941d1840de0458ad40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adce990bbc25d34941d1840de0458ad40">&#9670;&nbsp;</a></span>_temp</h2>
+<a id="a1cec360d41dfe9ae4cd8311fe3401b3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cec360d41dfe9ae4cd8311fe3401b3f">&#9670;&nbsp;</a></span>_temp</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -487,7 +487,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double DTSDataCollector::_temp = 0</td>
+          <td class="memname">float DTSDataCollector::_temp = 0</td>
         </tr>
       </table>
   </td>
@@ -499,8 +499,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae84baca398e961f47444d92bbe1109d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae84baca398e961f47444d92bbe1109d7">&#9670;&nbsp;</a></span>_temperatureOffset</h2>
+<a id="a3aa8a65163d22d5e6276d0778eaaad25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa8a65163d22d5e6276d0778eaaad25">&#9670;&nbsp;</a></span>_temperatureOffset</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -509,7 +509,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double DTSDataCollector::_temperatureOffset = 0</td>
+          <td class="memname">float DTSDataCollector::_temperatureOffset = 0</td>
         </tr>
       </table>
   </td>

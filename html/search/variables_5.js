@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['speed_282',['speed',['../main_8cpp.html#ae74e198bfc76466eafadc396b757c924',1,'main.cpp']]],
-  ['storage_283',['storage',['../main_8cpp.html#a3d7fbdc9d5fb39bf90d4b5e7a4d3c95e',1,'main.cpp']]]
+  ['initializedmpu_297',['initializedMPU',['../struct_m_p_u_task_data.html#ad7de74af0100de5f6dbebc203c3f31e2',1,'MPUTaskData']]]
 ];

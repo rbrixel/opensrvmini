@@ -85,22 +85,22 @@ Inheritance diagram for IDataStorage:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af366696a70ef729c6ff3b9e9f453b026"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">addData</a> (std::string channelName, double data)=0</td></tr>
-<tr class="memdesc:af366696a70ef729c6ff3b9e9f453b026"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores a double Value (data) to the channel channelName  <a href="class_i_data_storage.html#af366696a70ef729c6ff3b9e9f453b026">More...</a><br /></td></tr>
-<tr class="separator:af366696a70ef729c6ff3b9e9f453b026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43d103acc3867695c5148b4335f889e6"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">getData</a> (std::string channelName)=0</td></tr>
-<tr class="memdesc:a43d103acc3867695c5148b4335f889e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieves a double from the specified channel  <a href="class_i_data_storage.html#a43d103acc3867695c5148b4335f889e6">More...</a><br /></td></tr>
-<tr class="separator:a43d103acc3867695c5148b4335f889e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586f0990b4b40fd2821bed7cdef12739"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#a586f0990b4b40fd2821bed7cdef12739">addData</a> (std::string channelName, float data)=0</td></tr>
+<tr class="memdesc:a586f0990b4b40fd2821bed7cdef12739"><td class="mdescLeft">&#160;</td><td class="mdescRight">stores a float Value (data) to the channel channelName  <a href="class_i_data_storage.html#a586f0990b4b40fd2821bed7cdef12739">More...</a><br /></td></tr>
+<tr class="separator:a586f0990b4b40fd2821bed7cdef12739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22f55348c15706f5cbea3d510cd0696b"><td class="memItemLeft" align="right" valign="top">virtual float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#a22f55348c15706f5cbea3d510cd0696b">getData</a> (std::string channelName)=0</td></tr>
+<tr class="memdesc:a22f55348c15706f5cbea3d510cd0696b"><td class="mdescLeft">&#160;</td><td class="mdescRight">retrieves a float from the specified channel  <a href="class_i_data_storage.html#a22f55348c15706f5cbea3d510cd0696b">More...</a><br /></td></tr>
+<tr class="separator:a22f55348c15706f5cbea3d510cd0696b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbe6dd46d76e2bb31064d58a71b33018"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#adbe6dd46d76e2bb31064d58a71b33018">isChannelExistant</a> (std::string channelName)</td></tr>
 <tr class="separator:adbe6dd46d76e2bb31064d58a71b33018"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc753aa95b8b5cf1f54392be437a313c"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; std::string, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#abc753aa95b8b5cf1f54392be437a313c">getMapCopy</a> ()=0</td></tr>
-<tr class="separator:abc753aa95b8b5cf1f54392be437a313c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7014bae7daa78e44c6c70d04317823"><td class="memItemLeft" align="right" valign="top">virtual std::map&lt; std::string, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_storage.html#a5c7014bae7daa78e44c6c70d04317823">getMapCopy</a> ()=0</td></tr>
+<tr class="separator:a5c7014bae7daa78e44c6c70d04317823"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_i_data_storage.html">IDataStorage</a> to store sensorData in channels Every channel is defined by its name Future Idea: extend to store multiple values in a ringbuffer </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="af366696a70ef729c6ff3b9e9f453b026"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af366696a70ef729c6ff3b9e9f453b026">&#9670;&nbsp;</a></span>addData()</h2>
+<a id="a586f0990b4b40fd2821bed7cdef12739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a586f0990b4b40fd2821bed7cdef12739">&#9670;&nbsp;</a></span>addData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,7 +117,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>data</em>&#160;</td>
         </tr>
         <tr>
@@ -133,14 +133,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>stores a double Value (data) to the channel channelName </p>
+<p>stores a float Value (data) to the channel channelName </p>
 
-<p>Implemented in <a class="el" href="class_data_storage.html#ad42937e02d1145b4363e33729ff9cd94">DataStorage</a>.</p>
+<p>Implemented in <a class="el" href="class_data_storage.html#ae7a052683a71e58470845d07edd227fd">DataStorage</a>.</p>
 
 </div>
 </div>
-<a id="a43d103acc3867695c5148b4335f889e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43d103acc3867695c5148b4335f889e6">&#9670;&nbsp;</a></span>getData()</h2>
+<a id="a22f55348c15706f5cbea3d510cd0696b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22f55348c15706f5cbea3d510cd0696b">&#9670;&nbsp;</a></span>getData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -149,7 +149,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double IDataStorage::getData </td>
+          <td class="memname">virtual float IDataStorage::getData </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>channelName</em></td><td>)</td>
@@ -163,14 +163,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>retrieves a double from the specified channel </p>
+<p>retrieves a float from the specified channel </p>
 
-<p>Implemented in <a class="el" href="class_data_storage.html#af18d849e1d13b2379df826883bdda2e5">DataStorage</a>.</p>
+<p>Implemented in <a class="el" href="class_data_storage.html#adebfdee5cc52bb61f7f3c9d7fdadd0cf">DataStorage</a>.</p>
 
 </div>
 </div>
-<a id="abc753aa95b8b5cf1f54392be437a313c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc753aa95b8b5cf1f54392be437a313c">&#9670;&nbsp;</a></span>getMapCopy()</h2>
+<a id="a5c7014bae7daa78e44c6c70d04317823"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c7014bae7daa78e44c6c70d04317823">&#9670;&nbsp;</a></span>getMapCopy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::map&lt;std::string, double&gt; IDataStorage::getMapCopy </td>
+          <td class="memname">virtual std::map&lt;std::string, float&gt; IDataStorage::getMapCopy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -192,7 +192,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="class_data_storage.html#a069d8db21e899634cd4d8899b448aed0">DataStorage</a>.</p>
+<p>Implemented in <a class="el" href="class_data_storage.html#a2e1fd005b918a6b0e050f1d72929ce5d">DataStorage</a>.</p>
 
 </div>
 </div>

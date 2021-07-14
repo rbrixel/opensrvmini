@@ -87,8 +87,8 @@ Inheritance diagram for RangeDataActor:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adf45f001554b493270341b6ae4d57ba1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#adf45f001554b493270341b6ae4d57ba1">RangeDataActor</a> (std::string observedChannel, double lowerBound, double upperBound, uint8_t gpio, bool inRangeIsOn)</td></tr>
-<tr class="separator:adf45f001554b493270341b6ae4d57ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc05c23ed7048dc54c491c7a57511b9c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#acc05c23ed7048dc54c491c7a57511b9c">RangeDataActor</a> (std::string observedChannel, float lowerBound, float upperBound, uint8_t gpio, bool inRangeIsOn)</td></tr>
+<tr class="separator:acc05c23ed7048dc54c491c7a57511b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc1d2289b4ea63d6106aeb6f35a078de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#afc1d2289b4ea63d6106aeb6f35a078de">init</a> ()</td></tr>
 <tr class="memdesc:afc1d2289b4ea63d6106aeb6f35a078de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>.  <a href="class_range_data_actor.html#afc1d2289b4ea63d6106aeb6f35a078de">More...</a><br /></td></tr>
 <tr class="separator:afc1d2289b4ea63d6106aeb6f35a078de"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -107,19 +107,19 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:adee81eb1b6dd83251e8ebaa68e32b54f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#adee81eb1b6dd83251e8ebaa68e32b54f">isInRange</a> (double value)</td></tr>
-<tr class="separator:adee81eb1b6dd83251e8ebaa68e32b54f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a618322d091ef25a52701acd304338b4c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a618322d091ef25a52701acd304338b4c">extractChannelValue</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *dataStorage)</td></tr>
-<tr class="separator:a618322d091ef25a52701acd304338b4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa20f8a77510dcc455fd8715a4e7465"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a3aa20f8a77510dcc455fd8715a4e7465">isInRange</a> (float value)</td></tr>
+<tr class="separator:a3aa20f8a77510dcc455fd8715a4e7465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05be79d7a89292b20915f6f2c37ff760"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a05be79d7a89292b20915f6f2c37ff760">extractChannelValue</a> (<a class="el" href="class_i_data_storage.html">IDataStorage</a> *dataStorage)</td></tr>
+<tr class="separator:a05be79d7a89292b20915f6f2c37ff760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a00a64115e2c022068a4747b4a750ca88"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a00a64115e2c022068a4747b4a750ca88">_observedChannel</a></td></tr>
 <tr class="separator:a00a64115e2c022068a4747b4a750ca88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74801390a88c53ba7e07af232e95a70c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a74801390a88c53ba7e07af232e95a70c">_lowerBound</a> = 0.0f</td></tr>
-<tr class="separator:a74801390a88c53ba7e07af232e95a70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a042b04656ff73e390810cbe7bfc5a3db"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a042b04656ff73e390810cbe7bfc5a3db">_upperBound</a> = 999999999.0f</td></tr>
-<tr class="separator:a042b04656ff73e390810cbe7bfc5a3db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05b7df0d6a51ae4d1627dbf7f3bf396"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#ad05b7df0d6a51ae4d1627dbf7f3bf396">_lowerBound</a> = 0.0f</td></tr>
+<tr class="separator:ad05b7df0d6a51ae4d1627dbf7f3bf396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc7a3a54e4880bb8183e3b1ae9fc0d26"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#abc7a3a54e4880bb8183e3b1ae9fc0d26">_upperBound</a> = 999999999.0f</td></tr>
+<tr class="separator:abc7a3a54e4880bb8183e3b1ae9fc0d26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7505bf014cd428fdd0b1c11a87cf2922"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a7505bf014cd428fdd0b1c11a87cf2922">_inRangeIsOn</a> =true</td></tr>
 <tr class="separator:a7505bf014cd428fdd0b1c11a87cf2922"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3833e8f0feb612c4053c030b06078a76"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_range_data_actor.html#a3833e8f0feb612c4053c030b06078a76">_gpio</a> = 0</td></tr>
@@ -131,8 +131,8 @@ Protected Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_range_data_actor.html">RangeDataActor</a> is configured to observe a channel of a dataStorage if the channel value is between lowerbound and upperbound (including the values itself) the gpio pin will change its output the output is defined by inRangeIsOn, if inRangeIsOn==true, the output is HIGH if the channel is in the range and LOW if channel value is out of range if inRangeIsOn==false, the output is LOW if the channel is in the range and HIGH if channel value is out of range </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="adf45f001554b493270341b6ae4d57ba1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf45f001554b493270341b6ae4d57ba1">&#9670;&nbsp;</a></span>RangeDataActor()</h2>
+<a id="acc05c23ed7048dc54c491c7a57511b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc05c23ed7048dc54c491c7a57511b9c">&#9670;&nbsp;</a></span>RangeDataActor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -146,13 +146,13 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>lowerBound</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>upperBound</em>, </td>
         </tr>
         <tr>
@@ -208,8 +208,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a618322d091ef25a52701acd304338b4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a618322d091ef25a52701acd304338b4c">&#9670;&nbsp;</a></span>extractChannelValue()</h2>
+<a id="a05be79d7a89292b20915f6f2c37ff760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05be79d7a89292b20915f6f2c37ff760">&#9670;&nbsp;</a></span>extractChannelValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +218,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double RangeDataActor::extractChannelValue </td>
+          <td class="memname">float RangeDataActor::extractChannelValue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_i_data_storage.html">IDataStorage</a> *&#160;</td>
           <td class="paramname"><em>dataStorage</em></td><td>)</td>
@@ -280,8 +280,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adee81eb1b6dd83251e8ebaa68e32b54f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adee81eb1b6dd83251e8ebaa68e32b54f">&#9670;&nbsp;</a></span>isInRange()</h2>
+<a id="a3aa20f8a77510dcc455fd8715a4e7465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3aa20f8a77510dcc455fd8715a4e7465">&#9670;&nbsp;</a></span>isInRange()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +292,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">bool RangeDataActor::isInRange </td>
           <td>(</td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">float&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -444,8 +444,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a74801390a88c53ba7e07af232e95a70c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74801390a88c53ba7e07af232e95a70c">&#9670;&nbsp;</a></span>_lowerBound</h2>
+<a id="ad05b7df0d6a51ae4d1627dbf7f3bf396"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad05b7df0d6a51ae4d1627dbf7f3bf396">&#9670;&nbsp;</a></span>_lowerBound</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -454,7 +454,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double RangeDataActor::_lowerBound = 0.0f</td>
+          <td class="memname">float RangeDataActor::_lowerBound = 0.0f</td>
         </tr>
       </table>
   </td>
@@ -488,8 +488,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a042b04656ff73e390810cbe7bfc5a3db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a042b04656ff73e390810cbe7bfc5a3db">&#9670;&nbsp;</a></span>_upperBound</h2>
+<a id="abc7a3a54e4880bb8183e3b1ae9fc0d26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc7a3a54e4880bb8183e3b1ae9fc0d26">&#9670;&nbsp;</a></span>_upperBound</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -498,7 +498,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double RangeDataActor::_upperBound = 999999999.0f</td>
+          <td class="memname">float RangeDataActor::_upperBound = 999999999.0f</td>
         </tr>
       </table>
   </td>
