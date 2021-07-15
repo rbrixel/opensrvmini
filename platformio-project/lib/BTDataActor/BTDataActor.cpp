@@ -7,50 +7,42 @@
 #include <BTDataActor.h>
 #include <Arduino.h>
 
-// class MyServerCallbacks: public BLEServerCallbacks {
-//     void onConnect(BLEServer* pServer) {
-//       Serial.println("Connected");
-//       //BLEDevice::startAdvertising();
-//     };
-//     void onDisconnect(BLEServer* pServer) {
-//       Serial.println("DISConnected");
-//     }
-// };
-// class MyCallbacks: public BLECharacteristicCallbacks {
-//   	void onNotify(BLECharacteristic* pChar){
-//           Serial.printf("OnNotify %s",pChar->getData() );
-//       }
-// 	void onStatus(BLECharacteristic* pChar, Status s, uint32_t code){
-//         Serial.printf("OnStatus %s",pChar->getData() );
-//     }
-//     void onWrite(BLECharacteristic *pCharacteristic) {
-//       std::string value = pCharacteristic->getValue();
-//       if (value.length() > 0) {
-//         Serial.println("*********");
-//         Serial.print("New value: ");
-//         for (int i = 0; i < value.length(); i++)
-//           Serial.print(value[i]);
-//         Serial.println();
-//         Serial.println("*********");
-//       }
-//     }
-// };
-
 void BTDataActor::setSpeedCallback(void (*spcb)(int s))
 {
   _speedCallBack=spcb;
 }
 
+/* ****************************************  BLE Server Callbacks         ************************ */
 void BTDataActor::onConnect(BLEServer* pServer) {
-  Serial.println("Connected");
-  _speedCallBack(250);
+  log_w("Connected");
+  _speedCallBack(1500);
 };
 
 void BTDataActor::onDisconnect(BLEServer* pServer) {
-  Serial.println("DISConnected");
+  log_w("DISConnected");
   _pAdvertising->start();
   _speedCallBack(5000);
 }
+
+/* ****************************************  BLE Characteristic Callbacks ************************* */
+void BTDataActor::onNotify(BLECharacteristic* pChar){
+    log_w("OnNotify %s",pChar->getData() );
+}
+
+void BTDataActor::onStatus(BLECharacteristic* pChar, Status s, uint32_t code){
+    log_w("OnStatus %s",pChar->getData() );
+}
+
+void BTDataActor::onWrite(BLECharacteristic *pCharacteristic) {
+  std::string value = pCharacteristic->getValue();
+  if (value.length()==4){
+    std::memcpy(&_configuration, value.c_str(), sizeof(uint32_t));
+    log_w("onWrite set configuration to [%d] *******************************************************************************",_configuration);
+  }else{
+    log_w("Ignoring reveived but invalid configuration data. Expects uint32. Keep [%d].",_configuration);
+  }
+}
+
 
 ///
 /// Instanciation of BTDataActor 
@@ -59,15 +51,48 @@ BTDataActor::BTDataActor(std::string deviceName)
   _deviceName = deviceName;
 }
 
-BLECharacteristic*  BTDataActor::createDataChartacteristic(BLEUUID uuid)
+///
+/// Creates a BLECharacteristic with the given UUID (string parameter) not writable
+BLECharacteristic*  BTDataActor::createDataCharacteristic(std::string strUUID)
 {
-  return _pService->createCharacteristic(
-                                        uuid,
-                                        BLECharacteristic::PROPERTY_READ 
-                                        // | BLECharacteristic::PROPERTY_WRITE
-                                        | BLECharacteristic::PROPERTY_NOTIFY 
-                                        | BLECharacteristic::PROPERTY_INDICATE
-                                    );
+  return createDataCharacteristic(BLEUUID(strUUID),false);
+}
+
+///
+/// Creates a BLECharacteristic with the given UUID (BLEUUID parameter) not writable
+BLECharacteristic*  BTDataActor::createDataCharacteristic(BLEUUID uuid)
+{
+  return createDataCharacteristic(uuid,false);
+}
+
+///
+/// Creates a BLECharacteristic with the given UUID (string parameter), sets writable mode by parameter
+BLECharacteristic*  BTDataActor::createDataCharacteristic(std::string strUUID, bool writable)
+{
+  return createDataCharacteristic(BLEUUID(strUUID), writable);
+}
+
+///
+/// Creates a BLECharacteristic with the given UUID (BLEUUID parameter) sets writable mode by parameter
+BLECharacteristic*  BTDataActor::createDataCharacteristic(BLEUUID uuid, bool writable)
+{
+  if (writable)
+  {
+    return _pService->createCharacteristic(
+                                          uuid,
+                                            BLECharacteristic::PROPERTY_READ 
+                                          | BLECharacteristic::PROPERTY_WRITE
+                                          | BLECharacteristic::PROPERTY_NOTIFY 
+                                          | BLECharacteristic::PROPERTY_INDICATE
+                                      );
+  }else{
+    return _pService->createCharacteristic(
+                                          uuid,
+                                            BLECharacteristic::PROPERTY_READ 
+                                          | BLECharacteristic::PROPERTY_NOTIFY 
+                                          | BLECharacteristic::PROPERTY_INDICATE
+                                      );
+  }
 }
 
 ///
@@ -83,6 +108,9 @@ void BTDataActor::init()
     addCreateChannelCharacteristic(CHARACTERISTIC_ROLL_X_UUID);
     addCreateChannelCharacteristic(CHARACTERISTIC_ROLL_Y_UUID);
     addCreateChannelCharacteristic(CHARACTERISTIC_ROLL_Z_UUID);
+    _versionCharacteristic = createDataCharacteristic(CHARACTERISTIC_VERSION_UUID);    // Version for Protocol validation
+    _configurationCharacteristic = createDataCharacteristic(CHARACTERISTIC_CONFIGURATION_UUID, true);    // Configuration Exchante, client writes new whiches into this bitmask
+    _configurationCharacteristic->setCallbacks(this);
 
     _pService->start();
     
@@ -106,7 +134,7 @@ void BTDataActor::init()
 /// creates a ChannelCharacteristic with the given UUID and adds it to the internal Map
 void BTDataActor::addCreateChannelCharacteristic(std::string strUUID)
 {
-  BLECharacteristic *tmp = createDataChartacteristic(BLEUUID(strUUID));
+  BLECharacteristic *tmp = createDataCharacteristic(BLEUUID(strUUID));
   _channelCharacteristicMap[strUUID] = tmp;
 }
 
@@ -125,6 +153,14 @@ void BTDataActor::action(IDataStorage *dataStorage)
     std::map<std::string, float>::iterator it;
     std::string value;  
     //log_w("Action BLE\n");
+
+    // Send Version with each update
+    _versionCharacteristic->setValue( _bleVersion );
+    _versionCharacteristic->notify(true);
+    
+    _configurationCharacteristic->setValue(_configuration);
+    _versionCharacteristic->notify(true);
+
     BLECharacteristic *worker;
     for (it = data.begin(); it != data.end(); it++)
     {
@@ -149,7 +185,7 @@ void  BTDataActor::sleep() {
     ; // Maybe Default Output if sleeping?
 }
 
-
+/************************* MAP DATA */
 ///
 /// Registgers the channel with the given UUID#
 /// the channel will be taken from datastorage and published to the connected device using the uuid as characteristics uuid
