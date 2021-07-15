@@ -110,28 +110,48 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6325e8e2eab8d3dbf541b9e3d3212618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d00965019b9275ab7ceec9e845f760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a40d00965019b9275ab7ceec9e845f760">onConnect</a> (BLEServer *pServer)</td></tr>
 <tr class="separator:a40d00965019b9275ab7ceec9e845f760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c6804a2a493967ee1bf46db28fe871d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a7c6804a2a493967ee1bf46db28fe871d">registerTempInhouseChannel</a> (std::string channelName)</td></tr>
+<tr class="memdesc:a7c6804a2a493967ee1bf46db28fe871d"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers the channel for the Inhouse Temperature UUID  <a href="class_b_t_data_actor.html#a7c6804a2a493967ee1bf46db28fe871d">More...</a><br /></td></tr>
+<tr class="separator:a7c6804a2a493967ee1bf46db28fe871d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3d57085728d3de601d31a78e66bffb4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#ac3d57085728d3de601d31a78e66bffb4">registerTempOutdoorChannel</a> (std::string channelName)</td></tr>
+<tr class="memdesc:ac3d57085728d3de601d31a78e66bffb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers the channel for the Outdoor Temperature UUID  <a href="class_b_t_data_actor.html#ac3d57085728d3de601d31a78e66bffb4">More...</a><br /></td></tr>
+<tr class="separator:ac3d57085728d3de601d31a78e66bffb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5326dfd52abbda1335347f5f1bf63863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a5326dfd52abbda1335347f5f1bf63863">registerRollXChannel</a> (std::string channelName)</td></tr>
+<tr class="memdesc:a5326dfd52abbda1335347f5f1bf63863"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers the channel for the Roll X UUID  <a href="class_b_t_data_actor.html#a5326dfd52abbda1335347f5f1bf63863">More...</a><br /></td></tr>
+<tr class="separator:a5326dfd52abbda1335347f5f1bf63863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873f15e539bd0cdc65938aae87120a8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a873f15e539bd0cdc65938aae87120a8a">registerRollYChannel</a> (std::string channelName)</td></tr>
+<tr class="memdesc:a873f15e539bd0cdc65938aae87120a8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers the channel for the Roll Y UUID  <a href="class_b_t_data_actor.html#a873f15e539bd0cdc65938aae87120a8a">More...</a><br /></td></tr>
+<tr class="separator:a873f15e539bd0cdc65938aae87120a8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb582cc8d9b8a403cd5294d4d5732130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#aeb582cc8d9b8a403cd5294d4d5732130">registerRollZChannel</a> (std::string channelName)</td></tr>
+<tr class="memdesc:aeb582cc8d9b8a403cd5294d4d5732130"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers the channel for the Roll Z UUID  <a href="class_b_t_data_actor.html#aeb582cc8d9b8a403cd5294d4d5732130">More...</a><br /></td></tr>
+<tr class="separator:aeb582cc8d9b8a403cd5294d4d5732130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:add04a18960b936979a745d1638b96f51"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#add04a18960b936979a745d1638b96f51">createDataChartacteristic</a> (BLEUUID uuid)</td></tr>
 <tr class="separator:add04a18960b936979a745d1638b96f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb01db45d28d92edf2d6a9aeb49b277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a5fb01db45d28d92edf2d6a9aeb49b277">addCreateChannelCharacteristic</a> (std::string strUUID)</td></tr>
+<tr class="memdesc:a5fb01db45d28d92edf2d6a9aeb49b277"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a ChannelCharacteristic with the given UUID and adds it to the internal Map  <a href="class_b_t_data_actor.html#a5fb01db45d28d92edf2d6a9aeb49b277">More...</a><br /></td></tr>
+<tr class="separator:a5fb01db45d28d92edf2d6a9aeb49b277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46a4babae490c258a5f4f12404bcff13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a46a4babae490c258a5f4f12404bcff13">registerMapData</a> (std::string channelName, std::string strUUID)</td></tr>
+<tr class="separator:a46a4babae490c258a5f4f12404bcff13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a503f0972f43662c5bd98852fef180597"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a503f0972f43662c5bd98852fef180597">getChannelUUID</a> (std::string channelName)</td></tr>
+<tr class="memdesc:a503f0972f43662c5bd98852fef180597"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the UUID for a registered channel or an empty string if channel is not registered.  <a href="class_b_t_data_actor.html#a503f0972f43662c5bd98852fef180597">More...</a><br /></td></tr>
+<tr class="separator:a503f0972f43662c5bd98852fef180597"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaaf775dd350e704e7fc268be6445a05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#aaaaf775dd350e704e7fc268be6445a05">isChannelRegistered</a> (std::string channelName)</td></tr>
+<tr class="memdesc:aaaaf775dd350e704e7fc268be6445a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the channel is allready registered before.  <a href="class_b_t_data_actor.html#aaaaf775dd350e704e7fc268be6445a05">More...</a><br /></td></tr>
+<tr class="separator:aaaaf775dd350e704e7fc268be6445a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a00a50a081cc480a00aed43059e51ebe2"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a00a50a081cc480a00aed43059e51ebe2">_channelUUIDMap</a></td></tr>
+<tr class="separator:a00a50a081cc480a00aed43059e51ebe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc0ba4280864f4db3bf808d99619b2dc"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, BLECharacteristic * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#adc0ba4280864f4db3bf808d99619b2dc">_channelCharacteristicMap</a></td></tr>
+<tr class="separator:adc0ba4280864f4db3bf808d99619b2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ea3ef235324b6c5269e1e1ad3a0edfa"><td class="memItemLeft" align="right" valign="top">BLEServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a9ea3ef235324b6c5269e1e1ad3a0edfa">_pServer</a></td></tr>
 <tr class="separator:a9ea3ef235324b6c5269e1e1ad3a0edfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97c6c17b7dfaf642a6e573f1628d6064"><td class="memItemLeft" align="right" valign="top">BLEService *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a97c6c17b7dfaf642a6e573f1628d6064">_pService</a></td></tr>
 <tr class="separator:a97c6c17b7dfaf642a6e573f1628d6064"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68a0e222345251f8ba459351c1497568"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a68a0e222345251f8ba459351c1497568">_pTempInhouseCharacteristic</a></td></tr>
-<tr class="separator:a68a0e222345251f8ba459351c1497568"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ca0273dea6ed2f0c4cb1baaeeaa2e9d"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a7ca0273dea6ed2f0c4cb1baaeeaa2e9d">_pTempOutdoorCharacteristic</a></td></tr>
-<tr class="separator:a7ca0273dea6ed2f0c4cb1baaeeaa2e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bc7a4cf4279bc20d565c07a09e8d8a8"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a0bc7a4cf4279bc20d565c07a09e8d8a8">_pRollXCharacteristic</a></td></tr>
-<tr class="separator:a0bc7a4cf4279bc20d565c07a09e8d8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a85a12c7a487b3d08c0f3b99fdeed09"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a2a85a12c7a487b3d08c0f3b99fdeed09">_pRollYCharacteristic</a></td></tr>
-<tr class="separator:a2a85a12c7a487b3d08c0f3b99fdeed09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d0e4dd8a16749978175f03045e70a27"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a6d0e4dd8a16749978175f03045e70a27">_pRollZCharacteristic</a></td></tr>
-<tr class="separator:a6d0e4dd8a16749978175f03045e70a27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab032c11951e949826a3bf7f82ae37f0d"><td class="memItemLeft" align="right" valign="top">BLEAdvertising *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#ab032c11951e949826a3bf7f82ae37f0d">_pAdvertising</a></td></tr>
 <tr class="separator:ab032c11951e949826a3bf7f82ae37f0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530e66f5a262e1419a39d3b5e6fed10a"><td class="memItemLeft" align="right" valign="top">BLEAdvertisementData *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a530e66f5a262e1419a39d3b5e6fed10a">_pAdvertisementData</a></td></tr>
@@ -199,6 +219,34 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5fb01db45d28d92edf2d6a9aeb49b277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb01db45d28d92edf2d6a9aeb49b277">&#9670;&nbsp;</a></span>addCreateChannelCharacteristic()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::addCreateChannelCharacteristic </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>strUUID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>creates a ChannelCharacteristic with the given UUID and adds it to the internal Map </p>
+
+</div>
+</div>
 <a id="add04a18960b936979a745d1638b96f51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add04a18960b936979a745d1638b96f51">&#9670;&nbsp;</a></span>createDataChartacteristic()</h2>
 
@@ -222,6 +270,34 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a503f0972f43662c5bd98852fef180597"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503f0972f43662c5bd98852fef180597">&#9670;&nbsp;</a></span>getChannelUUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string BTDataActor::getChannelUUID </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Retrieves the UUID for a registered channel or an empty string if channel is not registered. </p>
 
 </div>
 </div>
@@ -251,6 +327,34 @@ Protected Attributes</h2></td></tr>
 <p>Initializes the Component and its <a class="el" href="class_data_storage.html">DataStorage</a>. </p>
 
 <p>Implements <a class="el" href="class_i_data_actor.html#adc6553cdef9152561f0e5d04a2e54839">IDataActor</a>.</p>
+
+</div>
+</div>
+<a id="aaaaf775dd350e704e7fc268be6445a05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaaf775dd350e704e7fc268be6445a05">&#9670;&nbsp;</a></span>isChannelRegistered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BTDataActor::isChannelRegistered </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines if the channel is allready registered before. </p>
 
 </div>
 </div>
@@ -287,6 +391,143 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46a4babae490c258a5f4f12404bcff13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46a4babae490c258a5f4f12404bcff13">&#9670;&nbsp;</a></span>registerMapData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::registerMapData </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>UUID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Registgers the channel with the given UUID# the channel will be taken from datastorage and published to the connected device using the uuid as characteristics uuid </p>
+
+</div>
+</div>
+<a id="a5326dfd52abbda1335347f5f1bf63863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5326dfd52abbda1335347f5f1bf63863">&#9670;&nbsp;</a></span>registerRollXChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::registerRollXChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>registers the channel for the Roll X UUID </p>
+
+</div>
+</div>
+<a id="a873f15e539bd0cdc65938aae87120a8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a873f15e539bd0cdc65938aae87120a8a">&#9670;&nbsp;</a></span>registerRollYChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::registerRollYChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>registers the channel for the Roll Y UUID </p>
+
+</div>
+</div>
+<a id="aeb582cc8d9b8a403cd5294d4d5732130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb582cc8d9b8a403cd5294d4d5732130">&#9670;&nbsp;</a></span>registerRollZChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::registerRollZChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>registers the channel for the Roll Z UUID </p>
+
+</div>
+</div>
+<a id="a7c6804a2a493967ee1bf46db28fe871d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c6804a2a493967ee1bf46db28fe871d">&#9670;&nbsp;</a></span>registerTempInhouseChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::registerTempInhouseChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>registers the channel for the Inhouse Temperature UUID </p>
+
+</div>
+</div>
+<a id="ac3d57085728d3de601d31a78e66bffb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3d57085728d3de601d31a78e66bffb4">&#9670;&nbsp;</a></span>registerTempOutdoorChannel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::registerTempOutdoorChannel </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>channelName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>registers the channel for the Outdoor Temperature UUID </p>
 
 </div>
 </div>
@@ -383,6 +624,50 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="adc0ba4280864f4db3bf808d99619b2dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0ba4280864f4db3bf808d99619b2dc">&#9670;&nbsp;</a></span>_channelCharacteristicMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, BLECharacteristic*&gt; BTDataActor::_channelCharacteristicMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00a50a081cc480a00aed43059e51ebe2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00a50a081cc480a00aed43059e51ebe2">&#9670;&nbsp;</a></span>_channelUUIDMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::string&gt; BTDataActor::_channelUUIDMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2dcee4a61578a7690d70fda5ab1cd412"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2dcee4a61578a7690d70fda5ab1cd412">&#9670;&nbsp;</a></span>_deviceName</h2>
 
@@ -449,72 +734,6 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0bc7a4cf4279bc20d565c07a09e8d8a8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bc7a4cf4279bc20d565c07a09e8d8a8">&#9670;&nbsp;</a></span>_pRollXCharacteristic</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BLECharacteristic* BTDataActor::_pRollXCharacteristic</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2a85a12c7a487b3d08c0f3b99fdeed09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a85a12c7a487b3d08c0f3b99fdeed09">&#9670;&nbsp;</a></span>_pRollYCharacteristic</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BLECharacteristic* BTDataActor::_pRollYCharacteristic</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6d0e4dd8a16749978175f03045e70a27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d0e4dd8a16749978175f03045e70a27">&#9670;&nbsp;</a></span>_pRollZCharacteristic</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BLECharacteristic* BTDataActor::_pRollZCharacteristic</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a9ea3ef235324b6c5269e1e1ad3a0edfa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9ea3ef235324b6c5269e1e1ad3a0edfa">&#9670;&nbsp;</a></span>_pServer</h2>
 
@@ -548,50 +767,6 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">BLEService* BTDataActor::_pService</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a68a0e222345251f8ba459351c1497568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68a0e222345251f8ba459351c1497568">&#9670;&nbsp;</a></span>_pTempInhouseCharacteristic</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BLECharacteristic* BTDataActor::_pTempInhouseCharacteristic</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7ca0273dea6ed2f0c4cb1baaeeaa2e9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ca0273dea6ed2f0c4cb1baaeeaa2e9d">&#9670;&nbsp;</a></span>_pTempOutdoorCharacteristic</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">BLECharacteristic* BTDataActor::_pTempOutdoorCharacteristic</td>
         </tr>
       </table>
   </td>

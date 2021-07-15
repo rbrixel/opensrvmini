@@ -86,12 +86,18 @@ $(function() {
 <li>_bmeIsReady
 : <a class="el" href="class_b_m_e_data_collector.html#a34c60d1d8e0a576bccf3e198485ba5d8">BMEDataCollector</a>
 </li>
+<li>_channelCharacteristicMap
+: <a class="el" href="class_b_t_data_actor.html#adc0ba4280864f4db3bf808d99619b2dc">BTDataActor</a>
+</li>
 <li>_channelName
 : <a class="el" href="class_a_d_s_data_collector.html#a3425f7e44f68e421d741d8e1e1985dde">ADSDataCollector</a>
 , <a class="el" href="class_b_m_e_data_collector.html#af22f85b85f763228a3b770bc6f5fb049">BMEDataCollector</a>
 , <a class="el" href="class_d_t_s_data_collector.html#acf71732f5fc27e5b7e0a33bc8a194b26">DTSDataCollector</a>
 , <a class="el" href="class_m_p_u_data_collector.html#ad1551d129dc047c83d09dc40c4c1bafc">MPUDataCollector</a>
 , <a class="el" href="class_template_data_collector.html#a1b48b13dd063c657883480e46fd26e72">TemplateDataCollector</a>
+</li>
+<li>_channelUUIDMap
+: <a class="el" href="class_b_t_data_actor.html#a00a50a081cc480a00aed43059e51ebe2">BTDataActor</a>
 </li>
 <li>_config1
 : <a class="el" href="class_template_data_collector.html#ab305d98d110d6caecf9cdd376d3545a1">TemplateDataCollector</a>
@@ -177,26 +183,11 @@ $(function() {
 : <a class="el" href="class_b_m_e_data_collector.html#a8abbda0a792d04d3ca5261478c58d2ef">BMEDataCollector</a>
 , <a class="el" href="class_d_t_s_data_collector.html#acac3fbc303665be4fd0b9b75f57e0044">DTSDataCollector</a>
 </li>
-<li>_pRollXCharacteristic
-: <a class="el" href="class_b_t_data_actor.html#a0bc7a4cf4279bc20d565c07a09e8d8a8">BTDataActor</a>
-</li>
-<li>_pRollYCharacteristic
-: <a class="el" href="class_b_t_data_actor.html#a2a85a12c7a487b3d08c0f3b99fdeed09">BTDataActor</a>
-</li>
-<li>_pRollZCharacteristic
-: <a class="el" href="class_b_t_data_actor.html#a6d0e4dd8a16749978175f03045e70a27">BTDataActor</a>
-</li>
 <li>_pServer
 : <a class="el" href="class_b_t_data_actor.html#a9ea3ef235324b6c5269e1e1ad3a0edfa">BTDataActor</a>
 </li>
 <li>_pService
 : <a class="el" href="class_b_t_data_actor.html#a97c6c17b7dfaf642a6e573f1628d6064">BTDataActor</a>
-</li>
-<li>_pTempInhouseCharacteristic
-: <a class="el" href="class_b_t_data_actor.html#a68a0e222345251f8ba459351c1497568">BTDataActor</a>
-</li>
-<li>_pTempOutdoorCharacteristic
-: <a class="el" href="class_b_t_data_actor.html#a7ca0273dea6ed2f0c4cb1baaeeaa2e9d">BTDataActor</a>
 </li>
 <li>_rs
 : <a class="el" href="class_display_data_actor.html#aca0b8e25e3c346edbfedbd14ed447b34">DisplayDataActor</a>
@@ -239,6 +230,9 @@ $(function() {
 , <a class="el" href="class_display_data_actor.html#aaa1f7270335896f03549cb7d525bc347">DisplayDataActor</a>
 , <a class="el" href="class_i_data_actor.html#ad81e304b8acfcf7366fa574d67419345">IDataActor</a>
 , <a class="el" href="class_range_data_actor.html#a4e711232aa32db796f1c77e83e2c6d65">RangeDataActor</a>
+</li>
+<li>addCreateChannelCharacteristic()
+: <a class="el" href="class_b_t_data_actor.html#a5fb01db45d28d92edf2d6a9aeb49b277">BTDataActor</a>
 </li>
 <li>addData()
 : <a class="el" href="class_data_storage.html#ae7a052683a71e58470845d07edd227fd">DataStorage</a>
@@ -307,6 +301,9 @@ $(function() {
 
 
 <h3><a id="index_g"></a>- g -</h3><ul>
+<li>getChannelUUID()
+: <a class="el" href="class_b_t_data_actor.html#a503f0972f43662c5bd98852fef180597">BTDataActor</a>
+</li>
 <li>getData()
 : <a class="el" href="class_data_storage.html#adebfdee5cc52bb61f7f3c9d7fdadd0cf">DataStorage</a>
 , <a class="el" href="class_i_data_storage.html#a22f55348c15706f5cbea3d510cd0696b">IDataStorage</a>
@@ -363,6 +360,9 @@ $(function() {
 : <a class="el" href="class_data_storage.html#a2520252b923415fcae10bba0e43dead0">DataStorage</a>
 , <a class="el" href="class_i_data_storage.html#adbe6dd46d76e2bb31064d58a71b33018">IDataStorage</a>
 </li>
+<li>isChannelRegistered()
+: <a class="el" href="class_b_t_data_actor.html#aaaaf775dd350e704e7fc268be6445a05">BTDataActor</a>
+</li>
 <li>isInRange()
 : <a class="el" href="class_range_data_actor.html#a3aa20f8a77510dcc455fd8715a4e7465">RangeDataActor</a>
 </li>
@@ -409,6 +409,24 @@ $(function() {
 </li>
 <li>readBMEData()
 : <a class="el" href="class_b_m_e_data_collector.html#a9cb9a0f91248d2b8684dc37a536b63f3">BMEDataCollector</a>
+</li>
+<li>registerMapData()
+: <a class="el" href="class_b_t_data_actor.html#a46a4babae490c258a5f4f12404bcff13">BTDataActor</a>
+</li>
+<li>registerRollXChannel()
+: <a class="el" href="class_b_t_data_actor.html#a5326dfd52abbda1335347f5f1bf63863">BTDataActor</a>
+</li>
+<li>registerRollYChannel()
+: <a class="el" href="class_b_t_data_actor.html#a873f15e539bd0cdc65938aae87120a8a">BTDataActor</a>
+</li>
+<li>registerRollZChannel()
+: <a class="el" href="class_b_t_data_actor.html#aeb582cc8d9b8a403cd5294d4d5732130">BTDataActor</a>
+</li>
+<li>registerTempInhouseChannel()
+: <a class="el" href="class_b_t_data_actor.html#a7c6804a2a493967ee1bf46db28fe871d">BTDataActor</a>
+</li>
+<li>registerTempOutdoorChannel()
+: <a class="el" href="class_b_t_data_actor.html#ac3d57085728d3de601d31a78e66bffb4">BTDataActor</a>
 </li>
 <li>reInit()
 : <a class="el" href="class_a_d_s_data_collector.html#a616bea63d1c8ab5fe89c52369d45ef15">ADSDataCollector</a>
