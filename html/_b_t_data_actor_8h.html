@@ -79,6 +79,7 @@ $(function() {
 <code>#include &lt;BLEDevice.h&gt;</code><br />
 <code>#include &lt;BLEUtils.h&gt;</code><br />
 <code>#include &lt;BLEServer.h&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
 </div>
 <p><a href="_b_t_data_actor_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -102,8 +103,42 @@ Macros</h2></td></tr>
 <tr class="separator:a96a9b81965ce363ab5fac959939f8e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af38b52c4b7e258eb3e929f343af8512f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_b_t_data_actor_8h.html#af38b52c4b7e258eb3e929f343af8512f">CHARACTERISTIC_ROLL_Z_UUID</a>&#160;&#160;&#160;&quot;31f84bd7-a740-4691-ae91-ffd5a373680b&quot;</td></tr>
 <tr class="separator:af38b52c4b7e258eb3e929f343af8512f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e99e90a25addeafbfbf3e4f379d06e4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_b_t_data_actor_8h.html#a1e99e90a25addeafbfbf3e4f379d06e4">CHARACTERISTIC_VERSION_UUID</a>&#160;&#160;&#160;&quot;a3e5d91b-0f1c-429a-a58a-f646ed8f664c&quot;</td></tr>
+<tr class="separator:a1e99e90a25addeafbfbf3e4f379d06e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a799ff6d196d2ca4eb04d87ef91b79750"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_b_t_data_actor_8h.html#a799ff6d196d2ca4eb04d87ef91b79750">CHARACTERISTIC_CONFIGURATION_UUID</a>&#160;&#160;&#160;&quot;6b466c0e-9e90-4e92-81dd-885f683201d2&quot;</td></tr>
+<tr class="separator:a799ff6d196d2ca4eb04d87ef91b79750"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae78a84d2e97907a61e6553120642565e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_b_t_data_actor_8h.html#ae78a84d2e97907a61e6553120642565e">BTDATAACTOR_BLE_VERSION</a>&#160;&#160;&#160;0.1f</td></tr>
+<tr class="separator:ae78a84d2e97907a61e6553120642565e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ae78a84d2e97907a61e6553120642565e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae78a84d2e97907a61e6553120642565e">&#9670;&nbsp;</a></span>BTDATAACTOR_BLE_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BTDATAACTOR_BLE_VERSION&#160;&#160;&#160;0.1f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a799ff6d196d2ca4eb04d87ef91b79750"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a799ff6d196d2ca4eb04d87ef91b79750">&#9670;&nbsp;</a></span>CHARACTERISTIC_CONFIGURATION_UUID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHARACTERISTIC_CONFIGURATION_UUID&#160;&#160;&#160;&quot;6b466c0e-9e90-4e92-81dd-885f683201d2&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a25a446ad33a53a5dd147a16822fe2bcc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a25a446ad33a53a5dd147a16822fe2bcc">&#9670;&nbsp;</a></span>CHARACTERISTIC_ROLL_X_UUID</h2>
 
@@ -168,6 +203,20 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define CHARACTERISTIC_TEMP_OUTDOOR_UUID&#160;&#160;&#160;&quot;324c5286-eb49-4f24-89cb-d29b1bd98778&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1e99e90a25addeafbfbf3e4f379d06e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e99e90a25addeafbfbf3e4f379d06e4">&#9670;&nbsp;</a></span>CHARACTERISTIC_VERSION_UUID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CHARACTERISTIC_VERSION_UUID&#160;&#160;&#160;&quot;a3e5d91b-0f1c-429a-a58a-f646ed8f664c&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

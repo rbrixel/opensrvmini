@@ -84,7 +84,7 @@ Inheritance diagram for BTDataActor:</div>
  <div class="center">
   <img src="class_b_t_data_actor.png" usemap="#BTDataActor_map" alt=""/>
   <map id="BTDataActor_map" name="BTDataActor_map">
-<area href="class_i_data_actor.html" alt="IDataActor" shape="rect" coords="0,0,129,24"/>
+<area href="class_i_data_actor.html" alt="IDataActor" shape="rect" coords="0,0,169,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -110,6 +110,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6325e8e2eab8d3dbf541b9e3d3212618"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d00965019b9275ab7ceec9e845f760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a40d00965019b9275ab7ceec9e845f760">onConnect</a> (BLEServer *pServer)</td></tr>
 <tr class="separator:a40d00965019b9275ab7ceec9e845f760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8121942f143f7919399dee8a7c87dc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#ab8121942f143f7919399dee8a7c87dc4">onWrite</a> (BLECharacteristic *pCharacteristic)</td></tr>
+<tr class="separator:ab8121942f143f7919399dee8a7c87dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837e717bb339826a969ae094a87916bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a837e717bb339826a969ae094a87916bc">onNotify</a> (BLECharacteristic *pChar)</td></tr>
+<tr class="separator:a837e717bb339826a969ae094a87916bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18efb9e7597aff55e9a0f155a2408cfa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a18efb9e7597aff55e9a0f155a2408cfa">onStatus</a> (BLECharacteristic *pChar, Status s, uint32_t code)</td></tr>
+<tr class="separator:a18efb9e7597aff55e9a0f155a2408cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c6804a2a493967ee1bf46db28fe871d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a7c6804a2a493967ee1bf46db28fe871d">registerTempInhouseChannel</a> (std::string channelName)</td></tr>
 <tr class="memdesc:a7c6804a2a493967ee1bf46db28fe871d"><td class="mdescLeft">&#160;</td><td class="mdescRight">registers the channel for the Inhouse Temperature UUID  <a href="class_b_t_data_actor.html#a7c6804a2a493967ee1bf46db28fe871d">More...</a><br /></td></tr>
 <tr class="separator:a7c6804a2a493967ee1bf46db28fe871d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,8 +134,18 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:add04a18960b936979a745d1638b96f51"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#add04a18960b936979a745d1638b96f51">createDataChartacteristic</a> (BLEUUID uuid)</td></tr>
-<tr class="separator:add04a18960b936979a745d1638b96f51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72ada9d283ce26af3cd30dcf34200c89"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a72ada9d283ce26af3cd30dcf34200c89">createDataCharacteristic</a> (std::string strUUID)</td></tr>
+<tr class="memdesc:a72ada9d283ce26af3cd30dcf34200c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a BLECharacteristic with the given UUID (string parameter) not writable.  <a href="class_b_t_data_actor.html#a72ada9d283ce26af3cd30dcf34200c89">More...</a><br /></td></tr>
+<tr class="separator:a72ada9d283ce26af3cd30dcf34200c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd5e138cdddbf4cf920f583c366b460e"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#abd5e138cdddbf4cf920f583c366b460e">createDataCharacteristic</a> (BLEUUID uuid)</td></tr>
+<tr class="memdesc:abd5e138cdddbf4cf920f583c366b460e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a BLECharacteristic with the given UUID (BLEUUID parameter) not writable.  <a href="class_b_t_data_actor.html#abd5e138cdddbf4cf920f583c366b460e">More...</a><br /></td></tr>
+<tr class="separator:abd5e138cdddbf4cf920f583c366b460e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0070e5fa4b0330434595718f1794b68a"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a0070e5fa4b0330434595718f1794b68a">createDataCharacteristic</a> (BLEUUID uuid, bool writable)</td></tr>
+<tr class="memdesc:a0070e5fa4b0330434595718f1794b68a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a BLECharacteristic with the given UUID (BLEUUID parameter) sets writable mode by parameter.  <a href="class_b_t_data_actor.html#a0070e5fa4b0330434595718f1794b68a">More...</a><br /></td></tr>
+<tr class="separator:a0070e5fa4b0330434595718f1794b68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117c8b1249d66e8f040ef0cad7ca8769"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a117c8b1249d66e8f040ef0cad7ca8769">createDataCharacteristic</a> (std::string strUUID, bool writable)</td></tr>
+<tr class="memdesc:a117c8b1249d66e8f040ef0cad7ca8769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a BLECharacteristic with the given UUID (string parameter), sets writable mode by parameter.  <a href="class_b_t_data_actor.html#a117c8b1249d66e8f040ef0cad7ca8769">More...</a><br /></td></tr>
+<tr class="separator:a117c8b1249d66e8f040ef0cad7ca8769"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fb01db45d28d92edf2d6a9aeb49b277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a5fb01db45d28d92edf2d6a9aeb49b277">addCreateChannelCharacteristic</a> (std::string strUUID)</td></tr>
 <tr class="memdesc:a5fb01db45d28d92edf2d6a9aeb49b277"><td class="mdescLeft">&#160;</td><td class="mdescRight">creates a ChannelCharacteristic with the given UUID and adds it to the internal Map  <a href="class_b_t_data_actor.html#a5fb01db45d28d92edf2d6a9aeb49b277">More...</a><br /></td></tr>
 <tr class="separator:a5fb01db45d28d92edf2d6a9aeb49b277"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,10 +160,18 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a1c8af77d356a707dfe0520bfcd421615"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a1c8af77d356a707dfe0520bfcd421615">_bleVersion</a> =<a class="el" href="_b_t_data_actor_8h.html#ae78a84d2e97907a61e6553120642565e">BTDATAACTOR_BLE_VERSION</a></td></tr>
+<tr class="separator:a1c8af77d356a707dfe0520bfcd421615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3027a6d18b08ad4d06aa60875e3a0a83"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a3027a6d18b08ad4d06aa60875e3a0a83">_configuration</a> = 0</td></tr>
+<tr class="separator:a3027a6d18b08ad4d06aa60875e3a0a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00a50a081cc480a00aed43059e51ebe2"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a00a50a081cc480a00aed43059e51ebe2">_channelUUIDMap</a></td></tr>
 <tr class="separator:a00a50a081cc480a00aed43059e51ebe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc0ba4280864f4db3bf808d99619b2dc"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, BLECharacteristic * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#adc0ba4280864f4db3bf808d99619b2dc">_channelCharacteristicMap</a></td></tr>
 <tr class="separator:adc0ba4280864f4db3bf808d99619b2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91ac8cd21870aee1deda98c3d8fc79ab"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a91ac8cd21870aee1deda98c3d8fc79ab">_versionCharacteristic</a></td></tr>
+<tr class="separator:a91ac8cd21870aee1deda98c3d8fc79ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe6b6e8fdbcc16f1e669b4dbb5dac6ed"><td class="memItemLeft" align="right" valign="top">BLECharacteristic *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#abe6b6e8fdbcc16f1e669b4dbb5dac6ed">_configurationCharacteristic</a></td></tr>
+<tr class="separator:abe6b6e8fdbcc16f1e669b4dbb5dac6ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ea3ef235324b6c5269e1e1ad3a0edfa"><td class="memItemLeft" align="right" valign="top">BLEServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a9ea3ef235324b6c5269e1e1ad3a0edfa">_pServer</a></td></tr>
 <tr class="separator:a9ea3ef235324b6c5269e1e1ad3a0edfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97c6c17b7dfaf642a6e573f1628d6064"><td class="memItemLeft" align="right" valign="top">BLEService *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a97c6c17b7dfaf642a6e573f1628d6064">_pService</a></td></tr>
@@ -160,8 +184,6 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:aa00c6b54ed56533071e1c68c7c13720f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dcee4a61578a7690d70fda5ab1cd412"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a2dcee4a61578a7690d70fda5ab1cd412">_deviceName</a></td></tr>
 <tr class="separator:a2dcee4a61578a7690d70fda5ab1cd412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a036dbd0a548187c7071a36d50ddb3f7e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_b_t_data_actor.html#a036dbd0a548187c7071a36d50ddb3f7e">count</a> =0</td></tr>
-<tr class="separator:a036dbd0a548187c7071a36d50ddb3f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_class_i_data_actor"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_i_data_actor')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="class_i_data_actor.html">IDataActor</a></td></tr>
 <tr class="memitem:a7e9d4c4095ec7b3a0157fdace97e5971 inherit pro_attribs_class_i_data_actor"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i_data_storage.html">IDataStorage</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_i_data_actor.html#a7e9d4c4095ec7b3a0157fdace97e5971">_dataStorage</a></td></tr>
 <tr class="separator:a7e9d4c4095ec7b3a0157fdace97e5971 inherit pro_attribs_class_i_data_actor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -247,8 +269,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="add04a18960b936979a745d1638b96f51"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add04a18960b936979a745d1638b96f51">&#9670;&nbsp;</a></span>createDataChartacteristic()</h2>
+<a id="abd5e138cdddbf4cf920f583c366b460e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd5e138cdddbf4cf920f583c366b460e">&#9670;&nbsp;</a></span>createDataCharacteristic() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -257,7 +279,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">BLECharacteristic * BTDataActor::createDataChartacteristic </td>
+          <td class="memname">BLECharacteristic * BTDataActor::createDataCharacteristic </td>
           <td>(</td>
           <td class="paramtype">BLEUUID&#160;</td>
           <td class="paramname"><em>uuid</em></td><td>)</td>
@@ -270,6 +292,112 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a BLECharacteristic with the given UUID (BLEUUID parameter) not writable. </p>
+
+</div>
+</div>
+<a id="a0070e5fa4b0330434595718f1794b68a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0070e5fa4b0330434595718f1794b68a">&#9670;&nbsp;</a></span>createDataCharacteristic() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLECharacteristic * BTDataActor::createDataCharacteristic </td>
+          <td>(</td>
+          <td class="paramtype">BLEUUID&#160;</td>
+          <td class="paramname"><em>uuid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>writable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a BLECharacteristic with the given UUID (BLEUUID parameter) sets writable mode by parameter. </p>
+
+</div>
+</div>
+<a id="a72ada9d283ce26af3cd30dcf34200c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72ada9d283ce26af3cd30dcf34200c89">&#9670;&nbsp;</a></span>createDataCharacteristic() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLECharacteristic * BTDataActor::createDataCharacteristic </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>strUUID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a BLECharacteristic with the given UUID (string parameter) not writable. </p>
+
+</div>
+</div>
+<a id="a117c8b1249d66e8f040ef0cad7ca8769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a117c8b1249d66e8f040ef0cad7ca8769">&#9670;&nbsp;</a></span>createDataCharacteristic() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLECharacteristic * BTDataActor::createDataCharacteristic </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>strUUID</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>writable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a BLECharacteristic with the given UUID (string parameter), sets writable mode by parameter. </p>
 
 </div>
 </div>
@@ -387,6 +515,76 @@ Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype">BLEServer *&#160;</td>
           <td class="paramname"><em>pServer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a837e717bb339826a969ae094a87916bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837e717bb339826a969ae094a87916bc">&#9670;&nbsp;</a></span>onNotify()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::onNotify </td>
+          <td>(</td>
+          <td class="paramtype">BLECharacteristic *&#160;</td>
+          <td class="paramname"><em>pChar</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a18efb9e7597aff55e9a0f155a2408cfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18efb9e7597aff55e9a0f155a2408cfa">&#9670;&nbsp;</a></span>onStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::onStatus </td>
+          <td>(</td>
+          <td class="paramtype">BLECharacteristic *&#160;</td>
+          <td class="paramname"><em>pChar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Status&#160;</td>
+          <td class="paramname"><em>s</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>code</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab8121942f143f7919399dee8a7c87dc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8121942f143f7919399dee8a7c87dc4">&#9670;&nbsp;</a></span>onWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BTDataActor::onWrite </td>
+          <td>(</td>
+          <td class="paramtype">BLECharacteristic *&#160;</td>
+          <td class="paramname"><em>pCharacteristic</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -624,6 +822,28 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1c8af77d356a707dfe0520bfcd421615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8af77d356a707dfe0520bfcd421615">&#9670;&nbsp;</a></span>_bleVersion</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float BTDataActor::_bleVersion =<a class="el" href="_b_t_data_actor_8h.html#ae78a84d2e97907a61e6553120642565e">BTDATAACTOR_BLE_VERSION</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adc0ba4280864f4db3bf808d99619b2dc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc0ba4280864f4db3bf808d99619b2dc">&#9670;&nbsp;</a></span>_channelCharacteristicMap</h2>
 
@@ -657,6 +877,50 @@ Protected Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::map&lt;std::string, std::string&gt; BTDataActor::_channelUUIDMap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3027a6d18b08ad4d06aa60875e3a0a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3027a6d18b08ad4d06aa60875e3a0a83">&#9670;&nbsp;</a></span>_configuration</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t BTDataActor::_configuration = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abe6b6e8fdbcc16f1e669b4dbb5dac6ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe6b6e8fdbcc16f1e669b4dbb5dac6ed">&#9670;&nbsp;</a></span>_configurationCharacteristic</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BLECharacteristic* BTDataActor::_configurationCharacteristic</td>
         </tr>
       </table>
   </td>
@@ -800,8 +1064,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a036dbd0a548187c7071a36d50ddb3f7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a036dbd0a548187c7071a36d50ddb3f7e">&#9670;&nbsp;</a></span>count</h2>
+<a id="a91ac8cd21870aee1deda98c3d8fc79ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91ac8cd21870aee1deda98c3d8fc79ab">&#9670;&nbsp;</a></span>_versionCharacteristic</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -810,7 +1074,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">float BTDataActor::count =0</td>
+          <td class="memname">BLECharacteristic* BTDataActor::_versionCharacteristic</td>
         </tr>
       </table>
   </td>

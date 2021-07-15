@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['count_302',['count',['../class_b_t_data_actor.html#a036dbd0a548187c7071a36d50ddb3f7e',1,'BTDataActor']]]
+  ['dataactors_318',['dataActors',['../main_8cpp.html#aec952ae3d3ec8122852cbe4048424569',1,'main.cpp']]],
+  ['datacollectors_319',['dataCollectors',['../main_8cpp.html#a6dc375d730400edd8984310c0f662bc2',1,'main.cpp']]]
 ];
