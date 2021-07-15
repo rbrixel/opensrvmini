@@ -89,14 +89,13 @@ void MPUDataCollector::init(IDataStorage *storage)
     _dataStorage = storage;
 
     byte status =_mpu->begin();
-    Serial.print(F("MPU6050 status: "));
-    Serial.println(status);
+    log_w("MPU6050 status: [%x] ", status);
     while(status!=0){ } // stop everything if could not connect to MPU6050
 
-    Serial.println(F("Calculating offsets, do not move MPU6050"));
+    log_w("Calculating offsets, do not move MPU6050");
     delay(1000);
     _mpu->calcOffsets(true,true); // gyro and accelero
-    Serial.println("Done!\n");
+    log_w("Done!");
 
     _data->initializedMPU = _mpu;
 
@@ -129,15 +128,20 @@ void MPUDataCollector::reInit()
 void MPUDataCollector::updateData()
 {
     #ifdef MPUDATACOLLECTOR_H_DEBUG
-        Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+        log_w("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(-1000,1000);
-        double result = randomVal/10;
+        float result = randomVal/10;
         _dataStorage->addData(_channelName + MPUCHEXTACCX , result);
         _dataStorage->addData(_channelName + MPUCHEXTACCY , result);
         _dataStorage->addData(_channelName + MPUCHEXTACCZ , result);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRX , result);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRY , result);
-        // _dataStorage->addData(_channelName + MPUCHEXTGYRZ , result);
+        _dataStorage->addData(_channelName + MPUCHEXTGYRX , result);
+        _dataStorage->addData(_channelName + MPUCHEXTGYRY , result);
+        _dataStorage->addData(_channelName + MPUCHEXTGYRZ , result);
+        _dataStorage->addData(_channelName + MPUCHEXTACCANGLEX , result );
+        _dataStorage->addData(_channelName + MPUCHEXTACCANGLEY , result );
+        _dataStorage->addData(_channelName + MPUCHEXTANGLEX    , result );
+        _dataStorage->addData(_channelName + MPUCHEXTANGLEY    , result );
+        _dataStorage->addData(_channelName + MPUCHEXTANGLEZ    , result );
     #else
         // _mpu->update();
         _dataStorage->addData(_channelName + MPUCHEXTTEMP      , _data->temp);

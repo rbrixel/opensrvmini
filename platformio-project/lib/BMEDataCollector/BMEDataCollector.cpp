@@ -17,7 +17,7 @@ BMEDataCollector::BMEDataCollector(std::string channelName)
     _bme280 = new BME280_I2C(_address, _i2cSDA, _i2cSCL);
 }
 
-BMEDataCollector::BMEDataCollector(std::string channelName, double temperatureOffset)
+BMEDataCollector::BMEDataCollector(std::string channelName, float temperatureOffset)
 {
     _channelName = channelName;
     _bme280 = new BME280_I2C(_address, _i2cSDA, _i2cSCL);
@@ -33,7 +33,7 @@ BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2
     _bme280 = new BME280_I2C(_address,_i2cSDA, _i2cSCL);
 }
 
-BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL, double tempoeratureOffset)
+BMEDataCollector::BMEDataCollector(std::string channelName, byte address,byte i2cSDA,byte i2cSCL, float tempoeratureOffset)
 {
     _channelName = channelName;
     _temperatureOffset=tempoeratureOffset;
@@ -86,11 +86,11 @@ void BMEDataCollector::updateData()
 {
     if (!_bmeIsReady) {
         #ifdef BMEDATACOLLECTOR_H_DEBUG
-            Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+            log_w("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(-200,400);
-            double result = randomVal/10;
+            float result = randomVal/10;
             long randomVal2 = random(90000,110000);
-            double result2 = randomVal2;
+            float result2 = randomVal2;
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , result);
             _dataStorage->addData(_channelName + CHANNELEXTPRESSURE ,result2);
         #else

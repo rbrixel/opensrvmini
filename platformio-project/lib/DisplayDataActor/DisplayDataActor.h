@@ -34,13 +34,13 @@ class DisplayDataActor : public IDataActor {
               std::string _observedChannel;
 
               uint8_t _rs     = GPIO_NUM_25;
-              uint8_t _enable = GPIO_NUM_23;
+              uint8_t _enable = GPIO_NUM_26;
               uint8_t _d0     = GPIO_NUM_0;
               uint8_t _d1     = GPIO_NUM_4;
               uint8_t _d2     = GPIO_NUM_16;
               uint8_t _d3     = GPIO_NUM_17;
 
-              double extractChannelValue(IDataStorage *dataStorage);
+              float extractChannelValue(IDataStorage *dataStorage);
 };
 
 #endif

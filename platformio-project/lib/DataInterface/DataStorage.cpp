@@ -7,8 +7,8 @@
 #include <DataStorage.h>
 
 /// 
-/// stores a double in the channelname
-void DataStorage::addData(std::string channelName, double data)
+/// stores a float in the channelname
+void DataStorage::addData(std::string channelName, float data)
 {
     _map[channelName] = data;
 }
@@ -24,9 +24,9 @@ bool DataStorage::isChannelExistant(std::string channelName)
 
 ///
 /// Resolves the channelName and returns the stored Data
-double DataStorage::getData(std::string channelName)
+float DataStorage::getData(std::string channelName)
 {
-    std::map<std::string, double>::iterator it = _map.find(channelName);
+    std::map<std::string, float>::iterator it = _map.find(channelName);
     if (it == _map.end())
     {
         return UNKNOWNRESULT;
@@ -35,8 +35,8 @@ double DataStorage::getData(std::string channelName)
     return _map[channelName];
 }
 
-std::map<std::string, double> DataStorage::getMapCopy()
+std::map<std::string, float> DataStorage::getMapCopy()
 {
-    std::map<std::string, double> result = _map;
+    std::map<std::string, float> result = _map;
     return result;
 }

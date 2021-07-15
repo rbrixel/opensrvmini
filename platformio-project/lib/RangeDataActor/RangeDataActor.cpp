@@ -13,7 +13,7 @@
 /// lowerbound and upperbound defines the range where an action will occur
 /// outPutPin will define the pin which is switched
 /// inRangeIsOn = true: if observed value is in range, output pin will be true
-RangeDataActor::RangeDataActor(std::string observedChannel,double lowerBound, double upperBound, uint8_t outputPin ,bool inRangeIsOn)
+RangeDataActor::RangeDataActor(std::string observedChannel,float lowerBound, float upperBound, uint8_t outputPin ,bool inRangeIsOn)
 {
               _observedChannel = observedChannel;
               _lowerBound = lowerBound;
@@ -46,26 +46,26 @@ void RangeDataActor::reInit()
 /// Updates BME Data into DataStorage
 void RangeDataActor::action(IDataStorage *dataStorage)
 {
-    //Serial.printf("Action on %s\n", _observedChannel.c_str());
+    //log_w("Action on [%s]", _observedChannel.c_str());
     // TODO LOGIC HERE
     if (!dataStorage->isChannelExistant(_observedChannel))
     {
         // No Data; No Action
-        //Serial.printf("No Action \n");
+        //log_w("No Action ");
         return;
     }
 
-    double value = dataStorage->getData(_observedChannel);
+    float value = dataStorage->getData(_observedChannel);
     if ( isInRange(value) )
     {
-        Serial.printf("Action on %s for value %f -> GPIO %d=%s\n",
+        log_w("Action on %s for value %f -> GPIO %d=%s",
             _observedChannel.c_str() ,
             value, 
             _gpio ,
             _inRangeIsOn ? "HIGH" : "LOW");
         digitalWrite( _gpio, _inRangeIsOn );
     }else{
-        Serial.printf("Action on %s for value %f -> %d=%s\n",
+        log_w("Action on %s for value %f -> %d=%s",
             _observedChannel.c_str() ,
             value,
             _gpio ,
@@ -76,7 +76,7 @@ void RangeDataActor::action(IDataStorage *dataStorage)
 
 /// 
 /// Updates BME Data into DataStorage
-bool RangeDataActor::isInRange(double value)
+bool RangeDataActor::isInRange(float value)
 {
     return (value >= _lowerBound && value <=_upperBound);
 }

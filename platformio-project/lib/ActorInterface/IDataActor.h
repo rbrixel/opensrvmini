@@ -40,6 +40,13 @@ class IDataActor {
       /// Wakeup is triggered by reinit
       virtual void sleep()=0;
 
+      ///
+      /// informal call that the System wants to save current,
+      /// used by implemenation to shutdown not used parts (timers, interrupts etc)
+      /// no update calls should be done after sleep has been called.
+      /// Wakeup is triggered by reinit
+      /// @param fcnPtr pointer to a callback function accepting an int for ms update
+      ///
       virtual void setSpeedCallback(void (*fcnPtr)(int s)) =0;
 
    protected:

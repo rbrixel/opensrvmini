@@ -1,9 +1,10 @@
-/*
-  Smoother.h - Library for smoothing inputs
-  Frank Weichert
-*/
 #include <Smoother.h>
 
+
+ /**
+ * New Instance of a smoother object
+ * @param arraySize the site of the internal array to build up. Will affect the latency of the smoothing effect
+*/
 Smoother::Smoother(int arraySize)
 {
   _arraySize = arraySize;
@@ -12,6 +13,9 @@ Smoother::Smoother(int arraySize)
   cleanUp();
 }
 
+/**
+ * Cleans all internal arrays and values
+*/
 void Smoother::cleanUp()
 {
   memset(_values,0,(sizeof *_values)*_arraySize);
@@ -21,6 +25,9 @@ void Smoother::cleanUp()
   _smoothingActive=true;
 }
 
+/**
+ * Counts up the internal index (use a ringbuffer)
+*/
 void Smoother::incrementInsertIndex()
 {
   _insertIndex++;
@@ -30,6 +37,10 @@ void Smoother::incrementInsertIndex()
   }
 }
 
+/**
+ * Inserts a value at the current position in the internal array
+ * @param value the value to be stored
+*/
 void Smoother::pushValue(int16_t value)
 {
    /*
@@ -53,6 +64,11 @@ void Smoother::pushValue(int16_t value)
   //debugArray("_values:",_values);
 }
 
+/**
+ * Debug output the internal array to serial console
+ * @param *tag pointer to a string to identify the caller 
+ * @param *arr the array to be printed
+*/
 void Smoother::debugArray(char*tag, int16_t *arr)
 {
   if(!Serial)
@@ -68,11 +84,20 @@ void Smoother::debugArray(char*tag, int16_t *arr)
   Serial.println();  
 }
 
+/**
+ * Switched smoothing on and off
+ * @param active true if smoothing is on 
+ */
  void Smoother::setSmoothingActive(bool active)
  {
     _smoothingActive=active;
  }
 
+/**
+ * returns the smooth calculated value
+ * @see setSmoothingActive(bool active) 
+ * @return the smoothed value if smoothing is active, otherwise the last pushed value
+*/
 int16_t Smoother::getSmoothed()
 {
   if (!_smoothingActive)

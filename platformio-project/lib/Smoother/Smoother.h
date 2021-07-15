@@ -7,6 +7,14 @@
 
 #include <Arduino.h>
 
+/** \class
+ * Smoother.h - Library for smoothing inputs
+ * stores all inputs in a buffer with a given size at construction.
+ * to get a smoothed value the content will be sortet, min and max values will be removed
+ * and an average of the remaining items is calculated
+ * 
+ * Frank Weichert
+ */
 class Smoother
 {
   public:
