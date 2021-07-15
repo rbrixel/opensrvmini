@@ -50,18 +50,18 @@ std::vector<IDataCollector *> dataCollectors; //!< all @see IDataCollector insta
 std::vector<IDataActor *> dataActors; /*!< all @see IDataActor instances which will be active here */
 IDataStorage *storage = new DataStorage();  /*!< the Storage where all are working on */
 
-volatile int speed=1000;
+volatile int speed=1500;
 
 /// Callback to change cycle time
 void setSpeed(int s)
 {
-  Serial.printf("Set Speed to %d",s);
+  log_w("Set Speed to [%d]",s);
   speed=s;
 }
 
 void setup()
 {
-  Serial.begin(115200);
+  //Serial.begin(115200);
 
   /* *******************************************************************************
       Create Datacollectors 
@@ -76,12 +76,20 @@ void setup()
   */
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_10,true )); // Raise PIN 10 to HIGH as long as board voltage is good
   dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_11,true )); // Raise PIN 11 as alarm to HIGH as voltage drops below 11.5V
-  dataActors.push_back(new BTDataActor("OSRVm")); 
-  dataActors.push_back(new DisplayDataActor("Channel-MPU.ACAX")); 
+  
+  BTDataActor *btactor = new BTDataActor("OSRVm");
+    btactor->registerTempInhouseChannel("Channel-BME.TEMP");
+    btactor->registerTempOutdoorChannel("Channel-DTS.TEMP");
+    btactor->registerRollXChannel("Channel-MPU.ANGX");
+    btactor->registerRollYChannel("Channel-MPU.ANGY");
+    btactor->registerRollZChannel("Channel-MPU.ANGZ");
+
+  dataActors.push_back(btactor); 
+  //dataActors.push_back(new DisplayDataActor("Channel-MPU.ACAX")); 
 
 #ifdef OUTPUT_ON
-  Serial.printf("INIT: %d Collecotrs found\n", dataCollectors.size());
-  Serial.printf("INIT: %d Actors found\n", dataActors.size());
+  log_w("INIT: [%d] Collecotrs found", dataCollectors.size());
+  log_w("INIT: [%d] Actors found", dataActors.size());
 #endif
 
   /* *******************************************************************************
@@ -91,7 +99,7 @@ void setup()
   for (std::size_t i = 0; i < dataCollectors.size(); ++i)
   {
 #ifdef OUTPUT_ON
-    Serial.printf("INIT: %s\n", dataCollectors[i]->getName().c_str());
+    log_w("INIT: %s", dataCollectors[i]->getName().c_str());
 #endif
     dataCollectors[i]->init(storage);
   }
@@ -102,7 +110,7 @@ void setup()
   for (std::size_t i = 0; i < dataActors.size(); ++i)
   {
 #ifdef OUTPUT_ON
-    Serial.printf("INIT Actor\n");
+    log_w("INIT Actor");
 #endif
     dataActors[i]->init();
     dataActors[i]->setSpeedCallback(&setSpeed);
@@ -119,7 +127,7 @@ void loop()
       Check Initialization of DataCollectors
   */
 #ifdef OUTPUT_ON
-  Serial.println("************************************");
+  log_w("************************************");
 #endif
   for (std::size_t i = 0; i < dataCollectors.size(); ++i)
   {
@@ -127,7 +135,7 @@ void loop()
     {
       dataCollectors[i]->reInit();
 #ifdef OUTPUT_ON
-      Serial.printf("Reinitialized: %s\n", dataCollectors[i]->getName().c_str());
+      log_w("Reinitialized: [%s]", dataCollectors[i]->getName().c_str());
 #endif
     };
   }
@@ -136,35 +144,32 @@ void loop()
       Update DataCollectors
   */
 #ifdef OUTPUT_ON
-  Serial.println("************************************");
+  log_w("************************************");
 #endif
   for (std::size_t i = 0; i < dataCollectors.size(); ++i)
   {
 #ifdef OUTPUT_ON
-    Serial.printf("UPDATING: %s\n", dataCollectors[i]->getName().c_str());
+    log_w("UPDATING: [%s]", dataCollectors[i]->getName().c_str());
 #endif    
     dataCollectors[i]->updateData();
 #ifdef OUTPUT_ON
-    Serial.printf("UPDATED: %s\n", dataCollectors[i]->getName().c_str());
+    log_w("UPDATED: [%s]", dataCollectors[i]->getName().c_str());
 #endif
   }
 #ifdef OUTPUT_ON
-  Serial.println("************************************");
+  log_w("************************************");
 #endif
 
   /* *******************************************************************************
       Update Actors
   */
 #ifdef OUTPUT_ON
-  Serial.println("************************************");
+  log_w("************************************");
 #endif
   for (std::size_t i = 0; i < dataActors.size(); ++i)
   {
     dataActors[i]->action(storage);
   }
-#ifdef OUTPUT_ON
-  Serial.println("************************************");
-#endif
 
   /* *******************************************************************************
       Use collected Data
@@ -180,12 +185,9 @@ void loop()
   //                 it->second);       // Print Channel Value
   // }
 #ifdef OUTPUT_ON
-  Serial.println("************************************");
-  Serial.println("Can Sleep now for a while **********");
-  Serial.println("");
-  Serial.println("");
-  Serial.println("");
-  Serial.println("");
+  log_w("Can Sleep now for a while **********");
+  log_w("************************************");
+  log_w("");
 #endif
   delay(speed);
 }

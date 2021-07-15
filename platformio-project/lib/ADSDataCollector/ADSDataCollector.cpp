@@ -52,7 +52,7 @@ void ADSDataCollector::reInit()
 void ADSDataCollector::updateData()
 {
     #ifdef ADSDATACOLLECTOR_H_DEBUG
-        Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+        log_w("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(100,160);
         float result = randomVal/10;
     #else

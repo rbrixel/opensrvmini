@@ -46,26 +46,26 @@ void RangeDataActor::reInit()
 /// Updates BME Data into DataStorage
 void RangeDataActor::action(IDataStorage *dataStorage)
 {
-    //Serial.printf("Action on %s\n", _observedChannel.c_str());
+    //log_w("Action on [%s]", _observedChannel.c_str());
     // TODO LOGIC HERE
     if (!dataStorage->isChannelExistant(_observedChannel))
     {
         // No Data; No Action
-        //Serial.printf("No Action \n");
+        //log_w("No Action ");
         return;
     }
 
     float value = dataStorage->getData(_observedChannel);
     if ( isInRange(value) )
     {
-        Serial.printf("Action on %s for value %f -> GPIO %d=%s\n",
+        log_w("Action on %s for value %f -> GPIO %d=%s",
             _observedChannel.c_str() ,
             value, 
             _gpio ,
             _inRangeIsOn ? "HIGH" : "LOW");
         digitalWrite( _gpio, _inRangeIsOn );
     }else{
-        Serial.printf("Action on %s for value %f -> %d=%s\n",
+        log_w("Action on %s for value %f -> %d=%s",
             _observedChannel.c_str() ,
             value,
             _gpio ,

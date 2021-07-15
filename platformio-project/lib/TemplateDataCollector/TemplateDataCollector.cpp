@@ -52,7 +52,7 @@ bool TemplateDataCollector::needsReInit()
 void TemplateDataCollector::updateData()
 {
         #ifdef OPENSRVDEBUG
-            Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+            log_w("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(0,_config1*10);
             float result = randomVal/10;
             if (result > 900)

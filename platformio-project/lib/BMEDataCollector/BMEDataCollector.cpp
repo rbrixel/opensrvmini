@@ -86,7 +86,7 @@ void BMEDataCollector::updateData()
 {
     if (!_bmeIsReady) {
         #ifdef BMEDATACOLLECTOR_H_DEBUG
-            Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+            log_w("DEBUG CODE ACTIVE! RANDOM DATA");
             long randomVal = random(-200,400);
             float result = randomVal/10;
             long randomVal2 = random(90000,110000);

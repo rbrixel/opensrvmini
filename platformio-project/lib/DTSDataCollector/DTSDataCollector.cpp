@@ -62,7 +62,7 @@ void DTSDataCollector::reInit()
 void DTSDataCollector::updateData()
 {
     #ifdef DTSDATACOLLECTOR_H_DEBUG
-        Serial.println("DEBUG CODE ACTIVE! RANDOM DATA");
+        log_w("DEBUG CODE ACTIVE! RANDOM DATA");
         long randomVal = random(-200,400);
         float result = randomVal/10;
         _dataStorage->addData(_channelName + CHANNELEXTTEMP, result);
@@ -70,7 +70,7 @@ void DTSDataCollector::updateData()
         // #rb: Der getDeviceCount führt dazu, dass die FW den Sensor nicht findet
         /*
         if (_ds18sensors->getDeviceCount()==0){
-            Serial.println("SENSOR DS18B20 (GPIO5) NOT FOUND!");
+            log_w("SENSOR DS18B20 (GPIO5) NOT FOUND!");
             _dataStorage->addData(_channelName + CHANNELEXTTEMP , 0.0f);
             return;
         }
