@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['opensrvmini_358',['OpenSRVmini',['../index.html',1,'']]]
+  ['opensrvmini_360',['OpenSRVmini',['../index.html',1,'']]]
 ];
