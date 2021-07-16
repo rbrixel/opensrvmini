@@ -50,65 +50,71 @@ std::vector<IDataCollector *> dataCollectors; //!< all @see IDataCollector insta
 std::vector<IDataActor *> dataActors; /*!< all @see IDataActor instances which will be active here */
 IDataStorage *storage = new DataStorage();  /*!< the Storage where all are working on */
 
-volatile int speed=1500;
+SemaphoreHandle_t loopSemaphore;
+volatile int speed=50000;
 
 /// Callback to change cycle time
 void setSpeed(int s)
 {
   log_w("Set Speed to [%d]",s);
+  xSemaphoreGive(loopSemaphore);
   speed=s;
 }
 
 void setup()
 {
   //Serial.begin(115200);
+    loopSemaphore = xSemaphoreCreateBinary();
+    if( loopSemaphore == NULL )
+    {
+        log_e("Invalid Semaphore created on setup");
+    }
+    /* *******************************************************************************
+        Create Datacollectors 
+    */
+    dataCollectors.push_back(new BMEDataCollector("Channel-BME"));                            // Get Temperature and Pressure / Uses Wire for communication
+    dataCollectors.push_back(new ADSDataCollector("Channel-ADS", &Wire));                     // get Board Voltage / Uses the Wire for communication. Wire is setup by BME Internal controller allready
+    dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));                            // get outer temperature
+    dataCollectors.push_back(new MPUDataCollector("Channel-MPU", GPIO_NUM_19, GPIO_NUM_18));  // get outer gyro acc / Setup to I2C to 18 and 19 to ensure asnyc polling is not disturbing BME I2C
 
-  /* *******************************************************************************
-      Create Datacollectors 
-  */
-  dataCollectors.push_back(new BMEDataCollector("Channel-BME"));                            // Get Temperature and Pressure / Uses Wire for communication
-  dataCollectors.push_back(new ADSDataCollector("Channel-ADS", &Wire));                     // get Board Voltage / Uses the Wire for communication. Wire is setup by BME Internal controller allready
-  dataCollectors.push_back(new DTSDataCollector("Channel-DTS"));                            // get outer temperature
-  dataCollectors.push_back(new MPUDataCollector("Channel-MPU", GPIO_NUM_19, GPIO_NUM_18));  // get outer gyro acc / Setup to I2C to 18 and 19 to ensure asnyc polling is not disturbing BME I2C
-
-  /* *******************************************************************************
-      Create DataActors 
-  */
-  dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_10,true )); // Raise PIN 10 to HIGH as long as board voltage is good
-  dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_11,true )); // Raise PIN 11 as alarm to HIGH as voltage drops below 11.5V
+    /* *******************************************************************************
+        Create DataActors 
+    */
+    dataActors.push_back(new RangeDataActor("Channel-ADS.VCC",11.5f,15.0f,GPIO_NUM_10,true )); // Raise PIN 10 to HIGH as long as board voltage is good
+    dataActors.push_back(new RangeDataActor("Channel-ADS.VCC", 0.0f,11.5f,GPIO_NUM_11,true )); // Raise PIN 11 as alarm to HIGH as voltage drops below 11.5V
   
-  BTDataActor *btactor = new BTDataActor("OSRVm");
-    btactor->registerTempInhouseChannel("Channel-BME.TEMP");
-    btactor->registerTempOutdoorChannel("Channel-DTS.TEMP");
-    btactor->registerRollXChannel("Channel-MPU.ANGX");
-    btactor->registerRollYChannel("Channel-MPU.ANGY");
-    btactor->registerRollZChannel("Channel-MPU.ANGZ");
+    BTDataActor *btactor = new BTDataActor("OSRVm");
+      btactor->registerTempInhouseChannel("Channel-BME.TEMP");
+      btactor->registerTempOutdoorChannel("Channel-DTS.TEMP");
+      btactor->registerRollXChannel("Channel-MPU.ANGX");
+      btactor->registerRollYChannel("Channel-MPU.ANGY");
+      btactor->registerRollZChannel("Channel-MPU.ANGZ");
 
-  dataActors.push_back(btactor); 
-  //dataActors.push_back(new DisplayDataActor("Channel-MPU.ACAX")); 
+    dataActors.push_back(btactor); 
+    //dataActors.push_back(new DisplayDataActor("Channel-MPU.ACAX")); 
 
 #ifdef OUTPUT_ON
-  log_w("INIT: [%d] Collecotrs found", dataCollectors.size());
-  log_w("INIT: [%d] Actors found", dataActors.size());
+    log_w("INIT: [%d] Collecotrs found", dataCollectors.size());
+    log_w("INIT: [%d] Actors found", dataActors.size());
 #endif
 
-  /* *******************************************************************************
-      Init DataCollectors
-  */
-  // Initialize Collectors (with storage and maybe more)
-  for (std::size_t i = 0; i < dataCollectors.size(); ++i)
-  {
+    /* *******************************************************************************
+        Init DataCollectors
+    */
+    // Initialize Collectors (with storage and maybe more)
+    for (std::size_t i = 0; i < dataCollectors.size(); ++i)
+    {
 #ifdef OUTPUT_ON
-    log_w("INIT: %s", dataCollectors[i]->getName().c_str());
+      log_w("INIT: %s", dataCollectors[i]->getName().c_str());
 #endif
-    dataCollectors[i]->init(storage);
-  }
+      dataCollectors[i]->init(storage);
+    }
 
-  /* *******************************************************************************
-      Init Actors
-  */
-  for (std::size_t i = 0; i < dataActors.size(); ++i)
-  {
+    /* *******************************************************************************
+        Init Actors
+    */
+    for (std::size_t i = 0; i < dataActors.size(); ++i)
+    {
 #ifdef OUTPUT_ON
     log_w("INIT Actor");
 #endif
@@ -189,5 +195,13 @@ void loop()
   log_w("************************************");
   log_w("");
 #endif
-  delay(speed);
+
+  log_w("Semaphore lock now for [%d] ms",speed/portTICK_PERIOD_MS);
+  if (xSemaphoreTake(loopSemaphore,speed/portTICK_PERIOD_MS))	// Wait for trigger //portMAX_DELAY
+  {
+    log_w("Semaphore Optained, triggered loop by external event");
+  }else{
+    log_w("Semaphore ticks expired, loop started after timeout of [%d]", speed/portTICK_PERIOD_MS);
+  }
+
 }
