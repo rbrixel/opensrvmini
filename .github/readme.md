@@ -1,5 +1,5 @@
 # OpenSRVmini - WORK IN PROGESS
-![OpenSRVmini Logo](../OpenSRVmini-Logo.jpg)
+![OpenSRVmini Logo](./OpenSRVmini-Logo.jpg)
 
 ## Beschreibung
 Mit OpenSRVmini kannst du folgendes in deinem Wohnwagen/Wohnmobil messen: 
