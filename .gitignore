@@ -1,6 +1,3 @@
-.pio
-platformio-project/.vscode/.browse.c_cpp.db*
-platformio-project/.vscode/c_cpp_properties.json
-platformio-project/.vscode/launch.json
-platformio-project/.vscode/ipch
-dox/doc/
+# Custom
+_res/
+.DS_Store
